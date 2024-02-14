@@ -1,0 +1,54 @@
+uuid: 9c41b450-1c5d-4fd0-9234-0ca5de9aec95
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.header_block
+    - field.field.block_content.header_block.body
+    - field.field.block_content.header_block.field_logo
+    - field.field.block_content.header_block.field_newsletter
+    - field.field.block_content.header_block.field_subscription
+  module:
+    - link
+    - webform
+id: block_content.header_block.default
+targetEntityType: block_content
+bundle: header_block
+mode: default
+content:
+  field_logo:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_newsletter:
+    type: webform_entity_reference_link
+    label: hidden
+    settings:
+      label: Newsletter
+      dialog: narrow
+      attributes: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_subscription:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  body: true
