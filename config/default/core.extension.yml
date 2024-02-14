@@ -37,6 +37,7 @@ module:
   page_cache: 0
   path: 0
   path_alias: 0
+  responsive_image: 0
   search: 0
   shortcut: 0
   system: 0
@@ -46,7 +47,10 @@ module:
   update: 0
   user: 0
   views_ui: 0
+  webform: 0
+  webform_ui: 0
   views: 10
+  linked_field: 100
   standard: 1000
 theme:
   olivero: 0
