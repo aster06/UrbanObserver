@@ -1,0 +1,20 @@
+uuid: 0adc5915-7317-472f-b607-153890696745
+langcode: en
+status: false
+dependencies:
+  theme:
+    - urbanobserver
+_core:
+  default_config_hash: Q9_2whdOj1YIomfvsIfopROW4FT_X5pY0DjdOiOaQ5U
+id: urbanobserver_primary_admin_actions
+theme: urbanobserver
+region: header
+weight: -2
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

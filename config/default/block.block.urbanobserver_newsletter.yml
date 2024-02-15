@@ -1,0 +1,25 @@
+uuid: 111b1d9c-85cb-4659-91a1-c70840c2be7b
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:header_block:0e4f4b6e-295c-4ac2-8a06-7063d7b4d596'
+  module:
+    - block_content
+  theme:
+    - urbanobserver
+id: urbanobserver_newsletter
+theme: urbanobserver
+region: header
+weight: -5
+provider: null
+plugin: 'block_content:0e4f4b6e-295c-4ac2-8a06-7063d7b4d596'
+settings:
+  id: 'block_content:0e4f4b6e-295c-4ac2-8a06-7063d7b4d596'
+  label: Newsletter
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
