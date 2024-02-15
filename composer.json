@@ -17,9 +17,11 @@
     "require": {
         "composer/installers": "^2.0",
         "drupal/admin_toolbar": "^3.4",
+        "drupal/components": "^3.0@beta",
         "drupal/core-composer-scaffold": "^10.2",
         "drupal/core-project-message": "^10.2",
         "drupal/core-recommended": "^10.2",
+        "drupal/emulsify_twig": "^4.0",
         "drupal/image_link_formatter": "^2.1",
         "drupal/linked_field": "^1.5",
         "drupal/menu_block": "^1.10",
