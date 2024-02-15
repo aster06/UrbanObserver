@@ -1,0 +1,22 @@
+uuid: 0568e796-f99e-4fd5-a771-cb3a51a62978
+langcode: en
+status: false
+dependencies:
+  module:
+    - help
+  theme:
+    - urbanobserver
+_core:
+  default_config_hash: VfPFqqxfkomud5CO8DUijw85QIl9GIxh_nIxLOYESxg
+id: urbanobserver_help
+theme: urbanobserver
+region: header
+weight: 2
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

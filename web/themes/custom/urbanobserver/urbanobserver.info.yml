@@ -11,9 +11,14 @@ libraries:
 ckeditor_stylesheets:
   - dist/css/style.css
 regions:
+  secondary_menu: Secondary menu
   header: Header
-  content: Content
-  sidebar: Sidebar
+  navigation: Main navigation
+  first_content: First content
+  banner: Banner
+  news: News
+  main_content: Main content
+  pre_footer: Pre-footer
   footer: Footer
 logo: images/logo.png
 components:

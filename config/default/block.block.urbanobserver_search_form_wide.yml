@@ -1,0 +1,23 @@
+uuid: 01b3b9b5-a40d-4cdc-a250-637a5b620eb2
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - urbanobserver
+_core:
+  default_config_hash: imMyHD6LYci0gtXq56qr9ZKGHzbEG9uFydrN5EhKtSU
+id: urbanobserver_search_form_wide
+theme: urbanobserver
+region: navigation
+weight: -4
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form (wide)'
+  label_display: '0'
+  provider: search
+  page_id: ''
+visibility: {  }

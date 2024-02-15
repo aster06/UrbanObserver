@@ -1,0 +1,22 @@
+uuid: 51ba01b1-4976-4a94-943e-5231d12be6f3
+langcode: en
+status: false
+dependencies:
+  theme:
+    - urbanobserver
+_core:
+  default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
+id: urbanobserver_primary_local_tasks
+theme: urbanobserver
+region: header
+weight: -1
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: d3462cd1-993b-4a9f-a419-b5e0bba0f9c2
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - urbanobserver
+_core:
+  default_config_hash: eYL19CLDyinGTWYQfBD1DswWzglEotE_kHnHx3AxTXM
+id: urbanobserver_powered
+theme: urbanobserver
+region: header
+weight: 3
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

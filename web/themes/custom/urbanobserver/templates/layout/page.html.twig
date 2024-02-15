@@ -50,9 +50,11 @@
 
 {% extends "@templates/_default.twig" %}
   {% block page_header %}
+    {{ page.secondary_menu }}
     {% if page.header %}
       {{ page.header }}
     {% endif %}
+    {{ page.navigation }}
   {% endblock %}
 
   {% block page_system %}
@@ -62,15 +64,15 @@
     {{ messages }}
   {% endblock %}
 
-  {% block page_sidebar %}
-    {{ page.sidebar }}
-  {% endblock %}
-
   {% block page_content %}
-    {{ page.content }}
+    {{ page.first_content }}
+    {{ page.banner }}
+    {{ page.news }}
+    {{ page.main_content }}
   {% endblock %}
 
   {% block page_footer %}
+    {{ page.pre_footer }}
     {% if page.footer %}
       {{ page.footer }}
     {% endif %}
