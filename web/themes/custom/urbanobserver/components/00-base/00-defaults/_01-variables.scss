@@ -5,10 +5,16 @@
  * and breakpoint related vars into
  * components/00-base/base/_breakpoints.css
 */
-
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Text:wght@100..900&family=Big+Shoulders+Text:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 // Fonts
+
 $font-body: georgia, times, 'Times New Roman', serif;
 $font-heading: 'HelveticaNeue', 'Helvetica', 'Arial', sans-serif;
+$global-font-1: Big Shoulders Text;
+$global-font-2: Work Sans;
+$global-font-3: "Big Shoulders Inline Text", sans-serif;;
 
 // Spacing
 $space: 1rem;

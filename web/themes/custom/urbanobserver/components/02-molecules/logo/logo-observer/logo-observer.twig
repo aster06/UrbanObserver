@@ -1,0 +1,19 @@
+{% set logo__base_class = logo__base_class|default('logo-observer') %}
+
+{% set logo__attributes = {
+  class: bem(logo__base_class, logo__modifiers, logo__blockname),
+} %}
+
+<div {{ add_attributes(logo__attributes) }}>
+  {% embed "@atoms/links/link/link.twig" with {
+    link_base_class: 'logo__link',
+    link_url: logo__url|default('/'),
+  } %}
+    {% block link_content %}
+      <div>
+        <div class="logo-title">UrbanObserver</div>
+        <div class="logo-tagline">Gossip & Lifestyle Online Magazine </div>
+      </div>
+    {% endblock %}
+  {% endembed %}
+</div>

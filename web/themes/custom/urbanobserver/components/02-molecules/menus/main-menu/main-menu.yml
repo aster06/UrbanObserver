@@ -1,5 +1,5 @@
 menu_items:
-  - title: 'Menu Item 1'
+  - title: 'Menu'
     url: '#'
     below:
       - title: 'Menu Item 1 Sub 1'

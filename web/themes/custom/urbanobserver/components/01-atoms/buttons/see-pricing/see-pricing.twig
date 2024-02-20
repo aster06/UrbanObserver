@@ -1,0 +1,13 @@
+{% set button__base_class = button__base_class|default('button-see-pricing') %}
+{% set button__attributes = button__attributes|default([]) %}
+
+{% set button__attributes = button__attributes|merge({
+  'class': bem(button__base_class, button__modifiers, button__blockname, button__additional_classes),
+}) %}
+
+<a {{ add_attributes(button__attributes) }}>
+  {% block button__content %}
+    {{ button__content }}
+    <svg id="uuid-f3f58555-6030-4575-a2c5-ef6bc2a5f2db" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75.92 69.98"> <g id="uuid-229bcfc3-0170-4510-b41a-e689aaa55c9b" data-name="Layer 1"> <path d="m43.73,0l-9.45,5.62h0c5.39,9.07,12.5,17.24,21.29,24.3H0v11h55.11c-8.3,6.88-15.03,14.78-20.24,23.31l9.38,5.74c7.2-11.75,17.56-22.14,31.68-30v-9.62C61.41,22.29,50.89,12.02,43.73,0Z"></path> </g> </svg>
+  {% endblock %}
+</a>

@@ -1,0 +1,34 @@
+{{ attach_library('urbanobserver/navigation-menu') }}
+
+<nav class="navigation-nav-block">
+  <div id="nav-logo" class="menu-logo">UrbanObserver</div>
+  <a href="#" id="toggle-expand" class="toggle-expand">
+    <span class="toggle-expand__open">
+      {% include "@atoms/images/icons/_icon.twig" with {
+        icon__base_class: "icon",
+        icon__blockname: "toggle-expand",
+        icon__name: "menu",
+      } %}
+    </span>
+    <span class="toggle-expand__close">
+            {% include "@atoms/images/icons/_icon.twig" with {
+              icon__base_class: "icon",
+              icon__blockname: "toggle-expand",
+              icon__name: "menu-close",
+            } %}
+    </span>
+  </a>
+  <div id="navigation-nav" class="navigation-nav">
+    {% include "@molecules/menus/_menu.twig" with {
+      menu_class: "navigation-menu",
+      items: navigation_menu_items,
+    } %}
+</div>
+  <div id="lower-block" class="lower-block">
+    {% include "@molecules/menus/little-pre-menu/little-pre-menu.twig" %}
+    {% include "@atoms/buttons/see-pricing/see-pricing.twig" %}
+  </div>
+</nav>
+
+
+

@@ -1,0 +1,9 @@
+little_pre_menu_items:
+  - title: 'About'
+    url: '#'
+  - title: 'Contact'
+    url: '#'
+  - title: 'Privacy Policy'
+    url: '#'
+  - title: 'Newsletter'
+    url: '#'

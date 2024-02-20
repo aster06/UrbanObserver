@@ -1,0 +1,29 @@
+.button-newsletter{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $black;
+  font-size: 16px;
+  padding: 0;
+  line-height: 1.6;
+  font-weight: 700;
+  text-transform: uppercase;
+  height: auto;
+  font-family: $global-font-1;
+  cursor: pointer;
+  transition: all .3s ease;
+  &:hover {
+    color: $main-hover;
+    fill: $main-hover;
+  }
+  svg {
+    transition: all .3s;
+    @include large-plus {
+      height: auto;
+      width: 36px;
+    }
+  }
+  @include large-plus {
+    font-size: 20px;
+  }
+}

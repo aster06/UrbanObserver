@@ -1,0 +1,78 @@
+/* Dropdown Button */
+.dropbtn {
+  color: $main-hover;
+  font-family: $global-font-2;
+  font-size: 13px;
+  cursor: pointer;
+  line-height: 1.2;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  margin-left: auto;
+  padding: 2px 6px;
+  border-color: $main-hover;
+  border-style: solid;
+  border-width: 0 2px 0 2px;
+  background: transparent;
+}
+
+.dropdown {
+  position: relative;
+  display: flex;
+  padding-bottom: 25px;
+
+  &:hover {
+    .dropdown-content {
+      display: flex;
+      flex-direction: column;
+      right: 0;
+      top: 25px;
+    }
+
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    border-width: 1px 1px 3px;
+    border-color: black;
+    box-shadow: none;
+    border-style: solid;
+    z-index: 1;
+
+    p {
+      border-bottom: 1px solid black;
+      font-family: $global-font-1;
+      font-size: 17px;
+      line-height: 1.2;
+      font-weight: 700;
+      color: black;
+      padding: 11px 20px;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      padding: 8px 14px;
+      border-style: solid;
+      border-radius: 0px;
+      background-color: $main-hover;
+      font-family: $global-font-2;
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 500;
+      text-transform: uppercase;
+      margin: 15px 20px;
+      max-width: 80px;
+
+      &:hover {
+        background-color: #F35858;
+      }
+    }
+  }
+}
+
+
