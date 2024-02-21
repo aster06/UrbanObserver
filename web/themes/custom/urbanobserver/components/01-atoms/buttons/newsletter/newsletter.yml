@@ -1,0 +1,4 @@
+button__content: 'Newsletter'
+button_url: '#'
+button_modifiers:
+  - 'newsletter'

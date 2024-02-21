@@ -1,0 +1,59 @@
+/* A */
+.navigation-menu__link {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.5;
+  text-decoration: none;
+  color: black;
+  padding: 0;
+  text-align: left;
+
+  &--with-sub {
+    width: 80%;
+  }
+
+  &:focus,
+  &:hover {
+    color: $main-hover;
+
+    @include medium {
+      color: $main-hover;
+    }
+  }
+
+  @include medium {
+    position: relative;
+    display: inline-block;
+    padding: 1rem 8px 8px;
+    width: auto;
+    border-bottom: none;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+  }
+}
+
+/*
+ * Sub Navigation Links
+ */
+
+/* A (Nested) */
+.navigation-menu__link--sub {
+  padding-left: $space-triple;
+  color: clr(accent);
+  font-weight: normal;
+
+  @include medium {
+    display: block;
+    padding: $space-one-third $space;
+    color: clr(highlight);
+  }
+}
+
+.navigation-menu--sub-2 {
+  background-color: clr(highlight-high);
+}
+
+.navigation-menu__link--sub-2 {
+  padding-left: $space-quadruple;
+}

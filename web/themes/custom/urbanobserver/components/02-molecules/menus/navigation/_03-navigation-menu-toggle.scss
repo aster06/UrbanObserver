@@ -1,0 +1,57 @@
+/* Toggle */
+.toggle-expand {
+  @include link;
+  border-bottom: 3px solid black;
+  position: absolute;
+  top: 1rem;
+  display: inline-block;
+  margin-left: -1rem;
+  margin-top: -1rem;
+  padding: $space;
+  width: 100vw;
+  text-decoration: none;
+
+
+  /* See account.js */
+  &--open {
+    background-color: white;
+    height: 100%;
+    margin-top: -5px;
+  }
+
+  @include medium {
+    display: none;
+  }
+}
+/* SVG icon */
+.toggle-expand__icon {
+  height: 25px;
+  width: 25px;
+  margin: 0 auto;
+  vertical-align: middle;
+
+}
+
+.toggle-expand__open {
+  display: inline-block;
+  float: right;
+  text-align: center;
+
+  .toggle-expand--open & {
+    display: none;
+  }
+
+  svg {
+    fill: black;
+  }
+}
+
+.toggle-expand__close {
+  display: none;
+  float: right;
+  text-align: center;
+  background-color: black;
+  .toggle-expand--open & {
+    display: inline-block;
+  }
+}

@@ -1,0 +1,30 @@
+.little-pre-menu {
+  @include list-reset;
+  text-align: left;
+  line-height: 1.2;
+}
+
+.little-pre-menu__item {
+  margin-right: 15px;
+  font-size: 13px;
+  font-family: $global-font-2;
+  font-weight: 500;
+  display: inline-block;
+
+  @include large {
+    display: inline;
+    margin-bottom: 1em;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+  a{
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.little-pre-menu__link {
+  @include link;
+}

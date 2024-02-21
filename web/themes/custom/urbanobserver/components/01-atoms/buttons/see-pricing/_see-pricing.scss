@@ -1,0 +1,21 @@
+.button-see-pricing {
+  height: auto;
+  padding: 15px 25px;
+  background-color: $main-hover;
+  font-family: $global-font-2;
+  font-size: 15px;
+  line-height: 1.2;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+
+  svg {
+    width: 15px;
+    fill: white;
+    vertical-align: middle;
+    margin-left: 10px;
+  }
+}
+
+

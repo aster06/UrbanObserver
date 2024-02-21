@@ -1,0 +1,128 @@
+/* Menu media */
+$main-menu-medium: $medium;
+
+/* Nav */
+.navigation-nav {
+  display: none;
+  text-align: center;
+
+  @include medium {
+    display: block;
+    border-bottom: 2px solid black;
+  }
+
+  &--open {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 110px;
+    display: block;
+    overflow-y: scroll;
+    width: 100%;
+
+    @include medium {
+      position: relative;
+      left: auto;
+      right: auto;
+      top: auto;
+      width: auto;
+      overflow-y: visible;
+    }
+  }
+}
+
+/* UL */
+.navigation-menu {
+  @include list-reset;
+
+  position: relative;
+  z-index: 10;
+  border-bottom: 1px solid;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @include medium {
+    border-bottom: none;
+    height: 50px;
+  }
+}
+
+.menu-logo {
+  font-family: $global-font-3;
+  font-size: 42px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  color: black;
+  margin-top: -20px;
+  @include medium {
+    display: none;
+  }
+
+  &--open {
+    z-index: 5;
+    position: absolute;
+    font-family: $global-font-1;
+    font-size: 26px;
+    line-height: 1.2;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 30px 0 0;
+
+  }
+
+}
+
+/*
+ * Sub Navigation
+ */
+
+/* UL (Nested) */
+.navigation-menu--sub {
+  height: 0;
+  overflow: hidden;
+  width: 100%;
+  border-bottom: none;
+  background-color: clr(muted);
+
+
+  @include medium {
+    position: absolute;
+    left: 0;
+    top: 51px;
+    z-index: 1;
+    display: none;
+    height: auto;
+    overflow: visible;
+    padding: 0;
+    width: 315px;
+    background-color: clr(accent-high);
+    font-size: 0.9rem;
+  }
+
+  &:hover {
+    .navigation-menu__link--sub {
+      @include medium {
+        color: clr(highlight);
+
+        &.active,
+        &:active,
+        &:hover {
+          background-color: clr(accent-high);
+          color: clr(background);
+        }
+      }
+    }
+  }
+
+  /* See account.js */
+  &-open {
+    height: auto;
+  }
+}
+
+.navigation-menu--sub-2 {
+  @include medium {
+    display: none; /* Never shown on large screens */
+  }
+}
