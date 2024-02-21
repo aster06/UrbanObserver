@@ -9,3 +9,18 @@
 @import '03-organisms/**/*.scss';
 @import '04-templates/**/*.scss';
 @import '00-base/01-colors/colors-used.scss';
+
+//Fonts
+@font-face {
+  font-family: Big Shoulders Inline Text;
+  src: url('../assets/fonts/Big_Shoulders_Inline_Text/BigShouldersInlineText-VariableFont_wght.ttf');
+};
+@font-face {
+  font-family: Work Sans;
+  src: url('../assets/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf'),
+  url('../assets/fonts/Work_Sans/WorkSans-Italic-VariableFont_wght.ttf');
+};
+@font-face {
+  font-family: Big Shoulders Text;
+  src: url('../assets/fonts/Big_Shoulders_Text/BigShouldersText-VariableFont_wght.ttf');
+};
