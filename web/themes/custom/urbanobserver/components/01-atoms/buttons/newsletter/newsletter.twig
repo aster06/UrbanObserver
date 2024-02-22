@@ -1,10 +1,10 @@
 {% set button__base_class = button__base_class|default('button-newsletter') %}
 {% set button__attributes = button__attributes|default([]) %}
-
+{{ button__attributes.addClass('h2') }}
 {% set button__attributes = button__attributes|merge({
   'class': bem(button__base_class, button__modifiers, button__blockname, button__additional_classes),
 }) %}
-  <a {{ add_attributes(button__attributes) }}>
+  <a href={{ newsletter__link }} {{ add_attributes(button__attributes) }}>
     {% block button__content %}
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
         <path

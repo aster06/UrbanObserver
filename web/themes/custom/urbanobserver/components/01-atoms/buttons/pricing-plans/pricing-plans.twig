@@ -5,8 +5,8 @@
   'class': bem(button__base_class, button__modifiers, button__blockname, button__additional_classes),
 }) %}
 
-<a {{ add_attributes(button__attributes) }}>
-  {% block button__content %}
+<a href={{ subscription__link }} {{ add_attributes(button__attributes) }}>
+  {% block button__subscription %}
     {{ button__content }}
   {% endblock %}
 </a>

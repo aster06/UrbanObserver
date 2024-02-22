@@ -10,7 +10,7 @@
 @import '04-templates/**/*.scss';
 @import '00-base/01-colors/colors-used.scss';
 
-//Fonts
+//Fonts for storybook
 @font-face {
   font-family: Big Shoulders Inline Text;
   src: url('../assets/fonts/Big_Shoulders_Inline_Text/BigShouldersInlineText-VariableFont_wght.ttf');
@@ -23,4 +23,21 @@
 @font-face {
   font-family: Big Shoulders Text;
   src: url('../assets/fonts/Big_Shoulders_Text/BigShouldersText-VariableFont_wght.ttf');
+};
+
+//Fonts for drupal site
+@font-face {
+  font-family: Big Shoulders Inline Text;
+  src: url('/themes/custom/urbanobserver/assets/fonts/Big_Shoulders_Inline_Text/BigShouldersInlineText-VariableFont_wght.ttf');
+};
+
+@font-face {
+  font-family: Work Sans;
+  src: url('/themes/custom/urbanobserver/assets/fonts/Work_Sans/WorkSans-VariableFont_wght.ttf'),
+  url('/themes/custom/urbanobserver/assets/fonts/Work_Sans/WorkSans-Italic-VariableFont_wght.ttf');
+};
+
+@font-face {
+  font-family: Big Shoulders Text;
+  src: url('/themes/custom/urbanobserver/assets/fonts/Big_Shoulders_Text/BigShouldersText-VariableFont_wght.ttf');
 };

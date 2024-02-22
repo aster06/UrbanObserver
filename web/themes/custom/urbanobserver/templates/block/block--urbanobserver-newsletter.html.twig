@@ -1,0 +1,21 @@
+<div {{ bem('block') }}>
+  {{ title_prefix }}
+  {% if label %}
+    <h2{{ title_attributes.addClass('h2') }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+<div class="newsletter-block-observer">
+{# in future work with web form  #}
+  {% include "@atoms/buttons/newsletter/newsletter.twig" with{
+    button__content: content.field_newsletter['#title'],
+    newsletter__link: content.field_newsletter[0]['#url'],
+  }
+  %}
+  {% include "@molecules/logo/logo-observer/logo-observer.twig" %}
+  {% include "@atoms/buttons/pricing-plans/pricing-plans.twig" with{
+    button__content: content.field_subscription[0]['#title'],
+    subscription__link: content.field_subscription[0]['#url'].uri,
+  }
+  %}
+</div>
+</div>
