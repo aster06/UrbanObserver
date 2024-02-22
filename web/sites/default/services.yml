@@ -99,7 +99,7 @@ parameters:
     #
     # Disabling the Twig cache is not recommended in production environments.
     # @default true
-    cache: false
+    cache: true
     # File extensions:
     #
     # List of file extensions the Twig system is allowed to load via the
