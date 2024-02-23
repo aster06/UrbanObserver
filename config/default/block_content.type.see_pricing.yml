@@ -1,0 +1,8 @@
+uuid: d11ce485-7a73-42e9-8f57-20c93727b969
+langcode: en
+status: true
+dependencies: {  }
+id: see_pricing
+label: 'See pricing'
+revision: 0
+description: ''

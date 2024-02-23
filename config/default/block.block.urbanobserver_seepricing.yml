@@ -1,0 +1,25 @@
+uuid: 34725681-40a7-45cb-b611-5731d1051e2e
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:see_pricing:d033df99-5539-4cb6-acc5-fa0d0daae94e'
+  module:
+    - block_content
+  theme:
+    - urbanobserver
+id: urbanobserver_seepricing
+theme: urbanobserver
+region: navigation
+weight: 0
+provider: null
+plugin: 'block_content:d033df99-5539-4cb6-acc5-fa0d0daae94e'
+settings:
+  id: 'block_content:d033df99-5539-4cb6-acc5-fa0d0daae94e'
+  label: 'See pricing'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

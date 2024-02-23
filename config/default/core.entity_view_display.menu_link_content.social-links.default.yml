@@ -1,0 +1,33 @@
+uuid: 20034e7d-7367-4047-8801-e734394ba8f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.menu_link_content.social-links.field_link_for_social_media
+    - system.menu.social-links
+  module:
+    - image
+    - linked_field
+id: menu_link_content.social-links.default
+targetEntityType: menu_link_content
+bundle: social-links
+mode: default
+content:
+  field_link_for_social_media:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings:
+      linked_field:
+        linked: '1'
+        type: field
+        destination: menu_name
+        advanced: {  }
+    weight: 0
+    region: content
+hidden:
+  children: true

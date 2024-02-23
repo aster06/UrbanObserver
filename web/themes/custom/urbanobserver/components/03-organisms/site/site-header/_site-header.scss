@@ -1,19 +1,21 @@
 .header {
   .newsletter-block-observer {
-    display: flex;
+    display: none;
+    @include medium {
+      display: flex;
 
-    .logo-observer {
-      margin: auto;
-    }
-    .button-newsletter {
-      margin: auto 0;
-      text-decoration: none;
-    }
-    .button-pricing-plans {
-      margin: auto 0;
+      .logo-observer {
+        margin: auto;
+      }
+      .button-newsletter {
+        margin: auto 0;
+        text-decoration: none;
+      }
+      .button-pricing-plans {
+        margin: auto 0;
+      }
     }
   }
-
   &__inner {
     @include wrapper;
 

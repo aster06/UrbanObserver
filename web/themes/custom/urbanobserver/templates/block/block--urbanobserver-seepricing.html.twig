@@ -1,0 +1,12 @@
+<div {{ bem('block') }}>
+  {{ title_prefix }}
+  {% if label %}
+    <h2{{ title_attributes.addClass('h2') }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+  {% include "@atoms/buttons/see-pricing/see-pricing.twig" with{
+    button__content: content.field_link_for_button[0]['#title'],
+  }
+  %}
+</div>
+

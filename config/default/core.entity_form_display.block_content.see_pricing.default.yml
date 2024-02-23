@@ -1,0 +1,33 @@
+uuid: 05031845-2b33-4d61-9265-b66c6643c8b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.see_pricing
+    - field.field.block_content.see_pricing.body
+    - field.field.block_content.see_pricing.field_link_for_button
+  module:
+    - link
+id: block_content.see_pricing.default
+targetEntityType: block_content
+bundle: see_pricing
+mode: default
+content:
+  field_link_for_button:
+    type: link_default
+    weight: 1
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  body: true

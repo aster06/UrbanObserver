@@ -31,6 +31,7 @@ module:
   image: 0
   link: 0
   menu_block: 0
+  menu_item_extras: 0
   menu_link_content: 0
   menu_ui: 0
   mysql: 0

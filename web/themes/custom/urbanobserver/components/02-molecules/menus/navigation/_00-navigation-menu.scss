@@ -1,13 +1,27 @@
 /* Menu media */
 $main-menu-medium: $medium;
+.search-icon {
+  width: 24px;
+  display: flex;
+  cursor: pointer;
+
+  svg {
+    vertical-align: middle;
+  }
+}
 
 /* Nav */
 .navigation-nav {
   display: none;
   text-align: center;
 
+  .menus {
+    margin: auto;
+    display: flex;
+  }
+
   @include medium {
-    display: block;
+    display: flex;
     border-bottom: 2px solid black;
   }
 
@@ -125,4 +139,11 @@ $main-menu-medium: $medium;
   @include medium {
     display: none; /* Never shown on large screens */
   }
+}
+//search block
+.search-block-form{
+  display: none;
+}
+.search-block-form--open{
+  display: block;
 }
