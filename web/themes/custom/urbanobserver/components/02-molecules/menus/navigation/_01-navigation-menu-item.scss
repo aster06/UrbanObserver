@@ -16,6 +16,7 @@
     @include medium {
       border: none;
     }
+
     .navigation-menu--sub {
       @include medium {
         right: 0;
@@ -67,25 +68,6 @@
   }
 }
 
-.lower-block {
-  display: none;
 
-  .little-pre-menu {
-    margin: 0 0 30px;
-  }
 
-  .button-see-pricing {
-    text-align: center;
-  }
 
-  &--open {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 26rem;
-    padding-right: 1rem;
-    width: 100%;
-    left: 0;
-    padding-left: 1rem;
-  }
-}

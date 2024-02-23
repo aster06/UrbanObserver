@@ -1,0 +1,29 @@
+uuid: f9325d11-28b0-4ff3-a9c8-5159c984ab6b
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.see_pricing
+    - field.field.block_content.see_pricing.body
+    - field.field.block_content.see_pricing.field_link_for_button
+  module:
+    - link
+id: block_content.see_pricing.default
+targetEntityType: block_content
+bundle: see_pricing
+mode: default
+content:
+  field_link_for_button:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true

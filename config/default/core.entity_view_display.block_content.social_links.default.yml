@@ -1,0 +1,22 @@
+uuid: 7ab02fd8-7bdc-41a9-b146-4b2befe77710
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.social_links
+    - field.field.block_content.social_links.body
+  module:
+    - text
+id: block_content.social_links.default
+targetEntityType: block_content
+bundle: social_links
+mode: default
+content:
+  body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

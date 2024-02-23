@@ -1,0 +1,25 @@
+uuid: 7192bba8-1810-4325-bfaf-a605f77e4079
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.mie-demo-base-menu
+  module:
+    - system
+  theme:
+    - urbanobserver
+id: menuitemextrasdemomenuq
+theme: urbanobserver
+region: secondary_menu
+weight: 0
+provider: system
+plugin: 'system_menu_block:mie-demo-base-menu'
+settings:
+  id: 'system_menu_block:mie-demo-base-menu'
+  label: 'Menu Item Extras Demo Menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

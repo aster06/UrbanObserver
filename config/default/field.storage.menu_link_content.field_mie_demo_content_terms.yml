@@ -1,0 +1,22 @@
+uuid: f3021552-4417-4dd1-b026-7af8fe74fe14
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_link_content
+    - taxonomy
+_core:
+  default_config_hash: PYL1x7BeYu35G5yMUK0Nv3wzq29pIxl-bI3QGXooyOw
+id: menu_link_content.field_mie_demo_content_terms
+field_name: field_mie_demo_content_terms
+entity_type: menu_link_content
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

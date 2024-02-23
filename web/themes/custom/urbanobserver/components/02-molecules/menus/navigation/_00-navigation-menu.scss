@@ -1,17 +1,17 @@
 /* Menu media */
 $main-menu-medium: $medium;
+.search-icon {
+  width: 24px;
+  display: flex;
+  cursor: pointer;
 
-/* Nav */
-.navigation-nav {
-  display: none;
-  text-align: center;
-
-  @include medium {
-    display: block;
-    border-bottom: 2px solid black;
+  svg {
+    vertical-align: middle;
   }
+}
 
-  &--open {
+.nav-class--open {
+  .navigation-nav {
     position: absolute;
     left: 0;
     right: 0;
@@ -29,6 +29,76 @@ $main-menu-medium: $medium;
       overflow-y: visible;
     }
   }
+
+  .menu-logo {
+    z-index: 5;
+    position: absolute;
+    font-family: $global-font-1;
+    font-size: 26px;
+    line-height: 1.2;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 30px 0 0;
+  }
+
+  .little-pre-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 26rem;
+    padding-right: 1rem;
+    width: 100%;
+    left: 0;
+    padding-left: 1rem;
+  }
+  .social-links{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 35rem;
+    padding-right: 1rem;
+    width: 100%;
+    left: 0;
+    padding-left: 1rem;
+  }
+  .button-see-pricing{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 30rem;
+    padding-right: 1rem;
+    width: 100%;
+    left: 0;
+    padding-left: 1rem;
+  }
+}
+
+.little-pre-menu {
+  display: none;
+}
+.button-see-pricing {
+  display: none;
+}
+
+.social-links {
+  display: none;
+
+}
+/* Nav */
+.navigation-nav {
+  display: none;
+  text-align: center;
+
+  .menus {
+    margin: auto;
+    display: flex;
+  }
+
+  @include medium {
+    display: flex;
+    border-bottom: 2px solid black;
+  }
+
 }
 
 /* UL */
@@ -57,18 +127,6 @@ $main-menu-medium: $medium;
   margin-top: -20px;
   @include medium {
     display: none;
-  }
-
-  &--open {
-    z-index: 5;
-    position: absolute;
-    font-family: $global-font-1;
-    font-size: 26px;
-    line-height: 1.2;
-    font-weight: 800;
-    text-transform: uppercase;
-    padding: 30px 0 0;
-
   }
 
 }
@@ -125,4 +183,13 @@ $main-menu-medium: $medium;
   @include medium {
     display: none; /* Never shown on large screens */
   }
+}
+
+//search block
+.search-block-form {
+  display: none;
+}
+
+.search-block-form--open {
+  display: block;
 }
