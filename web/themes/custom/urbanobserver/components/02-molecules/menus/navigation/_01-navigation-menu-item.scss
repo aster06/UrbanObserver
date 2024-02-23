@@ -68,47 +68,6 @@
   }
 }
 
-.little-pre-menu {
-  display: none;
 
-  &--open {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 26rem;
-    padding-right: 1rem;
-    width: 100%;
-    left: 0;
-    padding-left: 1rem;
-  }
-}
 
-.button-see-pricing {
-  display: none;
 
-  &--open {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 30rem;
-    padding-right: 1rem;
-    width: 100%;
-    left: 0;
-    padding-left: 1rem;
-  }
-}
-
-.social-links {
-  display: none;
-  &--open {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 35rem;
-    padding-right: 1rem;
-    width: 100%;
-    left: 0;
-    padding-left: 1rem;
-  }
-
-}
