@@ -1,0 +1,30 @@
+uuid: 6f1b66cc-9412-4214-8ad2-973efbcb9ff9
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.genres
+  module:
+    - path
+id: taxonomy_term.genres.default
+targetEntityType: taxonomy_term
+bundle: genres
+mode: default
+content:
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  description: true
+  status: true

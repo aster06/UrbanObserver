@@ -9,7 +9,7 @@ _core:
 id: urbanobserver_page_title
 theme: urbanobserver
 region: header
-weight: -3
+weight: -7
 provider: null
 plugin: page_title_block
 settings:

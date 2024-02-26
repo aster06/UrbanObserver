@@ -1,0 +1,21 @@
+uuid: 6d08666a-5387-4384-9f0d-1d49148c594a
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.genres
+  module:
+    - text
+id: taxonomy_term.genres.default
+targetEntityType: taxonomy_term
+bundle: genres
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

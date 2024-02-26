@@ -11,7 +11,7 @@ _core:
 id: urbanobserver_powered
 theme: urbanobserver
 region: header
-weight: 3
+weight: -1
 provider: null
 plugin: system_powered_by_block
 settings:
