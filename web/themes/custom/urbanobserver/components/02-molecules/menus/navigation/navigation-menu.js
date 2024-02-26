@@ -12,6 +12,7 @@ Drupal.behaviors.mainMenu = {
         );
         navRegionMenu.forEach((a) => a.classList.toggle('nav-class--open'));
         searchIcon.forEach((si) => si.classList.toggle('search-icon--open-menu'));
+        searchForm.forEach((ib) => ib.classList.toggle('search-block-form--opens'));
         e.preventDefault();
       });
     });
