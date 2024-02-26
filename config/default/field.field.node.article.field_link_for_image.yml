@@ -1,0 +1,23 @@
+uuid: 4db8faaf-f7a0-4d0c-b269-41aabf0a7c63
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_link_for_image
+    - node.type.article
+  module:
+    - link
+id: node.article.field_link_for_image
+field_name: field_link_for_image
+entity_type: node
+bundle: article
+label: 'Link for image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link
