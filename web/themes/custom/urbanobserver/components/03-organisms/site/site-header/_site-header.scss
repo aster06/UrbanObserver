@@ -1,4 +1,130 @@
+.nav-region{
+  border-bottom: 3px solid black;
+  .nav-container{
+    width: 44rem;
+    margin: auto;
+    position: relative;
+  }
+}
+#block-urbanobserver-account-menu {
+  display: none;
+
+  @include medium {
+    width: auto;
+    max-width: 1440px;
+    display: flex;
+    margin: auto;
+
+    .date-secondary-menu {
+      color: black;
+      padding: 0 1rem;
+      font-family: $global-font-2;
+      font-size: 13px;
+      line-height: 1.2;
+      font-weight: 500;
+      margin: auto 0;
+    }
+
+    .menu {
+      display: flex;
+      margin-left: auto;
+      list-style: none;
+      gap: 20px;
+
+      .menu__item {
+        font-family: $global-font-2;
+        font-size: 13px;
+        line-height: 1.2;
+        font-weight: 600;
+        text-transform: uppercase;
+        display: flex;
+
+        a {
+          margin: auto 0;
+          text-decoration: none;
+          color: black;
+        }
+      }
+
+      .menu__item--with-sub {
+        position: relative;
+        display: flex;
+        padding: 10px;
+
+        &:hover {
+          .menu--sub-1 {
+            display: flex;
+            flex-direction: column;
+            right: 10px;
+            margin-top: 30px;
+            background-color: white;
+          }
+
+        }
+
+        a {
+          color: $main-hover;
+          font-family: $global-font-2;
+          font-size: 13px;
+          cursor: pointer;
+          line-height: 1.2;
+          font-weight: 600;
+          text-transform: uppercase;
+          margin-bottom: 0;
+          margin-left: auto;
+          padding: 2px 6px;
+          border-color: $main-hover;
+          border-style: solid;
+          border-width: 0 2px 0 2px;
+          background: transparent;
+        }
+
+        .menu--sub-1 {
+          display: none;
+          position: absolute;
+          border-width: 1px 1px 3px;
+          border-color: black;
+          box-shadow: none;
+          border-style: solid;
+          z-index: 1;
+
+          a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 8px 14px;
+            border-style: solid;
+            border-radius: 0px;
+            background-color: $main-hover;
+            font-family: $global-font-2;
+            font-size: 13px;
+            line-height: 1;
+            font-weight: 500;
+            text-transform: uppercase;
+            margin: 15px 20px;
+            max-width: 80px;
+
+            &:hover {
+              background-color: #F35858;
+            }
+          }
+
+          li {
+            width: 117px;
+          }
+        }
+      }
+    }
+  }
+}
+
 .header {
+  @include medium {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 20px;
+  }
+
   .newsletter-block-observer {
     display: none;
     @include medium {
@@ -16,6 +142,7 @@
       }
     }
   }
+
   &__inner {
     @include wrapper;
 
@@ -42,4 +169,8 @@
       padding: 0;
     }
   }
+}
+
+.navigation-nav-block {
+  padding: 0 1rem;
 }

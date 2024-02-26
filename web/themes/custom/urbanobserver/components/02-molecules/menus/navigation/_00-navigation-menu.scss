@@ -1,13 +1,20 @@
 /* Menu media */
 $main-menu-medium: $medium;
 .search-icon {
-  width: 24px;
-  display: flex;
-  cursor: pointer;
+  display: none;
+  @include medium {
+    width: 24px;
+    display: flex;
+    cursor: pointer;
 
-  svg {
-    vertical-align: middle;
+    svg {
+      vertical-align: middle;
+    }
   }
+}
+
+.search-icon--open {
+  fill: $main-hover;
 }
 
 .nav-class--open {
@@ -42,40 +49,67 @@ $main-menu-medium: $medium;
   }
 
   .little-pre-menu {
-    display: flex;
-    flex-direction: column;
+    display: inline-block;
     position: absolute;
-    top: 26rem;
+    top: 29rem;
     padding-right: 1rem;
     width: 100%;
     left: 0;
-    padding-left: 1rem;
+    padding-left: 20px;
   }
-  .social-links{
+
+  .social-links {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 35rem;
+    top: 36rem;
     padding-right: 1rem;
     width: 100%;
     left: 0;
     padding-left: 1rem;
+    padding-bottom: 1rem;
+
+    ul {
+      display: flex;
+      margin: auto;
+
+      li {
+        list-style: none;
+        padding: 20px;
+
+        a {
+          display: none;
+        }
+
+        .menu-link-contentsocial-links {
+          width: 19px;
+          height: 19px;
+
+          a {
+            display: flex;
+          }
+        }
+      }
+    }
   }
-  .button-see-pricing{
+
+  .button-see-pricing {
     display: flex;
-    flex-direction: column;
     position: absolute;
-    top: 30rem;
+    top: 32rem;
     padding-right: 1rem;
-    width: 100%;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     padding-left: 1rem;
+    width: 80%;
+    justify-content: center;
   }
 }
 
 .little-pre-menu {
   display: none;
 }
+
 .button-see-pricing {
   display: none;
 }
@@ -84,22 +118,26 @@ $main-menu-medium: $medium;
   display: none;
 
 }
+
 /* Nav */
 .navigation-nav {
   display: none;
   text-align: center;
 
   .menus {
-    margin: auto;
     display: flex;
+    margin: 40px auto;
+    @include medium {
+      display: flex;
+      margin: auto;
+    }
   }
 
   @include medium {
     display: flex;
-    border-bottom: 2px solid black;
   }
-
 }
+
 
 /* UL */
 .navigation-menu {
@@ -107,7 +145,6 @@ $main-menu-medium: $medium;
 
   position: relative;
   z-index: 10;
-  border-bottom: 1px solid;
   padding-left: 20px;
   padding-right: 20px;
 
@@ -124,7 +161,6 @@ $main-menu-medium: $medium;
   text-transform: uppercase;
   letter-spacing: -1px;
   color: black;
-  margin-top: -20px;
   @include medium {
     display: none;
   }
@@ -187,9 +223,114 @@ $main-menu-medium: $medium;
 
 //search block
 .search-block-form {
+  width: 100%;
+  padding: 0 20px;
+
+  form {
+    width: 100%;
+    border-width: 1px 0 3px 1px;
+    border-color: black;
+    border-style: solid;
+    height: 44px;
+
+    .form-item {
+      width: 100%;
+      height: 44px;
+
+
+      input {
+        width: 100%;
+        height: 40px;
+        padding: 12px 16px;
+        border: unset;
+      }
+    }
+
+    .form-actions {
+      height: 40px;
+      width: 52px;
+      margin-left: auto;
+
+      input {
+        background-color: black;
+        opacity: 0;
+      }
+
+      &::before {
+        content: url('/themes/custom/urbanobserver/assets/icons/icons8-search-30.png');
+        position: absolute;
+        width: 52px;
+        background-color: black;
+        height: 40px;
+        padding: 5px 11px;
+      }
+    }
+  }
+}
+
+.search-block-form {
   display: none;
 }
 
+.search-block-form--opens {
+  display: flex;
+  z-index: 8;
+  position: absolute;
+  top: 5rem;
+
+  #search-block-form {
+    flex-direction: row;
+    display: flex;
+  }
+}
+
 .search-block-form--open {
-  display: block;
+  @include medium {
+    display: block;
+    width: 884px;
+    min-height: 32px;
+    background-color: white;
+    border: 2px black solid;
+    right: 0;
+    max-width: 360px;
+    position: absolute;
+    height: 82px;
+    padding: 0;
+    form {
+      margin-left: auto;
+      margin-right: 0;
+      position: relative;
+      padding: 20px;
+      max-width: 360px;
+      display: flex;
+      border: unset;
+
+      .form-actions {
+        width: auto;
+
+        input {
+          background-color: $main-hover;
+          opacity: 1;
+          color: white;
+          font-size: 12px;
+          font-family: $global-font-2;
+          font-weight: 500;
+          width: 100%;
+          height: 40px;
+          padding: 12px 16px;
+          border: unset;
+        }
+
+        &::before {
+          display: none;
+        }
+      }
+
+      .form-item {
+        input {
+          border: 1px black solid;
+        }
+      }
+    }
+  }
 }
