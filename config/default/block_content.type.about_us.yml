@@ -1,0 +1,8 @@
+uuid: f820ea76-726e-48b5-8bd2-bfa5b3bc99e3
+langcode: en
+status: true
+dependencies: {  }
+id: about_us
+label: 'About us'
+revision: 0
+description: ''

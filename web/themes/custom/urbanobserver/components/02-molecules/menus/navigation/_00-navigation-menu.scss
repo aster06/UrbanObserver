@@ -18,6 +18,8 @@ $main-menu-medium: $medium;
 }
 
 .nav-class--open {
+  height: 40rem;
+
   .navigation-nav {
     position: absolute;
     left: 0;
@@ -89,6 +91,12 @@ $main-menu-medium: $medium;
             display: flex;
           }
         }
+        &:first-child {
+          display: none;
+        }
+        &:last-child {
+          display: none;
+        }
       }
     }
   }
@@ -116,7 +124,6 @@ $main-menu-medium: $medium;
 
 .social-links {
   display: none;
-
 }
 
 /* Nav */
