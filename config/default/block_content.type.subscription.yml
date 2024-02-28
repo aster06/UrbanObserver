@@ -1,0 +1,8 @@
+uuid: fb1feec6-4e20-490d-a271-cae44cfd821a
+langcode: en
+status: true
+dependencies: {  }
+id: subscription
+label: Subscription
+revision: 0
+description: ''
