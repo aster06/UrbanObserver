@@ -1,0 +1,25 @@
+uuid: 3f3861a7-661f-4409-887f-1b2b379dde1a
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:about_us:6911b962-50d6-46aa-aa85-4699a3e7a7c8'
+  module:
+    - block_content
+  theme:
+    - urbanobserver
+id: urbanobserver_aboutus
+theme: urbanobserver
+region: footer
+weight: -9
+provider: null
+plugin: 'block_content:6911b962-50d6-46aa-aa85-4699a3e7a7c8'
+settings:
+  id: 'block_content:6911b962-50d6-46aa-aa85-4699a3e7a7c8'
+  label: 'About us'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
