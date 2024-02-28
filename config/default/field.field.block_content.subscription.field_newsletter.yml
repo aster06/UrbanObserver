@@ -1,0 +1,25 @@
+uuid: 10b01340-4942-421b-ae14-43b68f184988
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.subscription
+    - field.storage.block_content.field_newsletter
+  module:
+    - webform
+id: block_content.subscription.field_newsletter
+field_name: field_newsletter
+entity_type: block_content
+bundle: subscription
+label: Newsletter
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:webform'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: webform

@@ -1,0 +1,25 @@
+uuid: 9eff355d-c247-476c-957b-fa8bffb2d58b
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:subscription:faad6518-20c0-4e11-aed6-21c5e8b7ea0c'
+  module:
+    - block_content
+  theme:
+    - urbanobserver
+id: urbanobserver_subscription
+theme: urbanobserver
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:faad6518-20c0-4e11-aed6-21c5e8b7ea0c'
+settings:
+  id: 'block_content:faad6518-20c0-4e11-aed6-21c5e8b7ea0c'
+  label: Subscription
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

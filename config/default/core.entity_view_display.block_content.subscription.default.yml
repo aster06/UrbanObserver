@@ -1,0 +1,24 @@
+uuid: 0a745336-290a-4b73-9039-fe3dab17b867
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.subscription
+    - field.field.block_content.subscription.field_newsletter
+  module:
+    - webform
+id: block_content.subscription.default
+targetEntityType: block_content
+bundle: subscription
+mode: default
+content:
+  field_newsletter:
+    type: webform_entity_reference_entity_view
+    label: hidden
+    settings:
+      source_entity: true
+      lazy: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }
