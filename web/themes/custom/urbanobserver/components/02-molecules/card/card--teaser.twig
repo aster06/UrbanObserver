@@ -1,4 +1,4 @@
-{% set card__base_class = 'card' %}
+{% set card__base_class = 'card--teaser' %}
 
 <div {{ bem(card__base_class, card__modifiers, card__blockname, card__extra_classes) }}>
   {% block card__img %}
@@ -10,6 +10,12 @@
         image_alt: card__image__alt,
       } %}
     {% endif %}
+  {% endblock %}
+  {% block card__info %}
+    {{ author_name }} {{ post.published_at|date("D, j F, Y") }}
+  {% endblock %}
+  {% block card__genres %}
+    {{ card_genres}}
   {% endblock %}
   <div {{ bem('content', card__content__modifiers, card__base_class) }}>
     {% if card__heading %}

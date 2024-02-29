@@ -71,18 +71,33 @@
  */
 #}
 
-
-{% embed "@molecules/card/card.twig" with {
-  card__extra_classes: ["grid__item"],
+{% embed "@molecules/card/card--teaser.twig" with {
+  card__extra_classes: ["card__item"],
   card__heading: label,
   card__body: content.body,
   card__link__url: url,
 } %}
+
   {% block card__img %}
-    {{ content.field_image }}
+    <div class="teaser-image">
+      {{ content.field_image }}
+    </div>
   {% endblock %}
 
   {% block card__info %}
-    {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+    <div class="teaser-author">
+      {{ author_name }}
+    </div>
+    <div class="teaser-date">
+      {{ post.published_at|date("D, j F, Y") }}
+    </div>
+  {% endblock %}
+
+  {% block card__genres %}
+    <div class="teaser-genres">
+      {{ content.field_ganers }}
+    </div>
   {% endblock %}
 {% endembed %}
+
+

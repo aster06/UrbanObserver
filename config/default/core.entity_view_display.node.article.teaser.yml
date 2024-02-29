@@ -13,6 +13,7 @@ dependencies:
     - node.type.article
   module:
     - image
+    - linked_field
     - text
     - user
 _core:
@@ -32,7 +33,7 @@ content:
     region: content
   field_ganers:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
@@ -46,14 +47,15 @@ content:
       image_style: medium
       image_loading:
         attribute: lazy
-    third_party_settings: {  }
+    third_party_settings:
+      linked_field:
+        linked: '1'
+        type: field
+        destination: field_link_for_image
+        advanced: {  }
     weight: 0
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 3
     region: content
 hidden:
   field_link_for_image: true
   field_tags: true
+  links: true
