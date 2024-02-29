@@ -1,6 +1,25 @@
 .footer {
-  background-color: clr(highlight-high);
-  padding: $space 0;
+  background-color: white;
+  padding: 3rem 0 0;
+  border-top: 3px black solid;
+  position: relative;
+
+  h2 {
+    font-family: $global-font-1;
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    color: black;
+  }
+
+  p {
+    color: #000000;
+    font-size: 15px;
+    line-height: 1.5;
+    font-weight: 400;
+  }
 
   &__inner {
     @include wrapper;
@@ -12,6 +31,206 @@
     @include large {
       flex-direction: row;
     }
+  }
+
+  #block-urbanobserver-sociallinks-2 {
+    margin-bottom: 3rem;
+
+    ul {
+      display: flex;
+
+      li {
+        list-style: none;
+        padding: 1rem;
+        background-color: $main-hover;
+        margin-right: 1rem;
+        border-radius: 2px;
+
+        a {
+          display: none;
+        }
+
+        .menu-link-contentsocial-links {
+          width: 19px;
+          height: 19px;
+
+          a {
+            display: flex;
+            img{
+              filter: invert(100%);
+            }
+          }
+        }
+
+        &:nth-child(3) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .views-element-container {
+    margin: 0 0 3rem 0;
+    font-family: $global-font-1;
+    font-size: 22px;
+    line-height: 1.2;
+    text-decoration: none;
+    font-weight: 700;
+
+    .views-field-title {
+      flex: 0 0 100%;
+
+      a {
+        text-decoration: none;
+        color: black;
+        margin: 0 0 8px 0;
+        display: flex;
+      }
+    }
+
+    .views-field-created {
+      font-family: $global-font-2;
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 500;
+      letter-spacing: -0.5px;
+      margin: auto 5px;
+    }
+
+    .views-field-field-ganers {
+      margin: 0 3px 0 0;
+      padding: 2px 0;
+      background-color: rgba(255, 255, 255, 0);
+      color: #000000;
+      border-width: 0;
+      border-style: solid;
+      border-color: #aaa;
+      font-family: $global-font-2;
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
+
+      a {
+        color: black;
+        text-decoration: none;
+      }
+    }
+
+    .views-row {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+#block-urbanobserver-subscription {
+  .form-item {
+    input {
+      padding: 15px 10px;
+      border-width: 1px;
+      border-style: solid;
+      border-radius: 0px;
+      color: black;
+      border-color: black;
+      font-family: $global-font-2;
+      font-size: 13px;
+      line-height: 1.2;
+      font-weight: 500;
+    }
+  }
+
+  .form-actions {
+    input {
+      background-color: $main-hover;
+      width: 100%;
+      font-family: $global-font-2;
+      font-size: 13px;
+      line-height: 1.2;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 18px;
+    }
+  }
+
+  .form-type-webform-terms-of-service {
+    display: flex;
+    color: black;
+    font-size: 13px;
+    line-height: 1.2;
+
+    .form-item__label {
+      margin-left: 5px;
+
+      a {
+        text-decoration: none;
+        color: $main-hover;
+      }
+    }
+  }
+}
+
+.copyright {
+  color: black;
+  font-size: 13px;
+  line-height: 1.2;
+  font-weight: 400;
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px black solid;
+}
+
+@include medium {
+  .views-field-field-ganers {
+    display: none;
+  }
+  .views-field-created {
+    display: none;
+  }
+  .views-field-title {
+    font-size: 15px;
+  }
+  #block-urbanobserver-aboutus {
+    flex: 25%;
+    min-width: 170px;
+    padding: 0 10px;
+  }
+
+  #block-urbanobserver-sociallinks-2 {
+    position: absolute;
+    margin-top: 11rem;
+    padding-left: 8px;
+
+    .menu {
+      display: flex;
+
+      .menu-item {
+        padding: 7px;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  #block-urbanobserver-views-block-latest-articles-block-1 {
+    flex: 25%;
+    min-width: 170px;
+  }
+
+  #block-urbanobserver-views-block-most-popular-block-1 {
+    flex: 25%;
+    min-width: 170px;
+  }
+
+  #block-urbanobserver-subscription {
+    flex: 25%;
+    min-width: 170px;
+  }
+
+  .copyright {
+    flex: 100%;
   }
 }
 
@@ -26,13 +245,27 @@
 }
 
 .footer__menu {
-  @include large {
-    flex: 1 1 100%;
-    margin-left: auto;
-    text-align: right;
+  @include medium {
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 
 .footer__branding {
   max-width: 10rem;
+}
+
+@include large {
+  #block-urbanobserver-sociallinks-2 {
+    margin-top: 9rem;
+  }
+  .views-field-field-ganers {
+    display: block;
+  }
+  .views-field-created {
+    display: block;
+  }
+  .views-field-title {
+    font-size: 22px;
+  }
 }
