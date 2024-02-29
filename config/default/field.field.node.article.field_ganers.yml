@@ -10,7 +10,7 @@ id: node.article.field_ganers
 field_name: field_ganers
 entity_type: node
 bundle: article
-label: Ganers
+label: Genre
 description: ''
 required: false
 translatable: false
