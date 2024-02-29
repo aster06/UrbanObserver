@@ -1,0 +1,24 @@
+uuid: c741a4fe-cdd1-416b-8979-0671378a560b
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.articles_main
+  module:
+    - views
+  theme:
+    - urbanobserver
+id: urbanobserver_views_block__articles_main_block_1
+theme: urbanobserver
+region: first_content
+weight: 0
+provider: null
+plugin: 'views_block:articles_main-block_1'
+settings:
+  id: 'views_block:articles_main-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }
