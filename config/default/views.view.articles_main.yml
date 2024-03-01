@@ -83,7 +83,7 @@ display:
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
-          expose_sort_order: true
+          expose_sort_order: false
           sort_asc_label: Asc
           sort_desc_label: Desc
       access:
@@ -135,6 +135,10 @@ display:
             article: article
       style:
         type: default
+        options:
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
       row:
         type: 'entity:node'
         options:
@@ -148,6 +152,7 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
+      css_class: articles-main
       header: {  }
       footer: {  }
       display_extenders: {  }
@@ -189,6 +194,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
+      block_description: ''
     cache_metadata:
       max-age: -1
       contexts:

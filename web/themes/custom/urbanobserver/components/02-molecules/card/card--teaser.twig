@@ -11,12 +11,6 @@
       } %}
     {% endif %}
   {% endblock %}
-  {% block card__info %}
-    {{ author_name }} {{ post.published_at|date("D, j F, Y") }}
-  {% endblock %}
-  {% block card__genres %}
-    {{ card_genres}}
-  {% endblock %}
   <div {{ bem('content', card__content__modifiers, card__base_class) }}>
     {% if card__heading %}
       {{ title_prefix }}
@@ -42,6 +36,13 @@
         heading_url: card__subheading__link,
       } %}
     {% endif %}
+    {% block card__genres %}
+      {{ card_genres}}
+    {% endblock %}
+    {% block card__info %}
+      {{ author_name }} {{ post.published_at|date("D, j F, Y") }}
+    {% endblock %}
+  </div>
     {% if card__body %}
       {% include "@atoms/text/text/01-paragraph.twig" with {
         paragraph_base_class: card__body__base_class|default('body'),
@@ -69,5 +70,5 @@
         button_url: card__button__url,
       } %}
     {% endif %}
-  </div>
+
 </div>
