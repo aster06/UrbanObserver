@@ -1,8 +1,11 @@
 .footer {
   background-color: white;
-  padding: 3rem 0 0;
+  padding: 3rem 20px 0;
   border-top: 3px black solid;
   position: relative;
+  &__inner{
+    max-width: 1440px;
+  }
 
   h2 {
     font-family: $global-font-1;

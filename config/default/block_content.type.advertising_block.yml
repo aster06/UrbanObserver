@@ -1,0 +1,8 @@
+uuid: 068a07be-a603-4f17-b876-42555a16d725
+langcode: en
+status: true
+dependencies: {  }
+id: advertising_block
+label: 'Advertising block'
+revision: 0
+description: ''

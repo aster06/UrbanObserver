@@ -33,14 +33,8 @@ $outer-container-break: $small;
   $h-padding: $space,
   $h-padding-large: $h-padding
 ) {
-  max-width: #{$container-max-width};
-  width: 100%;
-  margin: #{$v-margin} auto;
-  padding: #{$v-padding} #{$h-padding};
 
-  @include breakpoint($outer-container-break) {
-    padding: #{$v-padding} #{$h-padding-large};
-  }
+  margin: #{$v-margin} auto;
 
   @include breakpoint($container-max-width) {
     padding-left: calc(

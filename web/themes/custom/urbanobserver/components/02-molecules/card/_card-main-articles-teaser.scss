@@ -1,4 +1,8 @@
 #block-urbanobserver-views-block-articles-main-block-1 {
+  width: auto;
+  max-width: 1440px;
+  margin: auto;
+  padding: 0 20px;
   @include medium {
     .articles-main {
       display: flex;
@@ -88,7 +92,7 @@
       .views-element-container {
         .views-row {
           .heading {
-           font-size: 18px;
+            font-size: 18px;
             margin: auto auto 16px;
           }
         }
@@ -164,7 +168,8 @@
         font-weight: 500;
         text-transform: capitalize;
         margin-right: auto;
-        a{
+
+        a {
           text-decoration: none;
           color: black;
         }

@@ -14,7 +14,7 @@ body {
 
 .main {
   @include wrapper;
-
+  max-width: 100%;
   display: block; /* Fix for IE weirdness */
 }
 
