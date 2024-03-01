@@ -1,0 +1,184 @@
+#block-urbanobserver-views-block-articles-main-block-1 {
+  @include medium {
+    .articles-main {
+      display: flex;
+      flex-wrap: wrap;
+
+      .views-row {
+        max-width: 400px;
+        width: 30%;
+        margin: 0 auto;
+        border: unset;
+
+        .card--teaser__content {
+          .heading {
+            font-size: 16px;
+            line-height: 24px;
+            margin: auto auto 15px;
+          }
+
+          .teaser-author {
+            display: none;
+          }
+
+          .teaser-genres {
+            margin: 0 auto;
+          }
+        }
+
+        .text-long {
+          font-size: 12px;
+        }
+      }
+
+      .views-element-container {
+        flex: 0 0 100;
+        border-top: 1px black solid;
+
+        .views-row {
+          width: 23%;
+
+          .teaser-image {
+            img {
+              min-height: 100px;
+            }
+          }
+
+          .heading {
+            background-color: white;
+            margin: auto auto 0;
+
+            a {
+              border: unset;
+              box-shadow: 0 0 0 0;
+            }
+          }
+
+          .text-long {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  @include large {
+    .articles-main {
+      .views-row {
+        .card--teaser__content {
+          .heading {
+            margin: auto auto 25px;
+            font-size: 22px;
+            line-height: 1.45;
+          }
+
+          .teaser-author {
+            display: flex;
+          }
+
+          .teaser-genres {
+            margin: 0 5px 0 auto;
+          }
+        }
+
+        .text-long {
+          font-size: 16px;
+        }
+      }
+
+      .views-element-container {
+        .views-row {
+          .heading {
+           font-size: 18px;
+            margin: auto auto 16px;
+          }
+        }
+      }
+    }
+  }
+
+  .views-row {
+    padding-top: 24px;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: #000;
+
+    .teaser-image {
+      img {
+        min-width: 100%;
+        min-height: 224px;
+      }
+    }
+
+    .card--teaser__content {
+      text-align: center;
+      margin: -18px auto 0;
+      display: flex;
+      flex-wrap: wrap;
+
+      .heading {
+        flex: 0 0 100%;
+        font-size: 24px;
+        line-height: 34px;
+        font-weight: 800;
+        font-family: $global-font-1;
+        max-width: 90%;
+        margin: auto auto 25px;
+
+        a {
+          text-decoration: none;
+          color: black;
+          padding: 2px 12px;
+          border: 1px solid #000;
+          box-shadow: 0 3px 0 #000;
+          background: #fff;
+        }
+      }
+
+      .teaser-genres {
+        margin: 0 5px 0 auto;
+        padding: 0 5px;
+        background-color: rgba(255, 255, 255, 0);
+        border-width: 0 2px;
+        border-style: solid;
+        border-color: $main-hover;
+        font-family: $global-font-1;
+        font-size: 16px;
+        line-height: 1;
+        font-weight: 700;
+        text-transform: uppercase;
+
+        a {
+          text-decoration: none;
+          color: $main-hover;
+        }
+      }
+
+      .teaser-date {
+        display: none;
+      }
+
+      .teaser-author {
+        font-family: $global-font-2;
+        font-size: 13px;
+        line-height: 1;
+        font-weight: 500;
+        text-transform: capitalize;
+        margin-right: auto;
+        a{
+          text-decoration: none;
+          color: black;
+        }
+      }
+    }
+
+    .text-long {
+      line-height: 1.4;
+      font-weight: 400;
+      font-size: 14px;
+      text-align: center;
+      width: 90%;
+      margin: auto;
+    }
+  }
+}
+
