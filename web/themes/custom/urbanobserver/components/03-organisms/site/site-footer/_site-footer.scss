@@ -3,7 +3,8 @@
   padding: 3rem 20px 0;
   border-top: 3px black solid;
   position: relative;
-  &__inner{
+
+  &__inner {
     max-width: 1440px;
   }
 
@@ -39,10 +40,10 @@
   #block-urbanobserver-sociallinks-2 {
     margin-bottom: 3rem;
 
-    ul {
+    .menu {
       display: flex;
 
-      li {
+      .menu-item {
         list-style: none;
         padding: 1rem;
         background-color: $main-hover;
@@ -59,7 +60,8 @@
 
           a {
             display: flex;
-            img{
+
+            img {
               filter: invert(100%);
             }
           }
@@ -88,6 +90,10 @@
         color: black;
         margin: 0 0 8px 0;
         display: flex;
+
+        &:hover {
+          color: $main-hover;
+        }
       }
     }
 
@@ -118,6 +124,10 @@
       a {
         color: black;
         text-decoration: none;
+
+        &:hover {
+          color: $main-hover;
+        }
       }
     }
 
@@ -156,6 +166,10 @@
       text-transform: uppercase;
       letter-spacing: 1px;
       padding: 18px;
+
+      &:hover {
+        background-color: $button-hover;
+      }
     }
   }
 

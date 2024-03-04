@@ -1,6 +1,6 @@
 uuid: 01d33130-2238-4e2c-839c-954394842bdc
 langcode: en
-status: false
+status: true
 dependencies:
   module:
     - system
@@ -11,7 +11,7 @@ _core:
 id: urbanobserver_content
 theme: urbanobserver
 region: first_content
-weight: -7
+weight: -11
 provider: null
 plugin: system_main_block
 settings:
@@ -19,4 +19,8 @@ settings:
   label: 'Main page content'
   label_display: '0'
   provider: system
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '<front>'

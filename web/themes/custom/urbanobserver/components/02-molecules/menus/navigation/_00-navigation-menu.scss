@@ -91,9 +91,11 @@ $main-menu-medium: $medium;
             display: flex;
           }
         }
+
         &:first-child {
           display: none;
         }
+
         &:last-child {
           display: none;
         }
@@ -292,6 +294,7 @@ $main-menu-medium: $medium;
 }
 
 .search-block-form--open {
+  z-index: 1;
   @include medium {
     display: block;
     width: 884px;

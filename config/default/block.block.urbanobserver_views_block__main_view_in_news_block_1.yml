@@ -1,22 +1,22 @@
-uuid: c741a4fe-cdd1-416b-8979-0671378a560b
+uuid: 1719a3dc-6eb2-4e1c-a839-7936a23b7db2
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.articles_main
+    - views.view.main_view_in_news
   module:
     - system
     - views
   theme:
     - urbanobserver
-id: urbanobserver_views_block__articles_main_block_1
+id: urbanobserver_views_block__main_view_in_news_block_1
 theme: urbanobserver
-region: first_content
+region: news
 weight: -12
 provider: null
-plugin: 'views_block:articles_main-block_1'
+plugin: 'views_block:main_view_in_news-block_1'
 settings:
-  id: 'views_block:articles_main-block_1'
+  id: 'views_block:main_view_in_news-block_1'
   label: ''
   label_display: '0'
   provider: views
