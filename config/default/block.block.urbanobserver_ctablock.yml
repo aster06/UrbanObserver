@@ -1,0 +1,25 @@
+uuid: 8b8ab884-daaa-418f-9a2a-a1e63a8a35fa
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:cta_block:f7efa40c-b8b7-4d2d-95de-87f82729702b'
+  module:
+    - block_content
+  theme:
+    - urbanobserver
+id: urbanobserver_ctablock
+theme: urbanobserver
+region: banner
+weight: 0
+provider: null
+plugin: 'block_content:f7efa40c-b8b7-4d2d-95de-87f82729702b'
+settings:
+  id: 'block_content:f7efa40c-b8b7-4d2d-95de-87f82729702b'
+  label: 'CTA block'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

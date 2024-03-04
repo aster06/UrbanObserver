@@ -1,0 +1,34 @@
+uuid: 691f134d-4aa0-4b2d-bc6d-7deb98b9aebf
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.cta_block
+    - field.field.block_content.cta_block.body
+    - field.field.block_content.cta_block.field_newsletter
+  module:
+    - text
+    - webform
+id: block_content.cta_block.default
+targetEntityType: block_content
+bundle: cta_block
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_newsletter:
+    type: webform_entity_reference_link
+    label: hidden
+    settings:
+      label: 'Subscribe now'
+      dialog: narrow
+      attributes: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }
