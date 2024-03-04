@@ -27,7 +27,9 @@ content:
     settings:
       label: 'Subscribe now'
       dialog: narrow
-      attributes: {  }
+      attributes:
+        class:
+          - cta-button
     third_party_settings: {  }
     weight: 0
     region: content

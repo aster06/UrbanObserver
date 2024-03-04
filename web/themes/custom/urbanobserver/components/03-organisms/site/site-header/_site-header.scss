@@ -126,6 +126,8 @@
   }
 
   .newsletter-block-observer {
+    max-width: 1440px;
+    margin: auto;
     display: none;
     @include medium {
       display: flex;
