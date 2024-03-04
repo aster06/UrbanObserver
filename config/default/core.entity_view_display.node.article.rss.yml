@@ -20,6 +20,8 @@ bundle: article
 mode: rss
 content:
   links:
+    settings: {  }
+    third_party_settings: {  }
     weight: 100
     region: content
 hidden:

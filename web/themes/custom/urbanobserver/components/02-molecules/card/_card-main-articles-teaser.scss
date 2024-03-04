@@ -20,6 +20,12 @@
             font-size: 16px;
             line-height: 24px;
             margin: auto auto 15px;
+
+            a {
+              &:hover {
+                color: $main-hover;
+              }
+            }
           }
 
           .teaser-author {
@@ -28,6 +34,11 @@
 
           .teaser-genres {
             margin: 0 auto;
+            a {
+              &:hover {
+                color: $button-hover;
+              }
+            }
           }
         }
 
@@ -78,6 +89,12 @@
 
           .teaser-author {
             display: flex;
+
+            a {
+              &:hover {
+                color: $main-hover;
+              }
+            }
           }
 
           .teaser-genres {

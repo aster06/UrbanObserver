@@ -1,11 +1,13 @@
-.nav-region{
+.nav-region {
   border-bottom: 3px solid black;
-  .nav-container{
+
+  .nav-container {
     margin: auto;
     position: relative;
     max-width: 700px;
   }
 }
+
 #block-urbanobserver-account-menu {
   display: none;
 
@@ -43,6 +45,10 @@
           margin: auto 0;
           text-decoration: none;
           color: black;
+
+          &:hover {
+            color: $main-hover;
+          }
         }
       }
 

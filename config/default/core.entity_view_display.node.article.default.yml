@@ -12,10 +12,123 @@ dependencies:
     - node.type.article
   module:
     - image
+    - layout_builder
     - link
     - linked_field
     - text
     - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          d5d1a8b6-d42b-49d1-9e06-3ba8b946afba:
+            uuid: d5d1a8b6-d42b-49d1-9e06-3ba8b946afba
+            region: content
+            configuration:
+              id: 'field_block:node:article:field_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: content
+                  image_style: wide
+                  image_loading:
+                    attribute: eager
+                third_party_settings:
+                  linked_field:
+                    linked: '1'
+                    type: field
+                    destination: field_link_for_image
+                    advanced: {  }
+            weight: 0
+            additional: {  }
+          ac987e5e-57e0-493a-b6ab-a1a9de31d2a6:
+            uuid: ac987e5e-57e0-493a-b6ab-a1a9de31d2a6
+            region: content
+            configuration:
+              id: 'field_block:node:article:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          b844ea6f-3a15-478e-9fbb-7338454b0e09:
+            uuid: b844ea6f-3a15-478e-9fbb-7338454b0e09
+            region: content
+            configuration:
+              id: 'field_block:node:article:field_tags'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          206ce7f7-94fe-4b89-88a6-9caf7db18902:
+            uuid: 206ce7f7-94fe-4b89-88a6-9caf7db18902
+            region: content
+            configuration:
+              id: 'extra_field_block:node:article:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 3
+            additional: {  }
+          bfe9b872-620e-41f2-bcb2-7b5779d3143c:
+            uuid: bfe9b872-620e-41f2-bcb2-7b5779d3143c
+            region: content
+            configuration:
+              id: 'field_block:node:article:field_ganers'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+          f9ed13fb-f28e-4962-bddd-d7a6a99c5cb3:
+            uuid: f9ed13fb-f28e-4962-bddd-d7a6a99c5cb3
+            region: content
+            configuration:
+              id: 'field_block:node:article:field_link_for_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: link
+                label: above
+                settings:
+                  trim_length: 80
+                  url_only: false
+                  url_plain: false
+                  rel: ''
+                  target: ''
+                third_party_settings: {  }
+            weight: 5
+            additional: {  }
+        third_party_settings: {  }
 _core:
   default_config_hash: br6izr-iGEu--JvNbCJNtOBpRnxpFLXfoV5y61U9Nqc
 id: node.article.default

@@ -1,0 +1,12 @@
+uuid: 3b609349-9cad-4608-8265-c7f4be4238a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.experement
+id: paragraph.experement.default
+targetEntityType: paragraph
+bundle: experement
+mode: default
+content: {  }
+hidden: {  }
