@@ -3,6 +3,7 @@
   max-width: 1440px;
   margin: auto;
   padding: 0 20px;
+
   @include medium {
     .articles-main {
       display: flex;
@@ -57,10 +58,6 @@
               box-shadow: 0 0 0 0;
             }
           }
-
-          .text-long {
-            display: none;
-          }
         }
       }
     }
@@ -71,8 +68,12 @@
         .card--teaser__content {
           .heading {
             margin: auto auto 25px;
-            font-size: 22px;
+            font-size: 32px;
             line-height: 1.45;
+
+            a {
+              padding: 0;
+            }
           }
 
           .teaser-author {
@@ -85,7 +86,7 @@
         }
 
         .text-long {
-          font-size: 16px;
+          font-size: 15px;
         }
       }
 
@@ -183,7 +184,13 @@
       text-align: center;
       width: 90%;
       margin: auto;
+      font-family: $global-font-4;
+    }
+  }
+
+  .views-element-container {
+    .text-long {
+      display: none;
     }
   }
 }
-
