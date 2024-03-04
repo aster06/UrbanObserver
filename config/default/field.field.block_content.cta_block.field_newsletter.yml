@@ -1,0 +1,25 @@
+uuid: 5b9621ac-ba0b-4269-a87c-8e4bae235ba7
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.cta_block
+    - field.storage.block_content.field_newsletter
+  module:
+    - webform
+id: block_content.cta_block.field_newsletter
+field_name: field_newsletter
+entity_type: block_content
+bundle: cta_block
+label: 'Subscribe now'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:webform'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: webform
