@@ -1,0 +1,24 @@
+uuid: dad7ff5f-e4ce-4af6-8a21-f32a799f7af8
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.don_t_miss
+  module:
+    - views
+  theme:
+    - urbanobserver
+id: urbanobserver_views_block__don_t_miss_block_1
+theme: urbanobserver
+region: main_content
+weight: -14
+provider: null
+plugin: 'views_block:don_t_miss-block_1'
+settings:
+  id: 'views_block:don_t_miss-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }
