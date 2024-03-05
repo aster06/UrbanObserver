@@ -11,7 +11,7 @@ dependencies:
 id: urbanobserver_seepricing
 theme: urbanobserver
 region: navigation
-weight: 0
+weight: -11
 provider: null
 plugin: 'block_content:d033df99-5539-4cb6-acc5-fa0d0daae94e'
 settings:

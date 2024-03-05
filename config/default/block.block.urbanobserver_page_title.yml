@@ -1,15 +1,17 @@
 uuid: 23fea999-9f01-454a-8227-d4bed30edaf1
 langcode: en
-status: false
+status: true
 dependencies:
+  module:
+    - system
   theme:
     - urbanobserver
 _core:
   default_config_hash: 6aOgWsNTXjqrDm98TXSAjP6qd2nCijD1xw45MrnbK-Y
 id: urbanobserver_page_title
 theme: urbanobserver
-region: header
-weight: -7
+region: first_content
+weight: -9
 provider: null
 plugin: page_title_block
 settings:
@@ -17,4 +19,8 @@ settings:
   label: 'Page title'
   label_display: '0'
   provider: core
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '<front>'

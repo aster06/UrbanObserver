@@ -5,8 +5,12 @@ dependencies:
   config:
     - field.storage.node.field_ganers
     - node.type.article
+    - taxonomy.vocabulary.genres
+  content:
+    - 'taxonomy_term:genres:c1799870-62f7-4351-abea-c6bd5b19d5b0'
   module:
     - node
+    - taxonomy
     - user
 id: lifestyle_view
 label: 'Lifestyle view'
@@ -289,6 +293,52 @@ display:
           plugin_id: bundle
           value:
             article: article
+        field_ganers_target_id:
+          id: field_ganers_target_id
+          table: node__field_ganers
+          field: field_ganers_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value:
+            - 7
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: genres
+          type: textfield
+          hierarchy: false
+          limit: true
+          error_message: true
       style:
         type: default
       row:

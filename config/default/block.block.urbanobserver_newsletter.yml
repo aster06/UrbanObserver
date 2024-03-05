@@ -11,7 +11,7 @@ dependencies:
 id: urbanobserver_newsletter
 theme: urbanobserver
 region: header
-weight: -8
+weight: -14
 provider: null
 plugin: 'block_content:0e4f4b6e-295c-4ac2-8a06-7063d7b4d596'
 settings:

@@ -1,6 +1,6 @@
 uuid: 0adc5915-7317-472f-b607-153890696745
 langcode: en
-status: false
+status: true
 dependencies:
   theme:
     - urbanobserver
@@ -8,8 +8,8 @@ _core:
   default_config_hash: Q9_2whdOj1YIomfvsIfopROW4FT_X5pY0DjdOiOaQ5U
 id: urbanobserver_primary_admin_actions
 theme: urbanobserver
-region: header
-weight: -6
+region: first_content
+weight: -11
 provider: null
 plugin: local_actions_block
 settings:
