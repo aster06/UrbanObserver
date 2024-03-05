@@ -11,7 +11,7 @@ dependencies:
 id: urbanobserver_mainnavigation
 theme: urbanobserver
 region: navigation
-weight: -5
+weight: -14
 provider: null
 plugin: 'menu_block:main'
 settings:

@@ -1,0 +1,359 @@
+.news-region {
+  @include medium {
+    display: flex;
+    max-width: 1440px;
+    margin: auto;
+  }
+  @include large {
+    margin: 40px auto;
+  }
+  //top 5 block
+  #block-urbanobserver-views-block-top-five-block-1 {
+    padding: 0 20px;
+    margin-bottom: 20px;
+
+    .h2 {
+      color: white;
+      font-family: $global-font-1;
+      font-size: 24px;
+      line-height: 1.2;
+      font-style: italic;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      background-color: $main-hover;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .views-row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 10px 0;
+      border-bottom: 1px solid;
+      padding-bottom: 10px;
+      position: relative;
+
+      &::before {
+        counter-increment: section;
+        content: counter(section);
+        color: #ededed;
+        border-radius: 50%;
+        font-family: $global-font-4;
+        font-weight: 400;
+        font-size: 54px;
+        line-height: 1;
+        display: inline-flex;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
+
+      .views-field-field-image {
+        width: 35%;
+
+        .field-content {
+          a {
+            img {
+              width: 84px;
+              object-fit: cover;
+              height: 75px;
+            }
+          }
+        }
+      }
+
+      .views-field-title {
+        width: 65%;
+
+        a {
+          font-family: $global-font-1;
+          font-size: 22px;
+          line-height: 1.1;
+          font-weight: 800;
+          color: black;
+          text-decoration: none;
+        }
+      }
+
+      .views-field-field-ganers {
+        margin-left: auto;
+        width: 65%;
+
+        a {
+          text-decoration: none;
+          color: $main-hover;
+          padding: 0 5px;
+          border-width: 0 2px;
+          border-style: solid;
+          border-color: $main-hover;
+          font-family: $global-font-1;
+          font-size: 16px;
+          line-height: 1;
+          font-weight: 700;
+          width: auto;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    @include medium {
+      width: 25%;
+      padding: 0 10px;
+      .h2 {
+        font-size: 18px
+      }
+      .views-row {
+        &:last-child {
+          border: unset;
+        }
+
+        .views-field-field-image {
+          .field-content {
+            a {
+              img {
+                width: 51px;
+                height: 46px;
+              }
+            }
+          }
+        }
+
+        .views-field-title {
+          line-height: 1.1;
+
+          a {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+    @include large {
+      .h2{
+        font-size: 24px;
+      }
+      .views-row {
+        .views-field-field-image {
+          .field-content {
+            a {
+              img {
+                width: 95px;
+                height: 85px;
+              }
+            }
+          }
+        }
+
+        .views-field-title {
+          a {
+            font-size: 22px;
+          }
+        }
+      }
+    }
+  }
+
+  //main article
+  #block-urbanobserver-views-block-main-view-in-news-block-1 {
+    padding: 20px;
+
+    .main-view {
+      padding-bottom: 40px;
+      border-bottom: 1px solid;
+
+      .teaser-image {
+        img {
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .card--teaser__content {
+        margin: -30px auto 0;
+        max-width: 90%;
+
+        .heading {
+          font-size: 24px;
+          line-height: 34px;
+          font-family: $global-font-1;
+          font-weight: 800;
+
+          a {
+            color: black;
+            text-decoration: none;
+            padding: 2px 12px;
+            border: 1px solid #000;
+            box-shadow: 0 3px 0 #000;
+            background: white;
+          }
+        }
+
+        .teaser-genres {
+          a {
+            text-decoration: none;
+            color: $main-hover;
+            padding: 0 5px;
+            border-width: 0 2px;
+            border-style: solid;
+            border-color: $main-hover;
+            font-family: $global-font-1;
+            font-size: 16px;
+            line-height: 1;
+            font-weight: 700;
+            width: auto;
+            text-transform: uppercase;
+          }
+        }
+
+        .teaser-author, .teaser-date {
+          font-family: $global-font-2;
+          font-size: 15px;
+          line-height: 1.1;
+          font-weight: 500;
+          text-transform: capitalize;
+        }
+
+        .teaser-author {
+          float: left;
+          margin: 0 20px 0 0;
+
+          a {
+            color: black;
+            text-decoration: none;
+          }
+        }
+      }
+
+      .card--teaser__body {
+        margin: 10px;
+      }
+
+      .text-long {
+        font-family: $global-font-4;
+        font-size: 13px;
+        line-height: 1.4;
+        font-weight: 400;
+        padding: 0 15px;
+      }
+    }
+
+    @include medium {
+      border-left: 1px solid;
+      border-right: 1px solid;
+      width: 50%;
+      padding: 0 10px;
+      .main-view {
+        border: unset;
+        padding-bottom: 0;
+      }
+    }
+    @include large {
+      padding: 0 20px;
+      .main-view {
+        .card--teaser__content {
+          margin-top: -55px;
+          display: flex;
+          flex-wrap: wrap;
+
+          .heading {
+            font-size: 45px;
+            line-height: 1.32;
+            font-weight: 800;
+            flex: 100%;
+          }
+
+          .teaser-author {
+            margin: 0 20px;
+          }
+        }
+
+        .text-long {
+          font-size: 17px;
+          line-height: 1.4;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+  //lifestyle view
+  #block-urbanobserver-views-block-lifestyle-view-block-1 {
+    padding: 0 20px;
+
+    .views-row {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px 0 18px;
+      border-bottom: 1px solid;
+
+      .views-field-title {
+        flex: 0 0 100%;
+
+        a {
+          text-decoration: none;
+          color: black;
+          margin: 0 0 8px 0;
+          display: flex;
+          font-family: $global-font-1;
+          font-size: 22px;
+          line-height: 1.2;
+          font-weight: 700;
+        }
+      }
+
+      .views-field-field-ganers {
+        a {
+          text-decoration: none;
+          color: $main-hover;
+          padding: 0 5px;
+          border-width: 0 2px;
+          border-style: solid;
+          border-color: $main-hover;
+          font-family: $global-font-1;
+          font-size: 16px;
+          line-height: 1;
+          font-weight: 700;
+          width: auto;
+          text-transform: uppercase;
+        }
+      }
+
+      .views-field-created {
+        font-family: $global-font-2;
+        font-size: 13px;
+        line-height: 1;
+        font-weight: 500;
+        letter-spacing: -0.5px;
+        margin: auto 10px;
+      }
+    }
+
+    @include medium {
+      width: 25%;
+      padding: 10px;
+      .views-row {
+        padding: 5px;
+
+        &:last-child {
+          border: unset;
+        }
+
+        .views-field-title {
+          a {
+            font-size: 17px;
+          }
+        }
+      }
+    }
+    @include large {
+      .views-row {
+        padding: 10px;
+        .views-field-title {
+          a{
+            font-size: 22px;
+          }
+        }
+      }
+    }
+  }
+}

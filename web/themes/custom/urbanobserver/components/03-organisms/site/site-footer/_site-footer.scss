@@ -49,6 +49,9 @@
         background-color: $main-hover;
         margin-right: 1rem;
         border-radius: 2px;
+        @include medium {
+          padding: 10px;
+        }
 
         a {
           display: none;
@@ -201,21 +204,6 @@
 }
 
 @include medium {
-  .views-field-field-ganers {
-    display: none;
-  }
-  .views-field-created {
-    display: none;
-  }
-  .views-field-title {
-    font-size: 15px;
-  }
-  #block-urbanobserver-aboutus {
-    flex: 25%;
-    min-width: 170px;
-    padding: 0 10px;
-  }
-
   #block-urbanobserver-sociallinks-2 {
     position: absolute;
     margin-top: 11rem;
@@ -229,6 +217,20 @@
         margin-right: 5px;
       }
     }
+  }
+  .views-field-field-ganers {
+    display: none;
+  }
+  .views-field-created {
+    display: none;
+  }
+  .views-field-title {
+    font-size: 15px;
+  }
+  #block-urbanobserver-aboutus {
+    flex: 25%;
+    min-width: 170px;
+    padding: 0 10px;
   }
 
   #block-urbanobserver-views-block-latest-articles-block-1 {

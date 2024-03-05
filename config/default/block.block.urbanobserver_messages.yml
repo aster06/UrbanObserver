@@ -11,7 +11,7 @@ _core:
 id: urbanobserver_messages
 theme: urbanobserver
 region: header
-weight: -4
+weight: -13
 provider: null
 plugin: system_messages_block
 settings:
