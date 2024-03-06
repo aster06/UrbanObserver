@@ -12,7 +12,7 @@ dependencies:
 id: urbanobserver_views_block__lifestyle_view_block_1
 theme: urbanobserver
 region: news
-weight: 0
+weight: -13
 provider: null
 plugin: 'views_block:lifestyle_view-block_1'
 settings:

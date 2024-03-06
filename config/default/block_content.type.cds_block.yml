@@ -1,0 +1,8 @@
+uuid: aea1663a-e495-4335-a88b-a8ef0f482f67
+langcode: en
+status: true
+dependencies: {  }
+id: cds_block
+label: 'CDS block'
+revision: 0
+description: ''
