@@ -5,6 +5,7 @@ dependencies:
   config:
     - views.view.don_t_miss
   module:
+    - system
     - views
   theme:
     - urbanobserver
@@ -17,8 +18,12 @@ plugin: 'views_block:don_t_miss-block_1'
 settings:
   id: 'views_block:don_t_miss-block_1'
   label: ''
-  label_display: '0'
+  label_display: visible
   provider: views
   views_label: ''
   items_per_page: none
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

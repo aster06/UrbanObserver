@@ -10,47 +10,56 @@
       display: flex;
       flex-wrap: wrap;
 
-      .views-row {
-        max-width: 400px;
-        width: 30%;
-        margin: 0 auto;
-        border: unset;
+      .views-row-container {
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+        width: 100%;
 
-        .card--teaser__content {
-          .heading {
-            font-size: 16px;
-            line-height: 24px;
-            margin: auto auto 15px;
+        .views-row {
+          max-width: 400px;
+          width: 30%;
+          margin: 0 auto;
+          border: unset;
 
-            a {
-              &:hover {
-                color: $main-hover;
+          .card--teaser__content {
+            .heading {
+              font-size: 16px;
+              line-height: 24px;
+              margin: auto auto 15px;
+
+              a {
+                &:hover {
+                  color: $main-hover;
+                }
+              }
+            }
+
+            .teaser-author {
+              display: none;
+            }
+
+            .teaser-genres {
+              margin: 0 auto;
+
+              a {
+                &:hover {
+                  color: $button-hover;
+                }
               }
             }
           }
 
-          .teaser-author {
-            display: none;
+          .text-long {
+            font-size: 12px;
           }
-
-          .teaser-genres {
-            margin: 0 auto;
-            a {
-              &:hover {
-                color: $button-hover;
-              }
-            }
-          }
-        }
-
-        .text-long {
-          font-size: 12px;
         }
       }
 
       .views-element-container {
         flex: 0 0 100;
         border-top: 1px black solid;
+        margin: auto;
 
         .views-row {
           width: 23%;
@@ -77,35 +86,37 @@
   }
   @include large {
     .articles-main {
-      .views-row {
-        .card--teaser__content {
-          .heading {
-            margin: auto auto 25px;
-            font-size: 32px;
-            line-height: 1.45;
+      .views-row-container {
+        .views-row {
+          .card--teaser__content {
+            .heading {
+              margin: auto auto 25px;
+              font-size: 32px;
+              line-height: 1.45;
 
-            a {
-              padding: 0;
-            }
-          }
-
-          .teaser-author {
-            display: flex;
-
-            a {
-              &:hover {
-                color: $main-hover;
+              a {
+                padding: 0;
               }
             }
+
+            .teaser-author {
+              display: flex;
+
+              a {
+                &:hover {
+                  color: $main-hover;
+                }
+              }
+            }
+
+            .teaser-genres {
+              margin: 0 5px 0 auto;
+            }
           }
 
-          .teaser-genres {
-            margin: 0 5px 0 auto;
+          .text-long {
+            font-size: 15px;
           }
-        }
-
-        .text-long {
-          font-size: 15px;
         }
       }
 
@@ -181,20 +192,6 @@
       .teaser-date {
         display: none;
       }
-
-      .teaser-author {
-        font-family: $global-font-2;
-        font-size: 13px;
-        line-height: 1;
-        font-weight: 500;
-        text-transform: capitalize;
-        margin-right: auto;
-
-        a {
-          text-decoration: none;
-          color: black;
-        }
-      }
     }
 
     .text-long {
@@ -212,5 +209,20 @@
     .text-long {
       display: none;
     }
+  }
+}
+//styles for all
+.teaser-author, .teaser-date {
+  font-family: $global-font-2;
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin-right: auto;
+  padding-top: 2px;
+
+  a {
+    text-decoration: none;
+    color: black;
   }
 }
