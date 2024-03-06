@@ -1,0 +1,72 @@
+uuid: 35aa6c62-05d9-4723-b3a0-58b6f862866a
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.cds_block
+    - field.field.block_content.cds_block.layout_builder__layout
+    - views.view.celebrities
+    - views.view.drama
+    - views.view.scandals
+  module:
+    - layout_builder
+    - views
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_threecol_section
+        layout_settings:
+          label: CDS
+          context_mapping: {  }
+          column_widths: 33-34-33
+        components:
+          bbe1d2e5-6fd9-4a8e-ba37-3695ceeeea11:
+            uuid: bbe1d2e5-6fd9-4a8e-ba37-3695ceeeea11
+            region: first
+            configuration:
+              id: 'views_block:celebrities-block_1'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 0
+            additional: {  }
+          3bc1192b-2a15-42f3-a7a8-39fd5c040647:
+            uuid: 3bc1192b-2a15-42f3-a7a8-39fd5c040647
+            region: second
+            configuration:
+              id: 'views_block:drama-block_1'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 0
+            additional: {  }
+          34c9426d-3a43-4532-9770-ca60cc9f4760:
+            uuid: 34c9426d-3a43-4532-9770-ca60cc9f4760
+            region: third
+            configuration:
+              id: 'views_block:scandals-block_1'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+id: block_content.cds_block.default
+targetEntityType: block_content
+bundle: cds_block
+mode: default
+content: {  }
+hidden:
+  layout_builder__layout: true

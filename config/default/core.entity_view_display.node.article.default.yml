@@ -13,6 +13,7 @@ dependencies:
   module:
     - image
     - layout_builder
+    - layout_discovery
     - link
     - linked_field
     - text
@@ -20,7 +21,7 @@ dependencies:
 third_party_settings:
   layout_builder:
     enabled: true
-    allow_custom: false
+    allow_custom: true
     sections:
       -
         layout_id: layout_onecol

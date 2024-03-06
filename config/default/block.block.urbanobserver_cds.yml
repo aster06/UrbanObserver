@@ -1,0 +1,30 @@
+uuid: 6471b6ae-a1fc-472e-a4ac-cbfd191fe71f
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:cds_block:9e52c212-7e2f-4c4c-92fe-24d5bb8717f8'
+  module:
+    - block_content
+    - system
+  theme:
+    - urbanobserver
+id: urbanobserver_cds
+theme: urbanobserver
+region: main_content
+weight: 0
+provider: null
+plugin: 'block_content:9e52c212-7e2f-4c4c-92fe-24d5bb8717f8'
+settings:
+  id: 'block_content:9e52c212-7e2f-4c4c-92fe-24d5bb8717f8'
+  label: CDS
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

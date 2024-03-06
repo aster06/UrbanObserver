@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.article.field_image
     - field.field.node.article.field_link_for_image
     - field.field.node.article.field_tags
+    - field.field.node.article.layout_builder__layout
     - image.style.medium
     - node.type.article
   module:
@@ -58,4 +59,5 @@ content:
 hidden:
   field_link_for_image: true
   field_tags: true
+  layout_builder__layout: true
   links: true
