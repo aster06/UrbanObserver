@@ -3,6 +3,7 @@
     display: flex;
     max-width: 1440px;
     margin: auto;
+    padding: 0 10px;
   }
   @include large {
     margin: 40px auto;

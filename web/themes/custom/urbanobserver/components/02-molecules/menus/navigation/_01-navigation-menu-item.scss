@@ -8,11 +8,17 @@
   line-height: 1.2;
   font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 15px;
+
+  a {
+    color: black;
+
+    &:hover {
+      color: $main-hover;
+    }
+  }
 
   &:last-child {
     border-bottom: 1px solid black;
-    padding-bottom: 14px;
     @include medium {
       border: none;
     }

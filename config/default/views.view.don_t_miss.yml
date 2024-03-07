@@ -168,7 +168,7 @@ display:
       pager:
         type: some
         options:
-          offset: 0
+          offset: 4
           items_per_page: 3
       defaults:
         css_class: false
