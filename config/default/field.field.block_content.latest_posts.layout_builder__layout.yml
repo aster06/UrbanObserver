@@ -1,0 +1,21 @@
+uuid: 1f7cc1b6-034e-40b3-a8ba-1a2225435c58
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.latest_posts
+    - field.storage.block_content.layout_builder__layout
+  module:
+    - layout_builder
+id: block_content.latest_posts.layout_builder__layout
+field_name: layout_builder__layout
+entity_type: block_content
+bundle: latest_posts
+label: Layout
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: layout_section

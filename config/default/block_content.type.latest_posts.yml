@@ -1,0 +1,8 @@
+uuid: 08bfd6d6-ad2a-405e-8119-1b3cbe719cc1
+langcode: en
+status: true
+dependencies: {  }
+id: latest_posts
+label: 'Latest posts'
+revision: 0
+description: ''

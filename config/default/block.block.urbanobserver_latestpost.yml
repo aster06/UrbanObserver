@@ -1,0 +1,30 @@
+uuid: 337c6e15-4317-4e52-8cea-b48d9f376890
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:latest_posts:e43608e2-d244-4d53-9c65-ebfa4254055a'
+  module:
+    - block_content
+    - system
+  theme:
+    - urbanobserver
+id: urbanobserver_latestpost
+theme: urbanobserver
+region: main_content
+weight: 0
+provider: null
+plugin: 'block_content:e43608e2-d244-4d53-9c65-ebfa4254055a'
+settings:
+  id: 'block_content:e43608e2-d244-4d53-9c65-ebfa4254055a'
+  label: 'Latest post'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'
