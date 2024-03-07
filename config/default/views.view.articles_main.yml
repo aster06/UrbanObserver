@@ -173,8 +173,11 @@ display:
       pager:
         type: some
         options:
-          offset: 0
+          offset: 3
           items_per_page: 4
+      defaults:
+        css_class: false
+      css_class: articles-mains
       display_extenders: {  }
       displays:
         block_1: block_1

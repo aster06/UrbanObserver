@@ -15,12 +15,23 @@
         flex-wrap: wrap;
         margin: auto;
         width: 100%;
+        padding: 0 20px;
 
         .views-row {
           max-width: 400px;
           width: 30%;
           margin: 0 auto;
           border: unset;
+
+          &:first-child {
+            margin-left: 0;
+            margin-right: auto;
+          }
+
+          &:last-child {
+            margin-left: auto;
+            margin-right: 0;
+          }
 
           .card--teaser__content {
             .heading {
@@ -57,7 +68,6 @@
       }
 
       .views-element-container {
-        flex: 0 0 100;
         border-top: 1px black solid;
         margin: auto;
 
@@ -121,10 +131,14 @@
       }
 
       .views-element-container {
-        .views-row {
-          .heading {
-            font-size: 18px;
-            margin: auto auto 16px;
+        .articles-mains {
+          .views-row-container {
+            .views-row {
+              .heading {
+                font-size: 18px;
+                margin: auto auto 16px;
+              }
+            }
           }
         }
       }
@@ -211,6 +225,7 @@
     }
   }
 }
+
 //styles for all
 .teaser-author, .teaser-date {
   font-family: $global-font-2;

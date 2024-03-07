@@ -1,0 +1,227 @@
+.cds-block {
+  max-width: 1440px;
+  margin: auto;
+  padding: 20px;
+  @include medium {
+    padding: 20px 10px;
+  }
+  @include large {
+    padding: 20px;
+    margin: 50px auto;
+  }
+
+  .layout__region--first {
+    padding: 10px 20px 25px;
+    border-color: black;
+    width: 40%;
+    border-style: solid;
+    border-width: 1px 1px 4px 1px;
+    margin-bottom: 20px;
+    @include large {
+      flex: 0 1 35%;
+    }
+
+    .views-element-container {
+      text-align: center;
+
+      .h2 {
+        font-family: $global-font-1;
+        font-size: 26px;
+        line-height: 1.5;
+        font-style: italic;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: $main-hover;
+        margin-bottom: 25px;
+        border-color: black;
+        border-style: solid;
+        border-width: 0 0 1px 0;
+        padding: 10px 0;
+        @include medium {
+          font-size: 22px;
+        }
+        @include large {
+          font-size: 32px;
+          line-height: 1.3;
+        }
+      }
+
+      .teaser-image {
+        img {
+          margin: auto;
+          min-width: 238px;
+          @include large {
+            min-width: 350px;
+          }
+          @include xl {
+            min-width: 520px;
+          }
+        }
+      }
+
+      .teaser-genres {
+        display: none;
+      }
+
+      .teaser-author {
+        margin-top: 20px;
+        @include large {
+          font-size: 15px;
+        }
+        a{
+          &:hover {
+            color: $main-hover;
+          }
+        }
+      }
+
+      .card--teaser__content {
+        margin: -18px auto 0;
+
+        .heading {
+          margin: 0;
+          font-family: $global-font-1;
+          font-size: 24px;
+          line-height: 34px;
+          font-weight: 800;
+          display: inline;
+          padding: 2px 12px;
+          border: 1px solid #000;
+          box-shadow: 0 3px 0 #000;
+          background: #fff;
+          @include large {
+            font-size: 48px;
+            line-height: 1.30;
+          }
+          a {
+            text-decoration: none;
+            color: black;
+            &:hover {
+              color: $main-hover;
+            }
+          }
+        }
+      }
+
+      .text-long {
+        margin: 12px 0 0;
+        font-size: 13px;
+        line-height: 1.4;
+        font-weight: 400;
+        font-family: $global-font-4;
+        padding: 0 15px;
+        @include large {
+          font-size: 17px;
+        }
+      }
+    }
+
+    //pager
+    .js-pager__items {
+      list-style: none;
+      display: flex;
+
+      li {
+        font-size: 18px;
+        line-height: 1;
+        text-align: center;
+        padding: 8px 12px;
+        border: 1px solid;
+
+        &:first-child {
+          margin: auto 10px auto auto;
+        }
+
+        &:last-child {
+          margin: auto auto auto 5px;
+        }
+
+        a {
+          text-decoration: none;
+          color: black;
+
+          &:hover {
+            color: $main-hover;
+          }
+        }
+      }
+    }
+  }
+
+  .layout__region--second, .layout__region--third {
+    margin-bottom: 20px;
+    @include medium {
+      flex: 1 1 28%;
+      margin-left: 10px;
+    }
+    @include xl {
+      margin-left: 25px;
+    }
+
+    .h2 {
+      font-family: $global-font-1;
+      font-size: 26px;
+      line-height: 1.5;
+      font-style: italic;
+      font-weight: 800;
+      text-transform: uppercase;
+      text-align: center;
+      color: black;
+      @include medium {
+        font-size: 22px;
+      }
+      @include large {
+        font-size: 32px;
+        line-height: 1.3;
+        padding-top: 15px;
+      }
+    }
+
+    .views-row {
+      display: flex;
+      padding: 20px 0;
+      border-top: 1px solid;
+      @include medium {
+        padding: 10px 0;
+      }
+      @include large {
+        padding: 20px 0;
+      }
+
+      .views-field-title {
+        margin: 0;
+        font-family: $global-font-1;
+        font-size: 18px;
+        line-height: 1.2;
+        font-weight: 800;
+        padding: 0 5px 0 0;
+        @include medium {
+          font-size: 14px;
+        }
+        @include large {
+          font-size: 22px;
+        }
+
+        a {
+          color: black;
+          text-decoration: none;
+
+          &:hover {
+            color: $main-hover;
+          }
+        }
+      }
+
+      img {
+        min-width: 84px;
+        object-fit: cover;
+        @include medium {
+          min-width: 61px;
+        }
+        @include large {
+          min-width: 114px;
+        }
+      }
+    }
+  }
+}
