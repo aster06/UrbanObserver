@@ -1,0 +1,106 @@
+uuid: a085600a-7ae2-4183-a00c-3b8faf3aeeb6
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.latest_posts
+    - field.field.block_content.latest_posts.layout_builder__layout
+    - views.view.health
+    - views.view.latest_posts
+    - views.view.technology_slider
+    - webform.webform.subscription
+  content:
+    - 'block_content:advertising_block:427e2c33-8fb7-42c8-806d-50a94458dad3'
+  module:
+    - block_content
+    - layout_builder
+    - views
+    - webform
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: 'Latest posts'
+          context_mapping: {  }
+          column_widths: 75-25
+        components:
+          06b26003-cff6-4627-8d5c-b3147ba28dfd:
+            uuid: 06b26003-cff6-4627-8d5c-b3147ba28dfd
+            region: first
+            configuration:
+              id: 'views_block:latest_posts-block_1'
+              label: ''
+              label_display: '0'
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 0
+            additional: {  }
+          55c5b718-f91a-4d44-9cf5-c0e277a8183e:
+            uuid: 55c5b718-f91a-4d44-9cf5-c0e277a8183e
+            region: second
+            configuration:
+              id: 'block_content:427e2c33-8fb7-42c8-806d-50a94458dad3'
+              label: AD
+              label_display: '0'
+              provider: block_content
+              status: true
+              info: ''
+              view_mode: full
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+          9ce29a9d-2f62-4cbc-925f-c15ed2f5feb7:
+            uuid: 9ce29a9d-2f62-4cbc-925f-c15ed2f5feb7
+            region: second
+            configuration:
+              id: webform_block
+              label: Webform
+              label_display: visible
+              provider: webform
+              context_mapping: {  }
+              webform_id: subscription
+              default_data: ''
+              redirect: false
+              lazy: false
+            weight: 1
+            additional: {  }
+          f54715ce-fe45-46f8-94ac-613da2016c6a:
+            uuid: f54715ce-fe45-46f8-94ac-613da2016c6a
+            region: second
+            configuration:
+              id: 'views_block:technology_slider-block_1'
+              label: Technology
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: Technology
+              items_per_page: none
+            weight: 2
+            additional: {  }
+          fe008f9d-9261-449f-870e-ce531f446586:
+            uuid: fe008f9d-9261-449f-870e-ce531f446586
+            region: second
+            configuration:
+              id: 'views_block:health-block_1'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 3
+            additional: {  }
+        third_party_settings: {  }
+id: block_content.latest_posts.default
+targetEntityType: block_content
+bundle: latest_posts
+mode: default
+content: {  }
+hidden:
+  layout_builder__layout: true

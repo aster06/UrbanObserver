@@ -1,0 +1,22 @@
+uuid: 927b8268-3cb7-4061-98a6-602d84e14069
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.latest_posts
+    - field.field.block_content.latest_posts.layout_builder__layout
+id: block_content.latest_posts.default
+targetEntityType: block_content
+bundle: latest_posts
+mode: default
+content:
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  layout_builder__layout: true
