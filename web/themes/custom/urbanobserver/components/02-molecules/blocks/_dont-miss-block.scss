@@ -6,32 +6,6 @@
   @include large {
     padding: 20px;
   }
-  .style-heading {
-    background-color: #ebebeb;
-    border-top: 1px solid;
-    border-bottom: 1px solid;
-    position: relative;
-
-    &::before {
-      content: "";
-      width: 100%;
-      height: 25%;
-      background-color: transparent;
-      border-top: 1px solid;
-      border-bottom: 1px solid;
-      position: absolute;
-      top: 25%;
-    }
-
-    &::after {
-      content: "";
-      width: 100%;
-      height: 1px;
-      background-color: black;
-      position: absolute;
-      bottom: 25%;
-    }
-  }
 
   .h2 {
     position: relative;
@@ -55,6 +29,9 @@
     text-align: center;
     @include medium {
       width: 31%;
+    }
+    @include xl {
+      font-size: 54px;
     }
   }
 
@@ -107,7 +84,7 @@
 
     .teaser-genres {
       float: left;
-      padding-left: 20%;
+      padding-left: 19%;
       padding-right: 10px;
 
       a {
@@ -277,5 +254,47 @@
         }
       }
     }
+  }
+}
+//for all
+.style-heading {
+  background-color: #ebebeb;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 25%;
+    background-color: transparent;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    position: absolute;
+    top: 25%;
+    @include xl {
+      height: 20%;
+      top: 20%;
+    }
+  }
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    position: absolute;
+    bottom: 25%;
+    @include xl {
+      height: 20%;
+      background-color: transparent;
+      border-top: 1px solid;
+      border-bottom: 1px solid;
+      position: absolute;
+      bottom: 20%;
+    }
+  }
+  @include xl{
+    margin-bottom: 20px;
   }
 }

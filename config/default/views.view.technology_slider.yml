@@ -211,6 +211,7 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
+      css_class: technology-slider
       use_ajax: true
       header: {  }
       footer: {  }

@@ -1,0 +1,567 @@
+.webform-block {
+  padding-top: 20px;
+}
+
+.latest-post-block {
+  margin: auto;
+  max-width: 1440px;
+  padding: 20px;
+  @include medium {
+    padding: 10px;
+  }
+
+  .lp-h2 {
+    position: relative;
+    z-index: 2;
+    font-size: 35px;
+    font-family: $global-font-1;
+    line-height: 1.2;
+    font-style: italic;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    width: 85%;
+    background-color: #fff;
+    margin: auto;
+    padding: 3px 35px 0 25px;
+    border-width: 1px 1px 4px;
+    border-color: #000;
+    border-style: solid;
+    bottom: 9px;
+    color: $main-hover;
+    text-align: center;
+    @include medium {
+      width: 35%;
+    }
+    @include xl {
+      font-size: 54px;
+    }
+  }
+
+  .layout__region--first {
+    .latest-posts {
+      @include medium {
+        display: flex;
+        .views-row-container {
+          flex: 0 0 66%;
+
+          .card__item {
+            display: flex;
+          }
+        }
+        .views-element-container {
+          flex: 0 0 25%;
+          padding: 0 0 0 10px;
+          border-width: 0 1px 0 1px;
+          border-style: solid;
+          margin-top: 20px;
+
+          .views-row {
+            max-height: 13rem;
+            padding-top: 0;
+            margin-bottom: 20px;
+            @include large {
+              max-height: 16rem;
+            }
+            @include xl {
+              max-height: 22rem;
+            }
+          }
+
+          .card__item {
+            display: flex;
+            flex-direction: column;
+          }
+
+          @include xl {
+            padding: 0 0 0 20px;
+          }
+        }
+      }
+
+      .views-row-container {
+        @include large {
+          flex: 0 0 67%;
+        }
+      }
+    }
+
+    .views-row {
+      padding-top: 20px;
+      border-bottom: 1px solid;
+      padding-bottom: 10px;
+
+      &:last-child {
+        @include medium {
+          margin-right: 10px;
+          border: unset;
+          margin-bottom: 0;
+        }
+      }
+
+      @include xl {
+        padding: 20px 0;
+        margin-right: 20px;
+      }
+    }
+
+    .teaser-image {
+      img {
+        min-width: 100%;
+        min-height: 224px;
+        object-fit: cover;
+        @include medium {
+          min-width: 182px;
+          min-height: 145px;
+          width: 182px;
+          height: 145px;
+        }
+        @include large {
+          min-width: 238px;
+          min-height: 190px;
+        }
+        @include xl {
+          min-width: 338px;
+          min-height: 270px;
+        }
+      }
+    }
+
+    .heading {
+      padding: 20px 0 0 0;
+      margin: 0 0 15px 0;
+      font-family: $global-font-1;
+      font-size: 28px;
+      line-height: 1.1;
+      font-weight: 800;
+      @include medium {
+        font-size: 20px;
+        margin: 0 0 5px 0;
+      }
+      @include large {
+        font-size: 22px;
+        margin: 0 0 8px 0;
+      }
+      @include xl {
+        font-size: 28px;
+        padding: 25% 0 0 0;
+      }
+
+      a {
+        color: black;
+        text-decoration: none;
+
+        &:hover {
+          color: $main-hover;
+        }
+      }
+    }
+
+    .teaser-author {
+      display: none;
+    }
+
+    .teaser-date {
+      @include medium {
+        display: none;
+      }
+      @include xl {
+        display: flex;
+      }
+    }
+
+    .teaser-genres {
+      float: left;
+      padding-right: 10px;
+
+      a {
+        text-decoration: none;
+        color: #e04040;
+        padding: 0 5px;
+        border-width: 0 2px;
+        border-style: solid;
+        border-color: #e04040;
+        font-family: $global-font-1;
+        font-size: 16px;
+        line-height: 1;
+        font-weight: 700;
+        width: auto;
+        text-transform: uppercase;
+
+        &:hover {
+          color: $button-hover;
+        }
+      }
+    }
+
+    .text-long {
+      display: none;
+    }
+
+    .card--teaser__content {
+      @include medium {
+        padding: 10px;
+      }
+      @include medium {
+        padding: 20px;
+      }
+    }
+
+    .views-element-container {
+      .attach-latest-posts {
+
+        .teaser-image {
+          img {
+            object-fit: cover;
+            @include medium {
+              min-width: 185px;
+              min-height: 129px;
+              width: 185px;
+              height: 129px;
+            }
+            @include large {
+              min-width: 241px;
+              min-height: 193px;
+            }
+            @include xl {
+              min-width: 344px;
+              min-height: 275px;
+            }
+          }
+        }
+
+        .card--teaser__content {
+          position: relative;
+          margin: -37px auto 10px;
+          width: 80%;
+          text-align: center;
+          background-color: white;
+
+          .heading {
+            font-size: 22px;
+            @include medium {
+              margin: 0 0 5px;
+              font-size: 15px;
+              padding: 0;
+            }
+            @include xl {
+              font-size: 22px;
+            }
+          }
+
+          .teaser-genres {
+            padding-left: 25%;
+            @include medium {
+              float: none;
+              padding: 0;
+            }
+            @include xl {
+              float: left;
+              padding: 0 10px 0 25%;
+            }
+          }
+
+          .teaser-date {
+            display: none;
+          }
+
+          .teaser-author {
+            display: flex;
+            @include medium {
+              display: none;
+            }
+            @include xl {
+              display: flex;
+            }
+          }
+
+          @include medium {
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .layout__region--second {
+    width: 100%;
+    @include medium {
+      padding-left: 35px;
+      padding-right: 10px;
+      width: 8.6rem;
+    }
+    @include xl {
+      padding-right: 0;
+      padding-left: 60px;
+    }
+
+    .block-ad {
+      min-height: 190px;
+      margin: 30px 0;
+      @include medium {
+        min-height: 94px;
+        margin: 20px 0;
+      }
+      @include xl {
+        min-height: 200px;
+      }
+
+      &::before {
+        content: "";
+        background-image: url(/themes/custom/urbanobserver/assets/images/ad.webp);
+        position: absolute;
+        min-width: 88%;
+        background-color: #000;
+        height: 190px;
+        background-size: cover;
+        background-position: center;
+        @include medium {
+          height: 94px;
+          min-width: 19%;
+        }
+        @include xl {
+          height: 200px;
+          min-width: 16%;
+        }
+      }
+
+      a {
+        min-height: 190px;
+        opacity: 0;
+        @include medium {
+          min-height: 94px;
+        }
+      }
+    }
+
+
+    .technology-block {
+      margin-top: 30px;
+      margin-bottom: 40px;
+      @include medium {
+        margin-bottom: 0;
+      }
+
+      .h2 {
+        font-family: $global-font-2;
+        font-size: 26px;
+        line-height: 1;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: center;
+        color: black;
+        @include medium {
+          font-size: 16px;
+        }
+        @include xl {
+          font-size: 22px;
+        }
+      }
+
+      .technology-slider {
+        position: relative;
+        min-width: 280px;
+        min-height: 450px;
+        @include medium {
+          min-width: 100%;
+          min-height: 200px;
+        }
+        @include xl {
+          min-height: 360px;
+        }
+
+        .card__item {
+          min-width: 280px;
+          min-height: 450px;
+          @include medium {
+            min-width: 100%;
+            min-height: 200px;
+          }
+          @include xl {
+            min-height: 360px;
+          }
+
+          .heading {
+            margin: 12px 10px 10px;
+            font-family: $global-font-2;
+            font-size: 30px;
+            line-height: 1.15;
+            font-weight: 700;
+            @include medium {
+              margin: 10px 0 6px 0;
+              font-size: 16px;
+            }
+            @include xl {
+              font-size: 24px;
+            }
+
+            a {
+              color: white;
+              text-decoration: none;
+              &:hover {
+                opacity: 0.6;
+              }
+            }
+          }
+
+          .teaser-image {
+            img {
+              min-height: 450px;
+              min-width: 100%;
+              object-fit: cover;
+              @include medium {
+                min-width: 100%;
+                min-height: 200px;
+              }
+              @include xl {
+                min-height: 360px;
+              }
+            }
+
+            &::after {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5) 42%, rgba(0, 0, 0, 0) 61%, rgba(0, 0, 0, 0));
+            }
+          }
+
+          .card--teaser__content {
+            position: absolute;
+            bottom: 0;
+
+            .teaser-author {
+              color: white;
+              padding: 0 15px;
+              float: left;
+              @include medium {
+                display: none;
+              }
+            }
+
+            .teaser-date {
+              color: white;
+              padding: 0 0 20px;
+            }
+
+            .teaser-genres {
+              display: none;
+            }
+
+            @include medium {
+              padding: 5px;
+            }
+            @include xl {
+              padding: 5px 20px;
+            }
+          }
+
+          .text-long {
+            display: none;
+          }
+        }
+
+        .js-pager__items {
+          position: absolute;
+          top: 5%;
+          right: 5%;
+          list-style: none;
+          display: flex;
+          gap: 10px;
+
+          li {
+            background-color: rgba(0, 0, 0, .8);
+            min-width: 29px;
+            min-height: 29px;
+            line-height: 30px;
+            font-size: 10px;
+            border: 0;
+            pointer-events: auto;
+            display: flex;
+
+            a {
+              color: white;
+              text-decoration: none;
+              margin: auto;
+              font-size: 15px;
+            }
+          }
+        }
+      }
+    }
+
+    .health-block {
+      .h2 {
+        color: white;
+        font-family: $global-font-1;
+        font-size: 24px;
+        line-height: 1.2;
+        font-style: italic;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        background-color: $main-hover;
+        text-align: center;
+        padding: 10px;
+        @include medium {
+          font-size: 18px;
+        }
+        @include xl {
+          font-size: 24px;
+        }
+      }
+
+      .views-row {
+        padding: 18px 0;
+        border-bottom: 1px solid;
+
+        &:last-child {
+          border: unset;
+        }
+
+        @include medium {
+          padding: 10px 0;
+        }
+        @include xl {
+          padding: 15px 0;
+        }
+      }
+
+      .views-field-title {
+        margin: 0 0 10px 0;
+        font-family: $global-font-1;
+        font-size: 22px;
+        line-height: 1.1;
+        font-weight: 800;
+        @include medium {
+          margin: 5px 0 0 0;
+          font-size: 17px;
+        }
+        @include xl {
+          font-size: 22px;
+          margin-bottom: 15px;
+        }
+
+        a {
+          color: black;
+          text-decoration: none;
+
+          &:hover {
+            color: $main-hover;
+          }
+        }
+      }
+
+      .views-field-created {
+        font-family: $global-font-2;
+        font-size: 13px;
+        line-height: 1;
+        font-weight: 500;
+        text-transform: capitalize;
+      }
+    }
+  }
+}
