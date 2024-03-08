@@ -141,14 +141,13 @@
     }
   }
 }
-
-#block-urbanobserver-subscription {
+// all for web-form
   .form-item {
     input {
       padding: 15px 10px;
       border-width: 1px;
       border-style: solid;
-      border-radius: 0px;
+      border-radius: 0;
       color: black;
       border-color: black;
       font-family: $global-font-2;
@@ -191,7 +190,6 @@
       }
     }
   }
-}
 
 .copyright {
   color: black;
