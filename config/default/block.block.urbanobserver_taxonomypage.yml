@@ -1,0 +1,30 @@
+uuid: 43e1eacc-a236-49a5-a0c2-8561dbc5e8c5
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:taxonomy_page:ccfc6aea-7b1b-4183-afc6-7f1864e707da'
+  module:
+    - block_content
+    - system
+  theme:
+    - urbanobserver
+id: urbanobserver_taxonomypage
+theme: urbanobserver
+region: first_content
+weight: -8
+provider: null
+plugin: 'block_content:ccfc6aea-7b1b-4183-afc6-7f1864e707da'
+settings:
+  id: 'block_content:ccfc6aea-7b1b-4183-afc6-7f1864e707da'
+  label: 'Taxonomy page'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/celebrity\r\n/drama\r\n/health\r\n/technology\r\n/scandals\r\n/lifestyle\r\n/entertainment/music\r\n/entertainment/movies\r\n/entertainment/tv-shows"

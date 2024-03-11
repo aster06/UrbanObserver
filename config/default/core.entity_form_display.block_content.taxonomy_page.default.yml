@@ -1,0 +1,24 @@
+uuid: 3d200cc5-a03e-4d47-92f1-146135b132bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.taxonomy_page
+    - field.field.block_content.taxonomy_page.body
+    - field.field.block_content.taxonomy_page.layout_builder__layout
+id: block_content.taxonomy_page.default
+targetEntityType: block_content
+bundle: taxonomy_page
+mode: default
+content:
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  body: true
+  layout_builder__layout: true

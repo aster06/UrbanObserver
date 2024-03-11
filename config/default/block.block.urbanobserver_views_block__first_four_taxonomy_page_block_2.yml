@@ -1,22 +1,22 @@
-uuid: c741a4fe-cdd1-416b-8979-0671378a560b
+uuid: 7e81ab8d-bdd9-4b05-a3b8-0205ccf137a0
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.articles_main
+    - views.view.first_four_taxonomy_page
   module:
     - system
     - views
   theme:
     - urbanobserver
-id: urbanobserver_views_block__articles_main_block_1
+id: urbanobserver_views_block__first_four_taxonomy_page_block_2
 theme: urbanobserver
 region: first_content
-weight: -14
+weight: -10
 provider: null
-plugin: 'views_block:articles_main-block_1'
+plugin: 'views_block:first_four_taxonomy_page-block_2'
 settings:
-  id: 'views_block:articles_main-block_1'
+  id: 'views_block:first_four_taxonomy_page-block_2'
   label: ''
   label_display: '0'
   provider: views
@@ -26,4 +26,4 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: '<front>'
+    pages: /entertainment

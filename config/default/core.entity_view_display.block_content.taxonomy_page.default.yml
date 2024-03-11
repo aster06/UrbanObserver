@@ -1,0 +1,22 @@
+uuid: 31d51933-a6a8-49c4-97ec-090c9198616a
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.taxonomy_page
+    - field.field.block_content.taxonomy_page.body
+    - field.field.block_content.taxonomy_page.layout_builder__layout
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+id: block_content.taxonomy_page.default
+targetEntityType: block_content
+bundle: taxonomy_page
+mode: default
+content: {  }
+hidden:
+  body: true
+  layout_builder__layout: true

@@ -1,4 +1,4 @@
-uuid: 63f375bc-29dc-4abf-b324-00337004c6f7
+uuid: b85ff83b-9522-4bda-9481-cc4359abfae9
 langcode: en
 status: true
 dependencies:
@@ -9,10 +9,10 @@ dependencies:
     - system
   theme:
     - urbanobserver
-id: urbanobserver_ad
+id: urbanobserver_ad_3
 theme: urbanobserver
 region: first_content
-weight: -16
+weight: -9
 provider: null
 plugin: 'block_content:427e2c33-8fb7-42c8-806d-50a94458dad3'
 settings:
@@ -27,4 +27,4 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: '<front>'
+    pages: "/celebrity\r\n/drama\r\n/health\r\n/technology\r\n/scandals\r\n/lifestyle"

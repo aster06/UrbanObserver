@@ -11,7 +11,7 @@ _core:
 id: urbanobserver_page_title
 theme: urbanobserver
 region: first_content
-weight: -12
+weight: -15
 provider: null
 plugin: page_title_block
 settings:
