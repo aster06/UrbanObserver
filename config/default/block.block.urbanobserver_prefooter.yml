@@ -1,0 +1,30 @@
+uuid: 2db1950a-5774-42e5-a32b-a1bc8ae49b06
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:about_us:023d6c20-106c-428e-8835-bfb2bcd527f7'
+  module:
+    - block_content
+    - system
+  theme:
+    - urbanobserver
+id: urbanobserver_prefooter
+theme: urbanobserver
+region: pre_footer
+weight: 0
+provider: null
+plugin: 'block_content:023d6c20-106c-428e-8835-bfb2bcd527f7'
+settings:
+  id: 'block_content:023d6c20-106c-428e-8835-bfb2bcd527f7'
+  label: Pre-footer
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

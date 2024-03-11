@@ -1,0 +1,136 @@
+.pre-footer {
+  background-color: #EDEDED;;
+  display: flex;
+  border-top: 1px solid;
+  padding: 20px;
+
+  .text-long {
+    font-family: $global-font-3;
+    font-size: 42px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    color: #000;
+    @include medium {
+      font-size: 30px;
+    }
+    @include large {
+      font-size: 40px;
+    }
+    @include xl {
+      font-size: 54px;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .layout {
+    max-width: 1440px;
+    margin: auto;
+    @include medium {
+      margin: 0;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      width: 100%;
+    }
+    @include xl {
+      margin: auto;
+      .layout__region--second {
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    .layout__region--first {
+      display: flex;
+      align-items: center;
+    }
+
+    .navigation-nav-block {
+      padding: 0;
+      border-bottom: 1px solid #888;
+      @include medium {
+        margin: 0 0 0 25px;
+      }
+    }
+
+    .menu-logo, .toggle-expand {
+      display: none;
+    }
+
+    .navigation-nav {
+      display: flex;
+      @include medium {
+        justify-content: flex-end;
+      }
+    }
+
+    .menus {
+      display: flex;
+      margin: 0;
+      flex-direction: row;
+      padding-bottom: 12px;
+    }
+
+    .navigation-menu {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0;
+      gap: 5px 10px;
+      height: auto;
+      @include large {
+        gap: 5px 25px;
+      }
+
+      .navigation-menu__item {
+        a {
+          font-size: 17px;
+          @include medium {
+            font-size: 15px;
+            padding: 0;
+          }
+          @include large {
+            font-size: 16px;
+          }
+          @include xl {
+            font-size: 18px;
+          }
+        }
+
+        &:last-child {
+          border: unset;
+        }
+      }
+    }
+
+    .search-icon {
+      display: none;
+    }
+
+    .little-pre-menu {
+      display: flex;
+      flex-wrap: wrap;
+      padding-top: 12px;
+      gap: 5px 0;
+      @include medium {
+        justify-content: flex-end;
+      }
+      @include large {
+        .little-pre-menu__item {
+          margin-bottom: 0;
+        }
+      }
+
+      a {
+        text-transform: uppercase;
+        font-size: 12px;
+        @include xl {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
