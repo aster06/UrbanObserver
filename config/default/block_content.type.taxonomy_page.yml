@@ -1,0 +1,8 @@
+uuid: a61b598d-2f67-4a13-a8cf-d5f3c0d724cd
+langcode: en
+status: true
+dependencies: {  }
+id: taxonomy_page
+label: 'Taxonomy page'
+revision: 0
+description: ''
