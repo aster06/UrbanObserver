@@ -5,6 +5,7 @@ dependencies:
   config:
     - block_content.type.about_us
     - field.field.block_content.about_us.body
+    - field.field.block_content.about_us.layout_builder__layout
   module:
     - text
 id: block_content.about_us.default
@@ -30,4 +31,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  layout_builder__layout: true

@@ -5,8 +5,37 @@ dependencies:
   config:
     - block_content.type.about_us
     - field.field.block_content.about_us.body
+    - field.field.block_content.about_us.layout_builder__layout
   module:
+    - layout_builder
+    - layout_discovery
     - text
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          b5650c01-dea9-4d7b-9f1e-3e41cc4b35b8:
+            uuid: b5650c01-dea9-4d7b-9f1e-3e41cc4b35b8
+            region: content
+            configuration:
+              id: 'field_block:block_content:about_us:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
 id: block_content.about_us.default
 targetEntityType: block_content
 bundle: about_us
@@ -19,4 +48,5 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-hidden: {  }
+hidden:
+  layout_builder__layout: true
