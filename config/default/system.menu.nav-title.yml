@@ -1,0 +1,8 @@
+uuid: b3bed934-d316-4115-9db9-b3c2024c2d7d
+langcode: en
+status: true
+dependencies: {  }
+id: nav-title
+label: 'Nav title'
+description: ''
+locked: false

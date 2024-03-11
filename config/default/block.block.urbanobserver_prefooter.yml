@@ -6,7 +6,6 @@ dependencies:
     - 'block_content:about_us:023d6c20-106c-428e-8835-bfb2bcd527f7'
   module:
     - block_content
-    - system
   theme:
     - urbanobserver
 id: urbanobserver_prefooter
@@ -23,8 +22,4 @@ settings:
   status: true
   info: ''
   view_mode: full
-visibility:
-  request_path:
-    id: request_path
-    negate: false
-    pages: '<front>'
+visibility: {  }

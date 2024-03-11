@@ -11,7 +11,7 @@ _core:
 id: urbanobserver_page_title
 theme: urbanobserver
 region: first_content
-weight: -9
+weight: -12
 provider: null
 plugin: page_title_block
 settings:
@@ -22,5 +22,5 @@ settings:
 visibility:
   request_path:
     id: request_path
-    negate: true
-    pages: '<front>'
+    negate: false
+    pages: /node

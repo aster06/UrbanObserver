@@ -1,0 +1,62 @@
+#block-urbanobserver-navtitle, #block-urbanobserver-entertainment {
+  margin-bottom: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #ededed;
+  border-bottom: 1px solid;
+  text-align: center;
+  @include large {
+    margin-bottom: 60px;
+    padding-top: 60px;
+    padding-bottom: 70px;
+  }
+
+  h2 {
+    margin: 0 0 20px 0;
+    font-family: $global-font-1;
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 800;
+    text-transform: uppercase;
+    @include medium {
+      font-size: 36px;
+    }
+    @include large {
+      font-size: 42px;
+    }
+  }
+
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+
+    .menu__item {
+      list-style: none;
+      padding: 0;
+      font-family: $global-font-1;
+      font-size: 20px;
+      line-height: 1.2;
+      font-weight: 700;
+      text-transform: uppercase;
+
+      a {
+        text-decoration: none;
+        color: black;
+
+        &:hover {
+          color: $main-hover;
+        }
+      }
+    }
+
+    .menu__item--active {
+      a {
+        color: $main-hover;
+      }
+    }
+  }
+}
