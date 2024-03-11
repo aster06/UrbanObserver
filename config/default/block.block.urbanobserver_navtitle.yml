@@ -1,0 +1,36 @@
+uuid: ffa87e64-0c36-451d-8d4e-5977540aea1a
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.nav-title
+  module:
+    - menu_block
+    - system
+  theme:
+    - urbanobserver
+id: urbanobserver_navtitle
+theme: urbanobserver
+region: first_content
+weight: -9
+provider: null
+plugin: 'menu_block:nav-title'
+settings:
+  id: 'menu_block:nav-title'
+  label: 'Nav title'
+  label_display: visible
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: active_item
+  level: 1
+  depth: 0
+  expand_all_items: false
+  parent: 'nav-title:'
+  suggestion: nav_title
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/celebrity\r\n/drama\r\n/health\r\n/technology\r\n/scandals\r\n/lifestyle"

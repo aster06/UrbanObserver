@@ -1,0 +1,8 @@
+uuid: 229809ba-3fff-4f99-94ba-774a2e3bf28e
+langcode: en
+status: true
+dependencies: {  }
+id: entertainment
+label: Entertainment
+description: ''
+locked: false

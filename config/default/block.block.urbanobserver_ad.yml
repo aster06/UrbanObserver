@@ -6,12 +6,13 @@ dependencies:
     - 'block_content:advertising_block:427e2c33-8fb7-42c8-806d-50a94458dad3'
   module:
     - block_content
+    - system
   theme:
     - urbanobserver
 id: urbanobserver_ad
 theme: urbanobserver
 region: first_content
-weight: -10
+weight: -13
 provider: null
 plugin: 'block_content:427e2c33-8fb7-42c8-806d-50a94458dad3'
 settings:
@@ -22,4 +23,8 @@ settings:
   status: true
   info: ''
   view_mode: full
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

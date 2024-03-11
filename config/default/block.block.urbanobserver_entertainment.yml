@@ -1,0 +1,36 @@
+uuid: 18d94886-9d55-49e0-831e-9b79996f8bcf
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.entertainment
+  module:
+    - menu_block
+    - system
+  theme:
+    - urbanobserver
+id: urbanobserver_entertainment
+theme: urbanobserver
+region: first_content
+weight: -10
+provider: null
+plugin: 'menu_block:entertainment'
+settings:
+  id: 'menu_block:entertainment'
+  label: Entertainment
+  label_display: visible
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 0
+  expand_all_items: false
+  parent: 'entertainment:'
+  suggestion: entertainment
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/entertainment\r\n/entertainment/movies\r\n/entertainment/tv-shows\r\n/entertainment/music"

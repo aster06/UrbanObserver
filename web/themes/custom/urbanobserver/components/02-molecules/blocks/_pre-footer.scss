@@ -104,6 +104,11 @@
           border: unset;
         }
       }
+      .navigation-menu__item--active{
+        a{
+          color: $main-hover;
+        }
+      }
     }
 
     .search-icon {

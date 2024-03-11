@@ -1,0 +1,17 @@
+uuid: 39b5480f-7814-4b09-b98f-ac7a17b3588d
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.entertainment
+id: menu_link_content.entertainment.default
+targetEntityType: menu_link_content
+bundle: entertainment
+mode: default
+content:
+  children:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

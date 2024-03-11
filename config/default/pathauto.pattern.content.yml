@@ -1,0 +1,22 @@
+uuid: ee0a0444-c864-41de-8c13-37642989ed80
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: content
+label: Content
+type: 'canonical_entities:node'
+pattern: 'articles/[node:field_ganers]/[node:title]'
+selection_criteria:
+  ae01007e-b407-416b-b405-e55080f87401:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: ae01007e-b407-416b-b405-e55080f87401
+    context_mapping:
+      node: node
+    bundles:
+      article: article
+selection_logic: and
+weight: -5
+relationships: {  }

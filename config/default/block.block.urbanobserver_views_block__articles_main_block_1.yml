@@ -12,7 +12,7 @@ dependencies:
 id: urbanobserver_views_block__articles_main_block_1
 theme: urbanobserver
 region: first_content
-weight: -8
+weight: -11
 provider: null
 plugin: 'views_block:articles_main-block_1'
 settings:
