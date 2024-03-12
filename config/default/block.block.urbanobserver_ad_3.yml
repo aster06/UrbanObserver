@@ -27,4 +27,4 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: "/celebrity\r\n/drama\r\n/health\r\n/technology\r\n/scandals\r\n/lifestyle"
+    pages: "/celebrity\r\n/drama\r\n/health\r\n/technology\r\n/scandals\r\n/lifestyle\r\n/entertainment"

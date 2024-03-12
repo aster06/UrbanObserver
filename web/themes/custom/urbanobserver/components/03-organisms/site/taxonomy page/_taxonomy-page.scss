@@ -1,0 +1,276 @@
+.taxonomy-block-one, .taxonomy-block-two {
+  max-width: 1440px;
+  margin: auto;
+
+  .views-row-container {
+    padding: 0 20px;
+    @include medium {
+      display: flex;
+    }
+  }
+
+  .views-row {
+    padding-bottom: 20px;
+    border-bottom: 1px solid;
+    margin-bottom: 20px;
+    @include medium {
+      border-bottom: unset;
+      padding: 0 10px;
+      border-right: 1px black solid;
+    }
+
+    &:last-child {
+      border: unset;
+    }
+
+    img {
+      margin: auto;
+    }
+
+    .views-field-title {
+      width: 80%;
+      background-color: #fff;
+      position: relative;
+      margin: -28px auto 10px auto;
+      padding: 15px 10px 0;
+      text-align: center;
+
+      .field-content {
+        font-family: $global-font-1;
+        font-size: 22px;
+        line-height: 1.2;
+        font-weight: 800;
+        z-index: 5;
+
+        a {
+          text-decoration: none;
+          color: black;
+
+          &:hover {
+            color: $main-hover;
+          }
+        }
+
+        @include medium {
+          font-size: 15px;
+        }
+        @include large {
+          font-size: 22px;
+        }
+      }
+
+      @include medium {
+        padding: 0;
+      }
+    }
+
+    .views-field-field-ganers {
+      text-decoration: none;
+      float: left;
+      margin: 0 20px 0 30%;
+      padding: 0 5px;
+      border-width: 0 2px;
+      border-style: solid;
+      border-color: #e04040;
+      font-family: $global-font-1;
+      font-size: 16px;
+      line-height: 1;
+      font-weight: 700;
+      width: auto;
+      text-transform: uppercase;
+
+      a {
+        text-decoration: none;
+        color: #e04040;
+      }
+
+      @include medium {
+        display: flex;
+      }
+    }
+
+    .views-field-uid {
+      font-family: $global-font-2;
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 500;
+      text-transform: capitalize;
+      margin-right: auto;
+      padding-top: 2px;
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+
+      @include medium {
+        display: none;
+      }
+    }
+  }
+}
+
+.taxonomy-block-three, .taxonomy-block-four {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+
+  .views-row-container {
+    @include medium {
+      display: flex;
+      margin-right: 20px;
+      flex-wrap: wrap;
+    }
+  }
+
+  .views-row {
+    padding-bottom: 20px;
+    border-bottom: 1px solid;
+    margin-bottom: 20px;
+    @include medium {
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: 20px;
+      width: 46%;
+      height: 100%;
+    }
+
+    .views-field-title {
+      margin: 0 0 15px 0;
+      font-family: $global-font-1;
+      font-size: 28px;
+      line-height: 1.1;
+      font-weight: 800;
+      padding: 20px 0 0 0;
+      @include medium {
+        font-size: 15px;
+        flex: 1 0 50%;
+        padding: 10px 0 0 10px;
+      }
+      @include large {
+        margin: 0;
+        padding: 20px 0 0 0;
+      }
+      @include xl {
+        font-size: 24px;
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
+
+        &:hover {
+          color: $main-hover;
+        }
+      }
+    }
+
+    .views-field-field-image {
+      @include large {
+        flex: 1 0 50%;
+      }
+
+      img {
+        margin: auto;
+        @include medium {
+          height: 85px;
+          min-width: 107px;
+          width: 107px;
+          object-fit: cover;
+          margin: 0;
+        }
+        @include large {
+          min-width: 140px;
+          width: 140px;
+          height: 112px;
+        }
+        @include xl {
+          min-width: 198px;
+          width: 198px;
+          height: 159px;
+        }
+      }
+    }
+
+    .views-field-field-ganers {
+      padding-right: 10px;
+      @include medium {
+        display: flex;
+        margin: -20px 0 0 50%;
+      }
+      @include xl {
+        margin: -11% 0 0 50%;
+      }
+
+      a {
+        text-decoration: none;
+        color: #e04040;
+        padding: 0 5px;
+        border-width: 0 2px;
+        border-style: solid;
+        border-color: #e04040;
+        font-family: $global-font-1;
+        font-size: 16px;
+        line-height: 1;
+        font-weight: 700;
+        width: auto;
+        text-transform: uppercase;
+        @include large {
+          font-size: 18px;
+        }
+      }
+    }
+
+    .views-field-created {
+      font-family: $global-font-2;
+      font-size: 15px;
+      line-height: 1.1;
+      font-weight: 500;
+      text-transform: capitalize;
+      @include large {
+        display: none;
+      }
+      @include xl {
+        display: flex;
+        margin: -10.5% 0;
+      }
+    }
+  }
+
+  .more-link {
+    margin: 20px auto;
+
+    a {
+      color: black;
+      border-style: solid;
+      background-color: white;
+      border-color: black;
+      padding: 16px 24px;
+      border-width: 1px 1px 3px;
+      font-family: $global-font-2;
+      font-weight: 600;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-size: 12px;
+      line-height: 1;
+    }
+  }
+}
+
+#block-urbanobserver-ad-3 {
+  padding: 20px;
+  max-width: 1440px;
+  justify-content: center;
+  display: flex;
+  margin: 20px auto;
+}
+
+#block-urbanobserver-taxonomypage, #block-urbanobserver-entertainmentpage {
+  max-width: 1440px;
+  margin: auto;
+
+  .top-five-block {
+    width: 100%;
+    padding: 0 20px 0 0;
+  }
+}
