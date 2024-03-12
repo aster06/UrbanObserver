@@ -26,5 +26,5 @@ settings:
 visibility:
   request_path:
     id: request_path
-    negate: false
-    pages: '<front>'
+    negate: true
+    pages: "/celebrity\r\n/drama\r\n/health\r\n/technology\r\n/scandals\r\n/lifestyle\r\n/entertainment/music\r\n/entertainment/movies\r\n/entertainment/tv-shows\r\n/entertainment"
