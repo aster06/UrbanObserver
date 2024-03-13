@@ -122,7 +122,7 @@
             align-items: center;
           }
 
-          a{
+          a {
             text-decoration: none;
             color: black;
             line-height: 1;
@@ -134,7 +134,7 @@
             padding: 3px 6px 2px;
             border: 1px solid black;
             font-size: 10px;
-            @include large{
+            @include large {
               font-size: 13px;
             }
           }
@@ -147,6 +147,83 @@
     flex-direction: column-reverse;
     @include medium {
       flex-direction: row;
+    }
+
+    .layout__region--first {
+      .block {
+        padding: 20px;
+        @include medium {
+          padding: 10px;
+        }
+        @include xl {
+          padding: 20px;
+        }
+
+        .h2 {
+          font-family: $global-font-1;
+          font-size: 26px;
+          line-height: 1.2;
+          font-style: italic;
+          font-weight: 800;
+          text-transform: uppercase;
+          color: $main-hover;
+          padding-bottom: 10px;
+          border-bottom: 1px solid black;
+        }
+
+        .related-posts {
+          .views-row {
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+
+            .views-field-title {
+              margin: 0 0 10px;
+              font-family: $global-font-1;
+              font-size: 24px;
+              line-height: 1.2;
+              font-weight: 700;
+              @include medium {
+                margin: 0 0 6px;
+                font-size: 18px;
+              }
+              @include xl {
+                margin: 0 0 10px;
+                font-size: 24px;
+              }
+
+              a {
+                text-decoration: none;
+                color: black;
+
+                &:hover {
+                  color: $main-hover;
+                }
+              }
+            }
+
+            .views-field-field-ganers {
+              padding: 0;
+              font-family: $global-font-2;
+              font-size: 14px;
+              line-height: 1;
+              font-weight: 600;
+              text-transform: uppercase;
+              @include medium {
+                display: flex;
+                font-size: 12px;
+              }
+              @include xl {
+                font-size: 14px;
+              }
+
+              a {
+                text-decoration: none;
+                color: $main-hover;
+              }
+            }
+          }
+        }
+      }
     }
   }
 
@@ -174,13 +251,17 @@
           max-width: 100%;
 
           &:first-child, &:nth-child(2) {
-            width: 32%;
-            margin-right: 2%;
+            @include medium {
+              width: 32%;
+              margin-right: 2%;
+            }
             border-bottom: 1px solid black;
           }
 
           &:nth-child(3) {
-            width: 32%;
+            @include medium {
+              width: 32%;
+            }
             border-bottom: 1px solid black;
           }
 
@@ -198,6 +279,7 @@
                 width: 100%;
               }
             }
+
             @include large {
               width: 100%;
             }

@@ -17,7 +17,7 @@ elements: |-
     '#type': textfield
     '#title': Name
     '#title_display': invisible
-    '#placeholder': Name
+    '#placeholder': 'Name:*'
     '#required': true
     '#required_error': 'Acknowledgment is required!'
   email:
