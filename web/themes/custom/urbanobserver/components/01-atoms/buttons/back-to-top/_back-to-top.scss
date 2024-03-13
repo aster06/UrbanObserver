@@ -1,0 +1,31 @@
+.backToTop {
+  display: none;
+  position: fixed;
+  right: 5px;
+  bottom: 4px;
+  width: 40px;
+  height: 40px;
+  background-color: $main-hover;
+  border: unset;
+  color: rgba(0,0,0,0);
+  cursor: pointer;
+
+
+  &:before{
+    content: "";
+    background-image: url(/themes/custom/urbanobserver/assets/icons/icons8-up-67.png);
+    background-position: center;
+    z-index: 4;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    margin: 10px;
+    filter: invert(100%);
+  }
+}
+.show{
+  display: block;
+}

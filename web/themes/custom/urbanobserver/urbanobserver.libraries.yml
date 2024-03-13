@@ -1,18 +1,18 @@
 global:
   css:
     theme:
-      dist/css/style.css: {}
+      dist/css/style.css: { }
 
 main-menu:
   js:
-    dist/js/02-molecules/menus/main-menu/main-menu.js: {}
+    dist/js/02-molecules/menus/main-menu/main-menu.js: { }
   dependencies:
     - core/drupal
     - core/once
 
 navigation-menu:
   js:
-    dist/js/02-molecules/menus/navigation/navigation-menu.js: {}
+    dist/js/02-molecules/menus/navigation/navigation-menu.js: { }
   dependencies:
     - core/drupal
     - core/once
@@ -26,6 +26,13 @@ sprite:
 
 tabs:
   js:
-    dist/js/02-molecules/tabs/tabs.js: {}
+    dist/js/02-molecules/tabs/tabs.js: { }
   dependencies:
     - core/drupal
+
+back-to-top:
+  js:
+    dist/js/01-atoms/buttons/back-to-top/back-to-top.js: { }
+  dependencies:
+    - core/drupal
+    - core/once

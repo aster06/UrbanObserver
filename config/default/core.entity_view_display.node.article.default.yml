@@ -12,6 +12,7 @@ dependencies:
     - image.style.wide
     - node.type.article
     - views.view.most_popular
+    - views.view.related_posts
     - views.view.top_five
     - webform.webform.comments
   module:
@@ -293,6 +294,19 @@ third_party_settings:
                       text: ''
                     token: ''
             weight: 6
+            additional: {  }
+          f714d4b7-ff15-4fb5-a031-6be226d05341:
+            uuid: f714d4b7-ff15-4fb5-a031-6be226d05341
+            region: first
+            configuration:
+              id: 'views_block:related_posts-block_1'
+              label: ''
+              label_display: visible
+              provider: views
+              context_mapping: {  }
+              views_label: ''
+              items_per_page: none
+            weight: 1
             additional: {  }
         third_party_settings: {  }
       -
