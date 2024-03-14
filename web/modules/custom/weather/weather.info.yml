@@ -1,0 +1,6 @@
+name: Weather
+type: module
+description: 'The best weather module for Drupal'
+package: Custom
+core_version_requirement: ^9 || ^10
+
