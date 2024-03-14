@@ -1,0 +1,20 @@
+uuid: 9dc05898-ec38-495f-b116-ca2dcea0f9aa
+langcode: en
+status: true
+dependencies:
+  module:
+    - weather
+  theme:
+    - urbanobserver
+id: urbanobserver_weatherblock
+theme: urbanobserver
+region: secondary_menu
+weight: 0
+provider: null
+plugin: weather
+settings:
+  id: weather
+  label: 'Weather block'
+  label_display: '0'
+  provider: weather
+visibility: {  }

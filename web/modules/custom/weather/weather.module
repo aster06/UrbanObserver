@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function weather_theme() {
+  return [
+    'weather' => [
+      'variables' => [
+        'temp' => [],
+      ],
+    ],
+  ];
+}
