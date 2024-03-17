@@ -1,0 +1,7 @@
+weather_admin_form:
+ path: '/admin/structure/weather-form'
+ defaults:
+   _title: 'Weather admin form'
+   _form: '\Drupal\weather\Form\WeatherAdminForm'
+ requirements:
+   _permission: 'administer site configuration'

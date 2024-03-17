@@ -28,6 +28,7 @@
         "drupal/linked_field": "^1.5",
         "drupal/menu_block": "^1.10",
         "drupal/menu_item_extras": "^3.0",
+        "drupal/menu_per_role": "^1.6",
         "drupal/paragraphs": "^1.17",
         "drupal/pathauto": "^1.12",
         "drupal/simple_popup_blocks": "^3.1",

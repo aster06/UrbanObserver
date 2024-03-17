@@ -1,0 +1,5 @@
+admin_keys:
+  title: 'OpenWeather Api Key'
+  parent: system.admin_structure
+  route_name: weather_admin_form
+  weight: 50

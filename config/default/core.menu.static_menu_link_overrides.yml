@@ -8,15 +8,15 @@ definitions:
     expanded: false
     enabled: true
   user__page:
-    weight: -46
+    enabled: false
     menu_name: account
     parent: ''
-    enabled: false
     expanded: false
+    weight: -47
   user__logout:
-    weight: -50
-    parent: 'menu_link_content:3976f0b4-6836-4888-9eac-1015ebecc6c1'
+    parent: 'menu_link_content:3661ea5b-e32d-43f1-afc5-80516c125929'
     menu_name: account
+    weight: -50
     expanded: false
     enabled: true
   standard__front_page:
