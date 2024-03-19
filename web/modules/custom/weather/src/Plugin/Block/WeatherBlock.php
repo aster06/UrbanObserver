@@ -18,14 +18,12 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
   category: new TranslatableMarkup("Weather block")
 )]
 class WeatherBlock extends BlockBase implements ContainerFactoryPluginInterface {
+
   /**
    * Variable for Config Factory.
    */
-  protected $configFactory;
-
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, ConfigFactoryInterface $configFactory) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, protected ConfigFactoryInterface $configFactory) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
-    $this->configFactory = $configFactory;
   }
 
   /**

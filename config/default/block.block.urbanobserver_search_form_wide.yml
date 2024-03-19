@@ -11,7 +11,7 @@ _core:
 id: urbanobserver_search_form_wide
 theme: urbanobserver
 region: navigation
-weight: -13
+weight: -19
 provider: null
 plugin: search_form_block
 settings:

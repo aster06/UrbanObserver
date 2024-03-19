@@ -12,7 +12,7 @@ dependencies:
 id: urbanobserver_taxonomypage
 theme: urbanobserver
 region: first_content
-weight: -8
+weight: -7
 provider: null
 plugin: 'block_content:ccfc6aea-7b1b-4183-afc6-7f1864e707da'
 settings:

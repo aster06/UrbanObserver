@@ -12,7 +12,7 @@ dependencies:
 id: urbanobserver_navtitle
 theme: urbanobserver
 region: first_content
-weight: -12
+weight: -11
 provider: null
 plugin: 'menu_block:nav-title'
 settings:

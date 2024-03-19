@@ -2,13 +2,38 @@
 
 namespace Drupal\weather\Form;
 
+use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\weather\Services\WeatherApi;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * {@inheritdoc}
  */
 class WeatherAdminForm extends ConfigFormBase {
+
+  /**
+   * {@inheritdoc}
+   */
+  public function __construct(
+    ConfigFactoryInterface $config_factory,
+    $typedConfigManager,
+    protected WeatherApi $openWeatherClient,
+  ) {
+    parent::__construct($config_factory, $typedConfigManager);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container): WeatherAdminForm|ConfigFormBase|static {
+    return new static(
+      $container->get('config.factory'),
+      $container->get('config.typed'),
+      $container->get('weather.api_validation'),
+    );
+  }
 
   /**
    * {@inheritdoc}
@@ -43,18 +68,13 @@ class WeatherAdminForm extends ConfigFormBase {
   /**
    * {@inheritdoc}
    */
-  public function validateForm(array &$form, FormStateInterface $form_state): bool {
-    $api_key = $form_state->getValue('api_admin_key');
-    // Checking if we can get data from the OpenWeather site by entered api key.
-    try {
-      $client = \Drupal::httpClient();
-      $res = $client->get('https://api.openweathermap.org/data/2.5/weather?q=London&appid=' . $api_key);
-    }
-    // If we can`t get data we show error.
-    catch (\Exception $error) {
+  public function validateForm(array &$form, FormStateInterface $form_state) {
+    $apiKey = $form_state->getValue('api_admin_key');
+
+    // Fetching data from the OpenWeather site by entered API key.
+    if (!$this->openWeatherClient->validateApi($apiKey)) {
       $form_state->setErrorByName('api_admin_key', $this->t('Your API key is not valid.'));
     }
-    return TRUE;
   }
 
   /**

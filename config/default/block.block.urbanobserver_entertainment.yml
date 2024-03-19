@@ -12,7 +12,7 @@ dependencies:
 id: urbanobserver_entertainment
 theme: urbanobserver
 region: first_content
-weight: -13
+weight: -12
 provider: null
 plugin: 'menu_block:entertainment'
 settings:
