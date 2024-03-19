@@ -9,12 +9,12 @@ use Drupal\weather\Services\WeatherApi;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * {@inheritdoc}
+ * Form for admin to enter api OpenWeather key.
  */
 class WeatherAdminForm extends ConfigFormBase {
 
   /**
-   * {@inheritdoc}
+   * Constructs a WeatherApi object.
    */
   public function __construct(
     ConfigFactoryInterface $config_factory,

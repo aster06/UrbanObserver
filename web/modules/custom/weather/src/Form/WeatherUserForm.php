@@ -9,12 +9,12 @@ use Drupal\weather\Services\WeatherApi;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * {@inheritdoc}
+ * Form for user to choose a city for weather block.
  */
 class WeatherUserForm extends FormBase {
 
   /**
-   * Constructor.
+   * Constructs a WeatherApi object.
    */
   public function __construct(ConfigFactoryInterface $config_factory,
                                                              $typedConfigManager,

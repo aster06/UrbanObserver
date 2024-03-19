@@ -6,12 +6,12 @@ use Drupal\Core\Config\ConfigFactoryInterface;
 use GuzzleHttp\ClientInterface;
 
 /**
- * Class WeatherApi.
+ * Service class WeatherApi.
  */
 class WeatherApi {
 
   /**
-   * Constructor.
+   * Constructs a ConfigFactory and a Client object.
    */
   public function __construct(
     protected ConfigFactoryInterface $configFactory,
@@ -39,7 +39,7 @@ class WeatherApi {
     $config = $this->configFactory->get('weather.settings');
     $apiKey = $config->get('api_admin_key');
     try {
-      $client = \Drupal::httpClient();
+      $client = $this->httpClient->get('http_client');
       $res = $client->get('https://api.openweathermap.org/data/2.5/weather?q=' . $cityName . '&units=metric&appid=' . $apiKey);
       $body = (string) $res->getBody();
       json_decode($body, TRUE);
