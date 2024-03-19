@@ -7,6 +7,7 @@ use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
+use GuzzleHttp\ClientInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -18,14 +19,17 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
   category: new TranslatableMarkup("Weather block")
 )]
 class WeatherBlock extends BlockBase implements ContainerFactoryPluginInterface {
-  /**
-   * Variable for Config Factory.
-   */
-  protected $configFactory;
 
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, ConfigFactoryInterface $configFactory) {
+  /**
+   * Constructs a ConfigFactory a Client object.
+   */
+  public function __construct(array $configuration,
+                                                               $plugin_id,
+                                                               $plugin_definition,
+                              protected ConfigFactoryInterface $configFactory,
+                              protected ClientInterface $httpClient,
+  ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
-    $this->configFactory = $configFactory;
   }
 
   /**
@@ -40,7 +44,8 @@ class WeatherBlock extends BlockBase implements ContainerFactoryPluginInterface 
       $configuration,
       $plugin_id,
       $plugin_definition,
-      $container->get('config.factory')
+      $container->get('config.factory'),
+      $container->get('http_client')
     );
   }
 
@@ -58,8 +63,7 @@ class WeatherBlock extends BlockBase implements ContainerFactoryPluginInterface 
   public function build() {
     $city = 'Lutsk';
     $key = $this->getWeatherSetting();
-    $client = \Drupal::httpClient();
-    $res = $client->get('https://api.openweathermap.org/data/2.5/weather?q=' . $city . '&units=metric&appid=' . $key);
+    $res = $this->httpClient->get('https://api.openweathermap.org/data/2.5/weather?q=' . $city . '&units=metric&appid=' . $key);
     $body = (string) $res->getBody();
     $res = json_decode($body, TRUE);
     $tempCel = intval(round($res['main']['temp']));

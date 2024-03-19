@@ -12,7 +12,7 @@ dependencies:
 id: urbanobserver_views_block__first_four_taxonomy_page_block_2
 theme: urbanobserver
 region: first_content
-weight: -10
+weight: -9
 provider: null
 plugin: 'views_block:first_four_taxonomy_page-block_2'
 settings:

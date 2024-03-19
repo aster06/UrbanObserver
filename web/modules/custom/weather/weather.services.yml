@@ -1,0 +1,5 @@
+services:
+  weather.api_validation:
+    class: Drupal\weather\Services\WeatherApi
+    arguments:
+      [ '@config.factory', '@http_client' ]

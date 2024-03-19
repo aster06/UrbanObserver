@@ -1,6 +1,6 @@
 uuid: 3a33ff61-6f22-4ac6-9664-251b67a780db
 langcode: en
-status: false
+status: true
 dependencies:
   module:
     - system
@@ -10,8 +10,8 @@ _core:
   default_config_hash: BZ5tpW7H8X4PVGRm3MImTIHd2tN0eF7zOtp4SpRYUA0
 id: urbanobserver_messages
 theme: urbanobserver
-region: header
-weight: -13
+region: first_content
+weight: -15
 provider: null
 plugin: system_messages_block
 settings:
