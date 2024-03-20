@@ -14,7 +14,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class WeatherAdminForm extends ConfigFormBase {
 
   /**
-   * Constructs a WeatherApi object.
+   * Constructs a new WeatherAdminForm object.
    */
   public function __construct(
     ConfigFactoryInterface $config_factory,
@@ -61,14 +61,13 @@ class WeatherAdminForm extends ConfigFormBase {
       '#description' => $this->t('The api key is required to get weather information in your weather block.'),
       '#default_value' => $config->get('api_admin_key'),
     ];
-
     return parent::buildForm($form, $form_state);
   }
 
   /**
    * {@inheritdoc}
    */
-  public function validateForm(array &$form, FormStateInterface $form_state) {
+  public function validateForm(array &$form, FormStateInterface $form_state): void {
     $apiKey = $form_state->getValue('api_admin_key');
 
     // Fetching data from the OpenWeather site by entered API key.
@@ -81,7 +80,7 @@ class WeatherAdminForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state): void {
-    // Saving entered api key in config.
+    // Saving entered api key in a config.
     $config = $this->config('weather.settings');
     $config->set('api_admin_key', $form_state->getValue('api_admin_key'))
       ->save();
