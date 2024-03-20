@@ -67,7 +67,7 @@ class WeatherAdminForm extends ConfigFormBase {
   /**
    * {@inheritdoc}
    */
-  public function validateForm(array &$form, FormStateInterface $form_state) {
+  public function validateForm(array &$form, FormStateInterface $form_state): void {
     $apiKey = $form_state->getValue('api_admin_key');
 
     // Fetching data from the OpenWeather site by entered API key.

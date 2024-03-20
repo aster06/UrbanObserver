@@ -1,16 +1,26 @@
 <?php
 
 /**
+ * @file
+ * Primary module install for weather module.
+ */
+
+/**
  * Implements hook_schema().
  */
-function weather_schema()
-{
+function weather_schema() {
   $schema['weather_info'] = [
     'description' => 'The table for storing weather information',
     'fields' => [
       'id' => [
         'description' => 'The primary identifier for cities',
         'type' => 'serial',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'uid' => [
+        'description' => 'The primary identifier for users',
+        'type' => 'int',
         'not null' => TRUE,
         'unsigned' => TRUE,
       ],
@@ -29,14 +39,15 @@ function weather_schema()
   /**
    * Implements hook_update_N().
    */
-  function weather_update_10001(): void
-  {
+  function weather_update_10001(): void {
+    if (\Drupal::service('database.schema')->tableExists('weather_info')) {
+      return;
+    }
+
     $schema = weather_schema();
     $table = $schema['weather_info'];
 
-    if (!\Drupal::service('database.schema')->tableExists('weather_info')) {
-
-      \Drupal::database()->schema()->createTable('weather_info', $table);
-    }
+    \Drupal::database()->schema()->createTable('weather_info', $table);
   }
+
 }

@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Primary module hook for weather module.
+ */
+
+/**
  * Implements hook_theme().
  */
 function weather_theme() {

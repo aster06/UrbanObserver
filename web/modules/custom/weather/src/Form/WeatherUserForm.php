@@ -6,6 +6,7 @@ use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Session\AccountProxyInterface;
 use Drupal\weather\Services\WeatherApi;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -22,6 +23,7 @@ class WeatherUserForm extends FormBase {
     $typedConfigManager,
     protected Connection $connection,
     protected $messenger,
+    protected AccountProxyInterface $currentUser,
     protected WeatherApi $openWeatherClient,
   ) {
     parent::__construct($config_factory, $typedConfigManager);
@@ -36,6 +38,7 @@ class WeatherUserForm extends FormBase {
       $container->get('config.typed'),
       $container->get('database'),
       $container->get('messenger'),
+      $container->get('current_user'),
       $container->get('weather.api_validation')
     );
   }
@@ -51,8 +54,7 @@ class WeatherUserForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state): array {
-    $cityData = $this->openWeatherClient->getCityName();
-    $city = $cityData['city'];
+    $city = $this->openWeatherClient->getCityName();
     $form['user_city'] = [
       '#required' => TRUE,
       '#type' => 'textfield',
@@ -85,10 +87,13 @@ class WeatherUserForm extends FormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state): void {
     $cityName = $form_state->getValue('user_city');
+    $user = $this->currentUser->id();
     $data = [
+      'uid' => $user->id(),
       'user_city' => $cityName,
     ];
-    $this->connection->insert('weather_info')
+    $this->connection->merge('weather_info')
+      ->keys(['uid' => $user->id()])
       ->fields($data)
       ->execute();
     $this->messenger->addStatus(t('Your city is set.'));

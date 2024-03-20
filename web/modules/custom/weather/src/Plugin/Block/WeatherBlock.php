@@ -58,24 +58,15 @@ class WeatherBlock extends BlockBase implements ContainerFactoryPluginInterface 
   }
 
   /**
-   * Gets weather setting.
-   */
-  public function getWeatherSetting() {
-    $config = $this->configFactory->get('weather.settings');
-    return $config->get('api_admin_key');
-  }
-
-  /**
    * {@inheritdoc}
    */
-  public function build() {
-    $cityData = $this->openWeatherClient->getCityName();
-    $city = $cityData['city'];
+  public function build(): array {
+    $city = $this->openWeatherClient->getCityName();
     // Default value if we do not have value in the database.
     if (empty($city)) {
       $city = "Lutsk";
     }
-    $key = $this->getWeatherSetting();
+    $key = $this->openWeatherClient->getWeatherApiSetting();
     if (empty($key)) {
       return [];
     }

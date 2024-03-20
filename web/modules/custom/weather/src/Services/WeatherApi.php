@@ -4,6 +4,7 @@ namespace Drupal\weather\Services;
 
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Database\Connection;
+use Drupal\Core\Session\AccountProxyInterface;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\GuzzleException;
 
@@ -19,6 +20,7 @@ class WeatherApi {
     protected ConfigFactoryInterface $configFactory,
     protected ClientInterface $httpClient,
     protected Connection $connection,
+    protected AccountProxyInterface $currentUser,
   ) {
   }
 
@@ -61,7 +63,7 @@ class WeatherApi {
       $response = $this->httpClient->request('GET', 'https://api.openweathermap.org/data/2.5/weather?q=' . $city . '&units=metric&appid=' . $key);
       $body = (string) $response->getBody();
       $data = json_decode($body, TRUE);
-      $tempCel = intval(round($data['main']['temp']));
+      $tempCel = (int) round($data['main']['temp']);
       return [
         'city' => $city,
         'temperature' => $tempCel,
@@ -75,15 +77,24 @@ class WeatherApi {
   /**
    * Get a city name.
    */
-  public function getCityName(): array {
-    $city = $this->connection->select('weather_info', 't')
-      ->fields('t', ['user_city'])->execute()->fetchAll();
-    foreach ($city as $row) {
-      $city = $row->user_city;
-    }
-    return [
-      'city' => $city,
-    ];
+  public function getCityName() {
+    $uid = $this->currentUser->id();
+    $city = $this->connection
+      ->select('weather_info', 't')
+      ->condition('uid', $uid)
+      ->fields('t', ['user_city'])
+      ->execute();
+
+    return $city->fetchField();
+  }
+
+  /**
+   * Get weather api setting.
+   */
+  public function getWeatherApiSetting() {
+    return $this->configFactory
+      ->get('weather.settings')
+      ->get('api_admin_key');
   }
 
 }
