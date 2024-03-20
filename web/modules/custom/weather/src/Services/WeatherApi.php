@@ -32,7 +32,7 @@ class WeatherApi {
       return FALSE;
     }
     try {
-      $client = $this->httpClient->request('GET', 'https://api.openweathermap.org/data/2.5/weather?q=London&appid=' . $apiKey);
+      $this->httpClient->request('GET', 'https://api.openweathermap.org/data/2.5/weather?q=London&appid=' . $apiKey);
     }
     catch (GuzzleException $e) {
       return FALSE;
@@ -47,7 +47,7 @@ class WeatherApi {
     $config = $this->configFactory->get('weather.settings');
     $apiKey = $config->get('api_admin_key');
     try {
-      $res = $this->httpClient->request('GET', 'https://api.openweathermap.org/data/2.5/weather?q=' . $cityName . '&units=metric&appid=' . $apiKey);
+      $this->httpClient->request('GET', 'https://api.openweathermap.org/data/2.5/weather?q=' . $cityName . '&units=metric&appid=' . $apiKey);
     }
     catch (GuzzleException $e) {
       return FALSE;
@@ -58,19 +58,24 @@ class WeatherApi {
   /**
    * Get the value from OpenWeather.
    */
-  public function getWeatherValue(string $city, $key): array {
+  public function getWeatherValue(string $city): array {
+    $config = $this->configFactory->get('weather.settings');
+    $apiKey = $config->get('api_admin_key');
     try {
-      $response = $this->httpClient->request('GET', 'https://api.openweathermap.org/data/2.5/weather?q=' . $city . '&units=metric&appid=' . $key);
+      $response = $this->httpClient->request('GET', 'https://api.openweathermap.org/data/2.5/weather?q=' . $city . '&units=metric&appid=' . $apiKey);
       $body = (string) $response->getBody();
       $data = json_decode($body, TRUE);
       $tempCel = (int) round($data['main']['temp']);
+      if (empty($apiKey)) {
+        return [];
+      }
       return [
         'city' => $city,
         'temperature' => $tempCel,
       ];
     }
     catch (GuzzleException $e) {
-      return FALSE;
+      return [];
     }
   }
 
@@ -89,12 +94,18 @@ class WeatherApi {
   }
 
   /**
-   * Get weather api setting.
+   * Update field with a city.
    */
-  public function getWeatherApiSetting() {
-    return $this->configFactory
-      ->get('weather.settings')
-      ->get('api_admin_key');
+  public function cityUpdate($cityName): void {
+    $user = $this->currentUser->id();
+    $data = [
+      'uid' => $user,
+      'user_city' => $cityName,
+    ];
+    $this->connection->merge('weather_info')
+      ->keys(['uid' => $user])
+      ->fields($data)
+      ->execute();
   }
 
 }

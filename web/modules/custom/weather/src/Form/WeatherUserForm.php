@@ -20,7 +20,7 @@ class WeatherUserForm extends FormBase {
    */
   public function __construct(
     ConfigFactoryInterface $config_factory,
-    $typedConfigManager,
+                                    $typedConfigManager,
     protected Connection $connection,
     protected $messenger,
     protected AccountProxyInterface $currentUser,
@@ -87,16 +87,9 @@ class WeatherUserForm extends FormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state): void {
     $cityName = $form_state->getValue('user_city');
-    $user = $this->currentUser->id();
-    $data = [
-      'uid' => $user->id(),
-      'user_city' => $cityName,
-    ];
-    $this->connection->merge('weather_info')
-      ->keys(['uid' => $user->id()])
-      ->fields($data)
-      ->execute();
+    $this->openWeatherClient->cityUpdate($cityName);
     $this->messenger->addStatus(t('Your city is set.'));
+
   }
 
 }

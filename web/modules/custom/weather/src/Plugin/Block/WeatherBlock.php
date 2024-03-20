@@ -66,11 +66,7 @@ class WeatherBlock extends BlockBase implements ContainerFactoryPluginInterface 
     if (empty($city)) {
       $city = "Lutsk";
     }
-    $key = $this->openWeatherClient->getWeatherApiSetting();
-    if (empty($key)) {
-      return [];
-    }
-    $weatherData = $this->openWeatherClient->getWeatherValue($city, $key);
+    $weatherData = $this->openWeatherClient->getWeatherValue($city);
     $tempCel = $weatherData['temperature'];
     $temp = "$city $tempCel °C";
 
