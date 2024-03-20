@@ -2,8 +2,8 @@
 
 namespace Drupal\weather\Services;
 
-use Drupal\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Database\Connection;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\GuzzleException;
 
@@ -18,17 +18,8 @@ class WeatherApi {
   public function __construct(
     protected ConfigFactoryInterface $configFactory,
     protected ClientInterface $httpClient,
+    protected Connection $connection,
   ) {
-  }
-
-  /**
-   * Creates a new instance of WeatherApi.
-   */
-  public static function create(ContainerInterface $container): static {
-    return new static(
-      $container->get('config.factory'),
-      $container->get('http_client')
-    );
   }
 
   /**
@@ -79,6 +70,20 @@ class WeatherApi {
     catch (GuzzleException $e) {
       return FALSE;
     }
+  }
+
+  /**
+   * Get a city name.
+   */
+  public function getCityName(): array {
+    $city = $this->connection->select('weather_info', 't')
+      ->fields('t', ['user_city'])->execute()->fetchAll();
+    foreach ($city as $row) {
+      $city = $row->user_city;
+    }
+    return [
+      'city' => $city,
+    ];
   }
 
 }

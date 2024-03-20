@@ -19,7 +19,7 @@ class WeatherUserForm extends FormBase {
    */
   public function __construct(
     ConfigFactoryInterface $config_factory,
-                           $typedConfigManager,
+    $typedConfigManager,
     protected Connection $connection,
     protected $messenger,
     protected WeatherApi $openWeatherClient,
@@ -51,11 +51,8 @@ class WeatherUserForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state): array {
-    $city = $this->connection->select('weather_info', 't')
-      ->fields('t', ['user_city'])->execute()->fetchAll();
-    foreach ($city as $row) {
-      $city = $row->user_city;
-    }
+    $cityData = $this->openWeatherClient->getCityName();
+    $city = $cityData['city'];
     $form['user_city'] = [
       '#required' => TRUE,
       '#type' => 'textfield',

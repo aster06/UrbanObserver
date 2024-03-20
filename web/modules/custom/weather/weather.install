@@ -34,9 +34,9 @@ function weather_schema()
     $schema = weather_schema();
     $table = $schema['weather_info'];
 
-    if (\Drupal::service('database.schema')->tableExists('weather_info')) {
-      return;
+    if (!\Drupal::service('database.schema')->tableExists('weather_info')) {
+
+      \Drupal::database()->schema()->createTable('weather_info', $table);
     }
-    \Drupal::database()->schema()->createTable('weather_info', $table);
   }
 }

@@ -69,11 +69,8 @@ class WeatherBlock extends BlockBase implements ContainerFactoryPluginInterface 
    * {@inheritdoc}
    */
   public function build() {
-    $city = $this->connection->select('weather_info', 't')
-      ->fields('t', ['user_city'])->execute()->fetchAll();
-    foreach ($city as $row) {
-      $city = $row->user_city;
-    }
+    $cityData = $this->openWeatherClient->getCityName();
+    $city = $cityData['city'];
     // Default value if we do not have value in the database.
     if (empty($city)) {
       $city = "Lutsk";
