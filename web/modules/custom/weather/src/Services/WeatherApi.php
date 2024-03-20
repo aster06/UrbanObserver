@@ -2,8 +2,10 @@
 
 namespace Drupal\weather\Services;
 
+use Drupal\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Exception\GuzzleException;
 
 /**
  * Service class WeatherApi.
@@ -11,22 +13,35 @@ use GuzzleHttp\ClientInterface;
 class WeatherApi {
 
   /**
-   * Constructs a ConfigFactory and a Client object.
+   * Constructs a new WeatherApi object.
    */
   public function __construct(
     protected ConfigFactoryInterface $configFactory,
     protected ClientInterface $httpClient,
-  ) {}
+  ) {
+  }
+
+  /**
+   * Creates a new instance of WeatherApi.
+   */
+  public static function create(ContainerInterface $container): static {
+    return new static(
+      $container->get('config.factory'),
+      $container->get('http_client')
+    );
+  }
 
   /**
    * Weather Api Validation.
    */
   public function validateApi(string $apiKey): bool {
-    try {
-      $client = $this->httpClient->get('http_client');
-      $client->get('https://api.openweathermap.org/data/2.5/weather?q=London&appid=' . $apiKey);
+    if (empty($apiKey)) {
+      return FALSE;
     }
-    catch (\Exception $error) {
+    try {
+      $client = $this->httpClient->request('GET', 'https://api.openweathermap.org/data/2.5/weather?q=London&appid=' . $apiKey);
+    }
+    catch (GuzzleException $e) {
       return FALSE;
     }
     return TRUE;
@@ -39,15 +54,31 @@ class WeatherApi {
     $config = $this->configFactory->get('weather.settings');
     $apiKey = $config->get('api_admin_key');
     try {
-      $client = $this->httpClient->get('http_client');
-      $res = $client->get('https://api.openweathermap.org/data/2.5/weather?q=' . $cityName . '&units=metric&appid=' . $apiKey);
-      $body = (string) $res->getBody();
-      json_decode($body, TRUE);
+      $res = $this->httpClient->request('GET', 'https://api.openweathermap.org/data/2.5/weather?q=' . $cityName . '&units=metric&appid=' . $apiKey);
     }
-    catch (\Exception $error) {
+    catch (GuzzleException $e) {
       return FALSE;
     }
     return TRUE;
+  }
+
+  /**
+   * Get the value from OpenWeather.
+   */
+  public function getWeatherValue(string $city, $key): array {
+    try {
+      $response = $this->httpClient->request('GET', 'https://api.openweathermap.org/data/2.5/weather?q=' . $city . '&units=metric&appid=' . $key);
+      $body = (string) $response->getBody();
+      $data = json_decode($body, TRUE);
+      $tempCel = intval(round($data['main']['temp']));
+      return [
+        'city' => $city,
+        'temperature' => $tempCel,
+      ];
+    }
+    catch (GuzzleException $e) {
+      return FALSE;
+    }
   }
 
 }

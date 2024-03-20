@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function weather_schema()
+{
+  $schema['weather_info'] = [
+    'description' => 'The table for storing weather information',
+    'fields' => [
+      'id' => [
+        'description' => 'The primary identifier for cities',
+        'type' => 'serial',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'user_city' => [
+        'description' => 'User city.',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+    ],
+    'primary key' => ['id'],
+  ];
+  return $schema;
+
+  /**
+   * Implements hook_update_N().
+   */
+  function weather_update_10001(): void
+  {
+    $schema = weather_schema();
+    $table = $schema['weather_info'];
+
+    if (\Drupal::service('database.schema')->tableExists('weather_info')) {
+      return;
+    }
+    \Drupal::database()->schema()->createTable('weather_info', $table);
+  }
+}

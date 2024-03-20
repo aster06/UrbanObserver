@@ -1,0 +1,4 @@
+weather.user_custom_tab:
+  route_name: weather_user_form
+  base_route: entity.user.canonical
+  title: 'City for weather'

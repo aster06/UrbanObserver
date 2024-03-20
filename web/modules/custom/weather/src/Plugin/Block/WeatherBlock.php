@@ -5,8 +5,10 @@ namespace Drupal\weather\Plugin\Block;
 use Drupal\Core\Block\Attribute\Block;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Database\Connection;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\weather\Services\WeatherApi;
 use GuzzleHttp\ClientInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -21,13 +23,16 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class WeatherBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
-   * Constructs a ConfigFactory a Client object.
+   * Constructs a WeatherBlock object.
    */
-  public function __construct(array $configuration,
-                                                               $plugin_id,
-                                                               $plugin_definition,
-                              protected ConfigFactoryInterface $configFactory,
-                              protected ClientInterface $httpClient,
+  public function __construct(
+    array $configuration,
+    $plugin_id,
+    $plugin_definition,
+    protected ConfigFactoryInterface $configFactory,
+    protected ClientInterface $httpClient,
+    protected Connection $connection,
+    protected WeatherApi $openWeatherClient,
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
   }
@@ -38,14 +43,17 @@ class WeatherBlock extends BlockBase implements ContainerFactoryPluginInterface 
   public static function create(
     ContainerInterface $container,
     array $configuration,
-                       $plugin_id,
-                       $plugin_definition) {
+    $plugin_id,
+    $plugin_definition
+  ) {
     return new static(
       $configuration,
       $plugin_id,
       $plugin_definition,
       $container->get('config.factory'),
-      $container->get('http_client')
+      $container->get('http_client'),
+      $container->get('database'),
+      $container->get('weather.api_validation'),
     );
   }
 
@@ -61,13 +69,23 @@ class WeatherBlock extends BlockBase implements ContainerFactoryPluginInterface 
    * {@inheritdoc}
    */
   public function build() {
-    $city = 'Lutsk';
+    $city = $this->connection->select('weather_info', 't')
+      ->fields('t', ['user_city'])->execute()->fetchAll();
+    foreach ($city as $row) {
+      $city = $row->user_city;
+    }
+    // Default value if we do not have value in the database.
+    if (empty($city)) {
+      $city = "Lutsk";
+    }
     $key = $this->getWeatherSetting();
-    $res = $this->httpClient->get('https://api.openweathermap.org/data/2.5/weather?q=' . $city . '&units=metric&appid=' . $key);
-    $body = (string) $res->getBody();
-    $res = json_decode($body, TRUE);
-    $tempCel = intval(round($res['main']['temp']));
+    if (empty($key)) {
+      return [];
+    }
+    $weatherData = $this->openWeatherClient->getWeatherValue($city, $key);
+    $tempCel = $weatherData['temperature'];
     $temp = "$city $tempCel °C";
+
     return [
       '#theme' => 'weather',
       '#temp' => $temp,
