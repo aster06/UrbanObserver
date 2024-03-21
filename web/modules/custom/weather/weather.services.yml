@@ -3,3 +3,9 @@ services:
     class: Drupal\weather\Services\WeatherApi
     arguments:
       [ '@config.factory', '@http_client', '@database', '@current_user' ]
+  cache_context.weather_city:
+    class: Drupal\weather\Cache\WeatherCacheContext
+    tags:
+        - { name: cache.context }
+    arguments:
+      [ '@current_user', '@database', '@weather.api_validation' ]

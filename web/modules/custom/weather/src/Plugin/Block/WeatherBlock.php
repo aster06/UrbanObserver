@@ -7,6 +7,7 @@ use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Database\Connection;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\Core\Session\AccountProxyInterface;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\weather\Services\WeatherApi;
 use GuzzleHttp\ClientInterface;
@@ -32,6 +33,7 @@ class WeatherBlock extends BlockBase implements ContainerFactoryPluginInterface 
     protected ConfigFactoryInterface $configFactory,
     protected ClientInterface $httpClient,
     protected Connection $connection,
+    protected AccountProxyInterface $currentUser,
     protected WeatherApi $openWeatherClient,
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
@@ -53,6 +55,7 @@ class WeatherBlock extends BlockBase implements ContainerFactoryPluginInterface 
       $container->get('config.factory'),
       $container->get('http_client'),
       $container->get('database'),
+      $container->get('current_user'),
       $container->get('weather.api_validation'),
     );
   }
@@ -73,6 +76,12 @@ class WeatherBlock extends BlockBase implements ContainerFactoryPluginInterface 
     return [
       '#theme' => 'weather',
       '#temp' => $temp,
+      '#cache' => [
+        'contexts' => [
+          'weather_city',
+        ],
+        'max-age' => 3600,
+      ],
     ];
   }
 
