@@ -2,13 +2,14 @@
 
 namespace Drupal\registration\Form;
 
-use Drupal\Core\Database\Connection;
 use Drupal\Core\Entity\ContentEntityForm;
 use Drupal\Core\Entity\EntityRepositoryInterface;
+use Drupal\Core\Entity\EntityTypeBundleInfoInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Locale\CountryManagerInterface;
+use Drupal\registration\Services\CustomDatabaseTables;
 use Drupal\user\AccountForm;
 use Drupal\user\RegisterForm;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -26,9 +27,11 @@ class RegistrationForm extends RegisterForm {
     protected EntityRepositoryInterface $entity_repository,
     protected LanguageManagerInterface $language_manager,
     protected EntityTypeManagerInterface $entity_type_manager,
-    protected Connection $database,
+    protected CustomDatabaseTables $customDatabaseTables,
+    protected EntityTypeBundleInfoInterface $entity_type_bundle_info,
+    protected $time,
   ) {
-    parent::__construct($entity_repository, $language_manager);
+    parent::__construct($entity_repository, $language_manager, $entity_type_bundle_info, $time);
   }
 
   /**
@@ -40,7 +43,9 @@ class RegistrationForm extends RegisterForm {
       $container->get('entity.repository'),
       $container->get('language_manager'),
       $container->get('entity_type.manager'),
-      $container->get('database'),
+      $container->get('registration.custom_tables'),
+      $container->get('entity_type.bundle.info'),
+      $container->get('datetime.time'),
     );
   }
 
@@ -96,34 +101,17 @@ class RegistrationForm extends RegisterForm {
    *
    * @throws \Exception
    */
-  public function save(array $form, FormStateInterface $form_state) {
+  public function save(array $form, FormStateInterface $form_state): void {
     parent::save($form, $form_state);
     $values = $form_state->getValues();
     $city = $values['user_city'];
     $country = $values['country'];
-
     $genres = $values['categories'];
-    $categories = array_filter($genres);
 
     $account = $this->entity;
     $uid = $account->id();
 
-    $this->database->insert('registration_info')
-      ->fields([
-        'uid' => $uid,
-        'user_city' => $city,
-        'country' => $country,
-      ])
-      ->execute();
-    $category_row = $this->database->insert('categories_info')
-      ->fields([
-        'uid',
-        'categories',
-      ]);
-    foreach ($categories as $item) {
-      $category_row->values([$uid, $item]);
-    }
-    $category_row->execute();
+    $this->customDatabaseTables->databaseTables($uid, $city, $country, $genres);
   }
 
 }
