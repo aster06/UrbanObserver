@@ -6,35 +6,39 @@
  */
 
 /**
- * Implements hook_schema().
+ * Implements hook_update_N().
  */
-function weather_schema(): array {
-  $schema['weather_info'] = [
-    'description' => 'The table for storing weather information',
-    'fields' => [
-      'id' => [
-        'description' => 'The primary identifier for cities',
-        'type' => 'serial',
-        'not null' => TRUE,
-        'unsigned' => TRUE,
+function weather_update_10001(): void {
+  if (\Drupal::service('database')->schema()->tableExists('weather_info')) {
+
+    $table['weather_info'] = [
+      'description' => 'The table for storing weather information',
+      'fields' => [
+        'id' => [
+          'description' => 'The primary identifier for cities',
+          'type' => 'serial',
+          'not null' => TRUE,
+          'unsigned' => TRUE,
+        ],
+        'uid' => [
+          'description' => 'The primary identifier for users',
+          'type' => 'int',
+          'not null' => TRUE,
+          'unsigned' => TRUE,
+        ],
+        'user_city' => [
+          'description' => 'User city.',
+          'type' => 'varchar',
+          'length' => 100,
+          'not null' => TRUE,
+          'default' => '',
+        ],
       ],
-      'uid' => [
-        'description' => 'The primary identifier for users',
-        'type' => 'int',
-        'not null' => TRUE,
-        'unsigned' => TRUE,
-      ],
-      'user_city' => [
-        'description' => 'User city.',
-        'type' => 'varchar',
-        'length' => 100,
-        'not null' => TRUE,
-        'default' => '',
-      ],
-    ],
-    'primary key' => ['id'],
-  ];
-  return $schema;
+      'primary key' => ['id'],
+    ];
+
+    \Drupal::database()->schema()->createTable('weather_info', $table);
+  }
 }
 
 /**
