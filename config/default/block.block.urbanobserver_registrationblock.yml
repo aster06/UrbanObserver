@@ -1,20 +1,20 @@
-uuid: b2f43999-0a4a-433f-a226-a0a5f039cd8f
+uuid: 10ddf188-b056-490a-adbd-d10ff5566afb
 langcode: en
 status: true
 dependencies:
   module:
-    - weather
+    - registration
   theme:
     - urbanobserver
-id: urbanobserver_weatherblock
+id: urbanobserver_registrationblock
 theme: urbanobserver
 region: secondary_menu
 weight: 0
 provider: null
-plugin: weather
+plugin: registration
 settings:
-  id: weather
-  label: 'Weather block'
+  id: registration
+  label: 'Registration block'
   label_display: '0'
-  provider: weather
+  provider: registration
 visibility: {  }

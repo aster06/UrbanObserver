@@ -35,19 +35,16 @@ function weather_schema() {
     'primary key' => ['id'],
   ];
   return $schema;
+}
 
-  /**
-   * Implements hook_update_N().
-   */
-  function weather_update_10001(): void {
-    if (\Drupal::service('database.schema')->tableExists('weather_info')) {
-      return;
-    }
-
+/**
+ * Implements hook_update_N().
+ */
+function weather_update_10001(): void {
+  if (\Drupal::service('database')->schema()->tableExists('weather_info')) {
     $schema = weather_schema();
     $table = $schema['weather_info'];
 
-    \Drupal::database()->schema()->createTable('weather_info', $table);
+    \Drupal::database()->schema()->dropTable('weather_info', $table);
   }
-
 }

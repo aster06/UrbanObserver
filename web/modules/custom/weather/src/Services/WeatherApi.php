@@ -85,7 +85,7 @@ class WeatherApi {
   public function getCityName() {
     $uid = $this->currentUser->id();
     $city = $this->connection
-      ->select('weather_info', 't')
+      ->select('registration_info', 't')
       ->condition('uid', $uid)
       ->fields('t', ['user_city'])
       ->execute();
@@ -102,7 +102,7 @@ class WeatherApi {
       'uid' => $user,
       'user_city' => $cityName,
     ];
-    $this->connection->merge('weather_info')
+    $this->connection->merge('registration_info')
       ->keys(['uid' => $user])
       ->fields($data)
       ->execute();

@@ -20,13 +20,12 @@ class WeatherUserForm extends FormBase {
    */
   public function __construct(
     ConfigFactoryInterface $config_factory,
-                                    $typedConfigManager,
+    $typedConfigManager,
     protected Connection $connection,
     protected $messenger,
     protected AccountProxyInterface $currentUser,
     protected WeatherApi $openWeatherClient,
   ) {
-    parent::__construct($config_factory, $typedConfigManager);
   }
 
   /**
