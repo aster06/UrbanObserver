@@ -8,17 +8,17 @@ definitions:
     expanded: false
     enabled: true
   user__page:
-    enabled: false
+    weight: -48
     menu_name: account
     parent: ''
+    enabled: false
     expanded: false
-    weight: -47
   user__logout:
-    parent: 'menu_link_content:3661ea5b-e32d-43f1-afc5-80516c125929'
+    weight: -46
+    parent: ''
     menu_name: account
-    weight: -50
-    expanded: false
     enabled: true
+    expanded: false
   standard__front_page:
     weight: -43
     menu_name: main

@@ -1,0 +1,7 @@
+register.form:
+  path: '/user/register'
+  defaults:
+    _entity_form: 'user.register'
+    _title: 'User registration'
+  requirements:
+    _access_user_register: 'TRUE'

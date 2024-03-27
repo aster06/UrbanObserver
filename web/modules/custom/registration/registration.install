@@ -1,0 +1,81 @@
+<?php
+
+/**
+ * @file
+ * Primary module install for registration module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function registration_schema(): array {
+  $schema['registration_info'] = [
+    'description' => 'The table for storing registration information',
+    'fields' => [
+      'id' => [
+        'description' => 'The primary identifier.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'uid' => [
+        'description' => 'The primary identifier for users',
+        'type' => 'int',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'country' => [
+        'description' => 'The country of the user.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'user_city' => [
+        'description' => 'User city.',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+    ],
+    'primary key' => ['id'],
+  ];
+  $schema['categories_info'] = [
+    'description' => 'The table for storing registration information',
+    'fields' => [
+      'uid' => [
+        'description' => 'The primary identifier for users',
+        'type' => 'int',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'categories' => [
+        'description' => 'Value of the checkbox.',
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => ['uid', 'categories'],
+  ];
+
+  return $schema;
+
+}
+
+/**
+ * Implements hook_update_N().
+ */
+function registration_update_10001(): void {
+  $schema = registration_schema();
+
+  if (!\Drupal::service('database')->schema()->tableExists('registration_info')) {
+    $table_registration = $schema['registration_info'];
+    \Drupal::database()->schema()->createTable('registration_info', $table_registration);
+  }
+  if (!\Drupal::service('database')->schema()->tableExists('categories_info')) {
+    $table_categories = $schema['categories_info'];
+    \Drupal::database()->schema()->createTable('categories_info', $table_categories);
+  }
+}

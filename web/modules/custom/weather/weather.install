@@ -6,48 +6,46 @@
  */
 
 /**
- * Implements hook_schema().
+ * Implements hook_update_N().
  */
-function weather_schema() {
-  $schema['weather_info'] = [
-    'description' => 'The table for storing weather information',
-    'fields' => [
-      'id' => [
-        'description' => 'The primary identifier for cities',
-        'type' => 'serial',
-        'not null' => TRUE,
-        'unsigned' => TRUE,
-      ],
-      'uid' => [
-        'description' => 'The primary identifier for users',
-        'type' => 'int',
-        'not null' => TRUE,
-        'unsigned' => TRUE,
-      ],
-      'user_city' => [
-        'description' => 'User city.',
-        'type' => 'varchar',
-        'length' => 100,
-        'not null' => TRUE,
-        'default' => '',
-      ],
-    ],
-    'primary key' => ['id'],
-  ];
-  return $schema;
+function weather_update_10001(): void {
+  if (\Drupal::service('database')->schema()->tableExists('weather_info')) {
 
-  /**
-   * Implements hook_update_N().
-   */
-  function weather_update_10001(): void {
-    if (\Drupal::service('database.schema')->tableExists('weather_info')) {
-      return;
-    }
-
-    $schema = weather_schema();
-    $table = $schema['weather_info'];
+    $table['weather_info'] = [
+      'description' => 'The table for storing weather information',
+      'fields' => [
+        'id' => [
+          'description' => 'The primary identifier for cities',
+          'type' => 'serial',
+          'not null' => TRUE,
+          'unsigned' => TRUE,
+        ],
+        'uid' => [
+          'description' => 'The primary identifier for users',
+          'type' => 'int',
+          'not null' => TRUE,
+          'unsigned' => TRUE,
+        ],
+        'user_city' => [
+          'description' => 'User city.',
+          'type' => 'varchar',
+          'length' => 100,
+          'not null' => TRUE,
+          'default' => '',
+        ],
+      ],
+      'primary key' => ['id'],
+    ];
 
     \Drupal::database()->schema()->createTable('weather_info', $table);
   }
+}
 
+/**
+ * Implements hook_update_N().
+ */
+function weather_update_10002(): void {
+  if (\Drupal::service('database')->schema()->tableExists('weather_info')) {
+    \Drupal::database()->schema()->dropTable('weather_info');
+  }
 }

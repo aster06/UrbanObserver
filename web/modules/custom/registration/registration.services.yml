@@ -1,0 +1,5 @@
+services:
+  registration.custom_tables:
+    class: Drupal\registration\Services\CustomDatabaseTables
+    arguments:
+      ['@database']
