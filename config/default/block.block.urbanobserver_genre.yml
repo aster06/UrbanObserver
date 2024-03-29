@@ -1,0 +1,29 @@
+uuid: bccff2e4-1126-450b-839c-7914418ccc86
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.genre
+  module:
+    - facets
+    - system
+  theme:
+    - urbanobserver
+id: urbanobserver_genre
+theme: urbanobserver
+region: first_content
+weight: 0
+provider: null
+plugin: 'facet_block:genre'
+settings:
+  id: 'facet_block:genre'
+  label: Genre
+  label_display: '0'
+  provider: facets
+  context_mapping: {  }
+  block_id: urbanobserver_genre
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /solar-view

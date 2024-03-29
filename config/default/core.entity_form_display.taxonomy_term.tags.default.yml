@@ -12,6 +12,13 @@ targetEntityType: taxonomy_term
 bundle: tags
 mode: default
 content:
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
   name:
     type: menu_item_extras_view_mode_selector_select
     weight: 0

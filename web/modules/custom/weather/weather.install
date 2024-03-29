@@ -9,7 +9,7 @@
  * Implements hook_update_N().
  */
 function weather_update_10001(): void {
-  if (\Drupal::service('database')->schema()->tableExists('weather_info')) {
+  if (!\Drupal::service('database')->schema()->tableExists('weather_info')) {
 
     $table['weather_info'] = [
       'description' => 'The table for storing weather information',
