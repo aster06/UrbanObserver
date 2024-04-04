@@ -1,0 +1,8 @@
+ckeditor5.plugin.ckeditor_custom_button:
+  type: mapping
+  label: 'CKEditor Link Plugin'
+  mapping:
+    default_color:
+      type: string
+      label: 'Default Color for Links'
+      description: 'Specify the default color for links.'

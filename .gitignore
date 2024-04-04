@@ -7,6 +7,7 @@
 /web/themes/contrib/
 /web/profiles/contrib/
 /web/sites/default/files/
+node_modules
 
 # Ignore sensitive information
 

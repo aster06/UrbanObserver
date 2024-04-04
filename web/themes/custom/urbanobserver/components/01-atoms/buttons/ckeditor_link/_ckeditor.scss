@@ -1,0 +1,147 @@
+.ucb-link-button {
+  transition: box-shadow 0.5s ease, background-color 0.5s ease, color 0.5s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  background-clip: padding-box;
+  border-radius: 3px;
+  text-decoration: none !important;
+  display: inline-block;
+  padding: 5px 10px;
+  font-weight: bold;
+  line-height: 1.5em;
+}
+
+.container {
+  .ucb-button-group {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+.container {
+  .ucb-button-group {
+    .ucb-link-button {
+      flex-grow: 1;
+      border-radius: 0px;
+      background-clip: padding-box;
+      text-align: center;
+      vertical-align: middle;
+      border-style: solid;
+      position: relative;
+      border: none;
+      overflow: hidden;
+      width: 100%;
+      margin-bottom: 0;
+      border-radius: 0px !important;
+    }
+  }
+}
+
+/* Button in Editor - slightly expands a button's clickable area in CK editor to make toggling button UI easier via button element click */
+.ck-content {
+  .ucb-link-button, .cke-small, .cke-regular, .cke-large {
+    padding: 5px 15px;
+  }
+}
+
+
+/* Colors */
+.ucb-link-button {
+  &-blue {
+    background-color: #0277bd;
+  }
+
+  &-black {
+    background-color: #000;
+  }
+
+  &-gray {
+    background-color: #eeeeee;
+  }
+
+  &-white {
+    background-color: #fff;
+  }
+
+  &-gold {
+    background-color: #cfb87c;
+  }
+
+  /* Size */
+  .ucb-link-button-large {
+    font-size: 125%;
+  }
+
+  .ucb-link-button-regular {
+    font-size: 100%;
+  }
+
+  .ucb-link-button-small {
+    font-size: 85%;
+    padding: 1px 6px;
+  }
+}
+/* Width */
+.ucb-link-button.ucb-link-button-full {
+  display: block;
+  text-align: center;
+}
+
+/* Hover + Focus */
+.ucb-link-button:hover {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3)
+}
+
+.ucb-link-button.ucb-link-button-blue:hover,
+.ucb-link-button.ucb-link-button-blue:focus {
+  color: #fff !important;
+  background-color: #026baa;
+}
+
+.ucb-link-button.ucb-link-button-black:hover,
+.ucb-link-button.ucb-link-button-black:focus {
+  color: #fff !important;
+  background-color: #333333;
+}
+
+.ucb-link-button.ucb-link-button-gray:hover,
+.ucb-link-button.ucb-link-button-gray:focus {
+  color: #111111 !important;
+  background-color: #d6d6d6;
+}
+
+.ucb-link-button.ucb-link-button-white:hover,
+.ucb-link-button.ucb-link-button-white:focus {
+  color: #111111 !important;
+  background-color: #e6e6e6;
+}
+
+.ucb-link-button.ucb-link-button-gold:hover,
+.ucb-link-button.ucb-link-button-gold:focus {
+  color: #111111 !important;
+  background-color: #a6a6a6;
+}
+
+.container > .ucb-button-group > .ucb-link-button-large {
+  padding: 20px;
+}
+/* Colors */
+.ucb-text-link-button-blue {
+  color: #0277bd;
+}
+
+.ucb-text-link-button-black {
+  color: #000;
+}
+
+.ucb-text-link-button-gray {
+  color: #eeeeee;
+}
+
+.ucb-text-link-button-white {
+  color: #fff;
+}
+
+.ucb-text-link-button-gold {
+  color: #cfb87c;
+}
