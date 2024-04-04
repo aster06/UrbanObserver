@@ -27,14 +27,11 @@ export default class FormView extends View {
     this.focusTracker = new FocusTracker();
     this.keystrokes = new KeystrokeHandler();
 
-    //let textDefaultColor = drupalSettings.ckeditor_custom_button.default_color;
-
     // Creates Dropdowns for Color, Size, Text color
     this.colorDropdown = this._createSelectionDropdown(locale, 'Color', colorIcon, 'color', colorOptions, defaultColor)
     this.sizeDropdown = this._createSelectionDropdown(locale, 'Size', sizeOptions[defaultSize].icon, 'size', sizeOptions, defaultSize )
     this.textDropdown = this._createSelectionDropdown(locale, 'Text', colorTextIcon, 'text', textColorOptions, textDefaultColor )
     // Creates the main input field.
-    // this.innerTextInputView = this._createInput( 'Button Text' );
     this.linkInputView = this._createInput( 'Add Link' );
 
     // Sets defaults
@@ -57,7 +54,6 @@ export default class FormView extends View {
       this.sizeDropdown,
       this.colorDropdown,
       this.textDropdown,
-      // this.innerTextInputView,
       this.linkInputView,
       this.saveButtonView,
       this.cancelButtonView
@@ -163,7 +159,7 @@ export default class FormView extends View {
       icon,
       tooltip: !!icon, // Displays the tooltip on hover if there is an icon
       isToggleable: true, // Allows the button with the attribute's current value to display as selected
-      withText: !icon // Displays the button as text if the icon is falsey
+      withText: !icon // Displays the button as text if the icon is false.
     });
     // Allows the button with the attribute's current value to display as selected
     buttonView.bind('isOn').to(this, attribute, attributeValue => attributeValue === value);
