@@ -1,0 +1,5 @@
+name: Custom stores map
+type: module
+description: 'Custom map.'
+package: Custom
+core_version_requirement: ^9 || ^10

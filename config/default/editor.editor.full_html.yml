@@ -96,6 +96,8 @@ settings:
       multiBlock: true
     ckeditor5_sourceEditing:
       allowed_tags: {  }
+    ckeditor_custom_button:
+      default_color: blue
 image_upload:
   status: true
   scheme: public

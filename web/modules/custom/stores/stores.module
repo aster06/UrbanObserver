@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ */
+
+/**
+ * Implements hook_views_data().
+ */
+function stores_views_data():array {
+  $data['views']['custom_stores'] = [
+    'title' => t('Stores'),
+    'help' => t('Displays a map with stores.'),
+    'area' => [
+      'id' => 'custom_stores',
+    ],
+  ];
+  return $data;
+}

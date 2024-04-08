@@ -42,3 +42,4 @@ $space-one-eighth: calc($space/8);
 @mixin space-stack-page {
   margin-bottom: $space-double;
 }
+#map { height: 350px; }
