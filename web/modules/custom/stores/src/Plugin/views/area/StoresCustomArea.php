@@ -35,7 +35,7 @@ class StoresCustomArea extends AreaPluginBase {
     $form['color_border'] = [
       '#title' => $this->t('Select a color for markers border.'),
       '#type' => 'color',
-      '#default_value' => $this->options['color'],
+      '#default_value' => $this->options['color_border'],
       '#required' => TRUE,
     ];
 
@@ -84,7 +84,7 @@ class StoresCustomArea extends AreaPluginBase {
       ];
     }
 
-    $build['#attached']['drupalSettings']['mapstores'][$config_id] = $stores_variables;
+    $build['#attached']['drupalSettings']['stores'][$config_id] = $stores_variables;
     $build['#markup'] = "<div id='map' data-config-id='$config_id'></div>";
     return $build;
   }
@@ -95,12 +95,12 @@ class StoresCustomArea extends AreaPluginBase {
   public function validate():array {
     $errors = parent::validate();
     $size = $this->options['size'];
-    if ($size < 0 || $size > 25) {
-      $errors[] = $this->t('Marker size must be between 0 and 25.');
+    if (!is_numeric($size) || $size < 0 || $size > 25) {
+      $errors[] = $this->t('Marker size must be a number between 0 and 25.');
     }
     $zoom = $this->options['zoom'];
-    if ($zoom < 0) {
-      $errors[] = $this->t('Zoom should be positive.');
+    if (!is_numeric($zoom) || $zoom < 0) {
+      $errors[] = $this->t('Zoom should be a positive number.');
     }
     return $errors;
   }

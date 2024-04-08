@@ -5,11 +5,11 @@
         function (element) {
           const configId = element.getAttribute('data-config-id');
           const coordinates = drupalSettings.coordinates[configId];
-          const mapstores = drupalSettings.mapstores[configId];
-          const color_border = mapstores.color_border;
-          const color = mapstores.color;
-          const size = mapstores.size;
-          const zoom = mapstores.zoom;
+          const stores = drupalSettings.stores[configId];
+          const color_border = stores.color_border;
+          const color = stores.color;
+          const size = stores.size;
+          const zoom = stores.zoom;
           const map = L.map(element).setView([51.505, -0.09], zoom);
           L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
