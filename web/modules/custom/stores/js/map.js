@@ -1,7 +1,7 @@
 (function (Drupal, once, drupalSettings) {
   Drupal.behaviors.storesBehavior = {
     attach(context) {
-      once('storesBehavior', '#map', context).forEach(
+      once('storesBehavior', '.map_leaflet', context).forEach(
         function (element) {
           const configId = element.getAttribute('data-config-id');
           const coordinates = drupalSettings.coordinates[configId];

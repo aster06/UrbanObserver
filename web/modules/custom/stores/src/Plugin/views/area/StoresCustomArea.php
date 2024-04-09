@@ -48,16 +48,20 @@ class StoresCustomArea extends AreaPluginBase {
 
     $form['size'] = [
       '#title' => $this->t('Select a size of the markers.'),
-      '#type' => 'textfield',
+      '#type' => 'number',
       '#default_value' => $this->options['size'],
       '#required' => TRUE,
+      '#min' => 1,
+      '#max' => 25,
     ];
 
     $form['zoom'] = [
       '#title' => $this->t('Select a zoom for the map.'),
-      '#type' => 'textfield',
+      '#type' => 'number',
       '#default_value' => $this->options['zoom'],
       '#required' => TRUE,
+      '#min' => 1,
+      '#max' => 100,
     ];
   }
 
@@ -85,24 +89,8 @@ class StoresCustomArea extends AreaPluginBase {
     }
 
     $build['#attached']['drupalSettings']['stores'][$config_id] = $stores_variables;
-    $build['#markup'] = "<div id='map' data-config-id='$config_id'></div>";
+    $build['#markup'] = "<div class='map_leaflet' data-config-id='$config_id'></div>";
     return $build;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function validate():array {
-    $errors = parent::validate();
-    $size = $this->options['size'];
-    if (!is_numeric($size) || $size < 0 || $size > 25) {
-      $errors[] = $this->t('Marker size must be a number between 0 and 25.');
-    }
-    $zoom = $this->options['zoom'];
-    if (!is_numeric($zoom) || $zoom < 0) {
-      $errors[] = $this->t('Zoom should be a positive number.');
-    }
-    return $errors;
   }
 
 }
