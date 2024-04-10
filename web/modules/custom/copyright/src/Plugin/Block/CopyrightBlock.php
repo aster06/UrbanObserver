@@ -4,9 +4,12 @@ namespace Drupal\copyright\Plugin\Block;
 
 use Drupal\Core\Block\Attribute\Block;
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\Core\Url;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a 'Copyright' Block.
@@ -16,13 +19,29 @@ use Drupal\Core\Url;
   admin_label: new TranslatableMarkup('Copyright block'),
   category: new TranslatableMarkup('Copyright block')
 )]
-class CopyrightBlock extends BlockBase {
+class CopyrightBlock extends BlockBase implements ContainerFactoryPluginInterface {
+
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, protected EntityTypeManagerInterface $entityTypeManager) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
+  }
 
   /**
    * {@inheritdoc}
    */
-  public function build() {
-    $storage = \Drupal::entityTypeManager()->getStorage('config_pages');
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition): static {
+    return new static(
+      $configuration,
+      $plugin_id,
+      $plugin_definition,
+      $container->get('entity_type.manager')
+    );
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function build(): array {
+    $storage = $this->entityTypeManager->getStorage('config_pages');
     $entity = $storage->load('global_configurations');
     if (!$entity) {
       return [];
