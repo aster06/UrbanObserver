@@ -1,0 +1,20 @@
+uuid: 0c143c0b-4312-4561-b2e1-982f769b4801
+langcode: en
+status: true
+dependencies:
+  module:
+    - copyright
+  theme:
+    - urbanobserver
+id: urbanobserver_copyrightblock
+theme: urbanobserver
+region: footer
+weight: 0
+provider: null
+plugin: copyright
+settings:
+  id: copyright
+  label: 'Copyright block'
+  label_display: '0'
+  provider: copyright
+visibility: {  }

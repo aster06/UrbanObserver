@@ -239,11 +239,11 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: custom_stores
-          empty: false
+          empty: true
           color_border: '#c19a9a'
           color: '#855de5'
-          size: '15'
-          zoom: '1'
+          size: '20'
+          zoom: '3'
       footer: {  }
       display_extenders: {  }
     cache_metadata:

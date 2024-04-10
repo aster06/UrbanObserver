@@ -1,0 +1,22 @@
+uuid: be80d1be-64dd-4f40-946d-d7e555b7af13
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.advertising_block
+id: block_content.advertising_block.status
+field_name: status
+entity_type: block_content
+bundle: advertising_block
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

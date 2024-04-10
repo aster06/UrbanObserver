@@ -1,0 +1,18 @@
+uuid: da186811-362e-4b7a-b6a0-a7c75ce15ecd
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.cds_block
+id: block_content.cds_block.info
+field_name: info
+entity_type: block_content
+bundle: cds_block
+label: 'Block description'
+description: 'A brief description of your block.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

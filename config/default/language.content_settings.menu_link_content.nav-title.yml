@@ -1,0 +1,18 @@
+uuid: c302e197-f85d-409d-8946-17b2208ead93
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.nav-title
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: menu_link_content.nav-title
+target_entity_type_id: menu_link_content
+target_bundle: nav-title
+default_langcode: site_default
+language_alterable: true

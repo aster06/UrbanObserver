@@ -9,7 +9,7 @@ dependencies:
 id: urbanobserver_registrationblock
 theme: urbanobserver
 region: secondary_menu
-weight: 0
+weight: -20
 provider: null
 plugin: registration
 settings:

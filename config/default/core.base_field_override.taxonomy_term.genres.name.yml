@@ -1,0 +1,18 @@
+uuid: 2a243377-77df-4da4-b6de-ed993a778b64
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.genres
+id: taxonomy_term.genres.name
+field_name: name
+entity_type: taxonomy_term
+bundle: genres
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,18 @@
+uuid: 07315722-4714-4b1f-9cda-3f6778921309
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.entertainment
+id: menu_link_content.entertainment.title
+field_name: title
+entity_type: menu_link_content
+bundle: entertainment
+label: 'Menu link title'
+description: 'The text to be used for this link in the menu.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

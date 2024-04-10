@@ -1,0 +1,8 @@
+uuid: 7f8d09e2-3b97-485d-86e5-337e59675424
+langcode: en
+status: true
+dependencies: {  }
+id: copyrights_block
+label: 'Copyrights block'
+revision: 0
+description: ''

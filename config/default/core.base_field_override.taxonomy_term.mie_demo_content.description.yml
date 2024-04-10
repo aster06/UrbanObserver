@@ -1,0 +1,21 @@
+uuid: bb0f4e17-a8a2-4934-a49b-5af5ba79c7fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.mie_demo_content
+  module:
+    - text
+id: taxonomy_term.mie_demo_content.description
+field_name: description
+entity_type: taxonomy_term
+bundle: mie_demo_content
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

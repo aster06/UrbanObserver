@@ -1,0 +1,18 @@
+uuid: 1b7c1197-72b4-412c-a9f7-db19cb72006c
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.nav-title
+id: menu_link_content.nav-title.changed
+field_name: changed
+entity_type: menu_link_content
+bundle: nav-title
+label: Changed
+description: 'The time that the menu link was last edited.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

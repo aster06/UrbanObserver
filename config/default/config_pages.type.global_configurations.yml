@@ -1,0 +1,17 @@
+uuid: 91d79479-aa80-460e-9415-65a7f69376c3
+langcode: en
+status: true
+dependencies: {  }
+id: global_configurations
+label: 'Global configurations'
+token: false
+context:
+  show_warning: true
+  group:
+    language: true
+  fallback:
+    language: ''
+menu:
+  path: /global--configurations
+  weight: 0
+  description: 'Global configurations'

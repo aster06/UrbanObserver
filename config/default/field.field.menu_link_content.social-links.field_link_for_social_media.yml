@@ -6,7 +6,14 @@ dependencies:
     - field.storage.menu_link_content.field_link_for_social_media
     - system.menu.social-links
   module:
+    - content_translation
     - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      alt: alt
+      title: title
+      file: '0'
 id: menu_link_content.social-links.field_link_for_social_media
 field_name: field_link_for_social_media
 entity_type: menu_link_content
@@ -14,7 +21,7 @@ bundle: social-links
 label: 'Link for social_media'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

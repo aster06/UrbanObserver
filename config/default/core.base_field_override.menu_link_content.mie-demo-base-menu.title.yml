@@ -1,0 +1,18 @@
+uuid: 80252fac-b054-48af-a630-127e6c7e1ff0
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.mie-demo-base-menu
+id: menu_link_content.mie-demo-base-menu.title
+field_name: title
+entity_type: menu_link_content
+bundle: mie-demo-base-menu
+label: 'Menu link title'
+description: 'The text to be used for this link in the menu.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

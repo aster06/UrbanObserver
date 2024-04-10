@@ -1,0 +1,18 @@
+uuid: cef773d7-c7c4-4d57-b093-a9b81cdcd782
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.copyrights_block
+id: block_content.copyrights_block.changed
+field_name: changed
+entity_type: block_content
+bundle: copyrights_block
+label: Changed
+description: 'The time that the content block was last edited.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed
