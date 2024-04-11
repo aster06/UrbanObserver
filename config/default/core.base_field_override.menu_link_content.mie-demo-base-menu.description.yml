@@ -1,0 +1,18 @@
+uuid: fcb28258-b75b-4a9c-b6a4-12aafd535178
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.mie-demo-base-menu
+id: menu_link_content.mie-demo-base-menu.description
+field_name: description
+entity_type: menu_link_content
+bundle: mie-demo-base-menu
+label: Description
+description: 'Shown when hovering over the menu link.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

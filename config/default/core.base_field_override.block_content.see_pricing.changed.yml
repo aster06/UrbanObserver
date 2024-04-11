@@ -1,0 +1,18 @@
+uuid: f5cc5d57-1d9e-4d0e-85f7-adb597462123
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.see_pricing
+id: block_content.see_pricing.changed
+field_name: changed
+entity_type: block_content
+bundle: see_pricing
+label: Changed
+description: 'The time that the content block was last edited.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

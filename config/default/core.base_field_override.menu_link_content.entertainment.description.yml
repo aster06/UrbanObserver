@@ -1,0 +1,18 @@
+uuid: 86fb513c-74fa-41a1-a74f-cc2d2cf21a3d
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.entertainment
+id: menu_link_content.entertainment.description
+field_name: description
+entity_type: menu_link_content
+bundle: entertainment
+label: Description
+description: 'Shown when hovering over the menu link.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

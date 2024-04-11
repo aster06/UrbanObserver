@@ -1,0 +1,31 @@
+uuid: 57663de0-c625-4aec-85b2-af0a560ec2f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.global_configurations
+    - field.field.config_pages.global_configurations.field_copyrights
+    - field.field.config_pages.global_configurations.field_social_links_text
+  module:
+    - text
+id: config_pages.global_configurations.default
+targetEntityType: config_pages
+bundle: global_configurations
+mode: default
+content:
+  field_copyrights:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_social_links_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

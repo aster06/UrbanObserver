@@ -1,0 +1,18 @@
+uuid: 5fd6ebc4-3f07-4fb3-ad08-d5eab405d2b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.social-links
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: menu_link_content.social-links
+target_entity_type_id: menu_link_content
+target_bundle: social-links
+default_langcode: site_default
+language_alterable: true

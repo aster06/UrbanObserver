@@ -1,0 +1,18 @@
+uuid: d0ffb0eb-4295-4763-9092-f689c6570359
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.latest_posts
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: block_content.latest_posts
+target_entity_type_id: block_content
+target_bundle: latest_posts
+default_langcode: site_default
+language_alterable: true

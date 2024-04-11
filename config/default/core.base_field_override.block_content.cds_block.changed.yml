@@ -1,0 +1,18 @@
+uuid: 00cff3f9-80e1-4fcc-8af3-2bc2de9d9886
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.cds_block
+id: block_content.cds_block.changed
+field_name: changed
+entity_type: block_content
+bundle: cds_block
+label: Changed
+description: 'The time that the content block was last edited.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

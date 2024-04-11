@@ -1,0 +1,18 @@
+uuid: 402ae92a-c6e8-4177-b4ce-1d6971e96024
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.see_pricing
+id: block_content.see_pricing.info
+field_name: info
+entity_type: block_content
+bundle: see_pricing
+label: 'Block description'
+description: 'A brief description of your block.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

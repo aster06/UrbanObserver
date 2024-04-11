@@ -1,0 +1,18 @@
+uuid: d72225c6-30a1-4b28-9b1d-fb09057681e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.latest_posts
+id: block_content.latest_posts.info
+field_name: info
+entity_type: block_content
+bundle: latest_posts
+label: 'Block description'
+description: 'A brief description of your block.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

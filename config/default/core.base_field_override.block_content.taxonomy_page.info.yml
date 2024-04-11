@@ -1,0 +1,18 @@
+uuid: 6dcb071a-5779-49d3-ba58-7cfc44cc877c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.taxonomy_page
+id: block_content.taxonomy_page.info
+field_name: info
+entity_type: block_content
+bundle: taxonomy_page
+label: 'Block description'
+description: 'A brief description of your block.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

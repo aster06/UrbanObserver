@@ -1,0 +1,22 @@
+uuid: f6e48a92-355b-4e8c-96f9-b193180a1ca9
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.see_pricing
+id: block_content.see_pricing.status
+field_name: status
+entity_type: block_content
+bundle: see_pricing
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

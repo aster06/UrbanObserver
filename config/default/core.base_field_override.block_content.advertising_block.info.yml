@@ -1,0 +1,18 @@
+uuid: 957a728c-11a3-4bd7-815d-28d47d26803b
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.advertising_block
+id: block_content.advertising_block.info
+field_name: info
+entity_type: block_content
+bundle: advertising_block
+label: 'Block description'
+description: 'A brief description of your block.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

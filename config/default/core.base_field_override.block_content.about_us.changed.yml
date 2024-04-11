@@ -1,0 +1,18 @@
+uuid: 6a12e087-38fb-446f-bcba-7b2ea46ebf1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.about_us
+id: block_content.about_us.changed
+field_name: changed
+entity_type: block_content
+bundle: about_us
+label: Changed
+description: 'The time that the content block was last edited.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

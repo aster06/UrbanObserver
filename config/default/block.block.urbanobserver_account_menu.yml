@@ -14,7 +14,7 @@ _core:
 id: urbanobserver_account_menu
 theme: urbanobserver
 region: secondary_menu
-weight: -5
+weight: -21
 provider: null
 plugin: 'system_menu_block:account'
 settings:

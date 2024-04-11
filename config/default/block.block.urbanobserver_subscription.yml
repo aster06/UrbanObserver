@@ -11,7 +11,7 @@ dependencies:
 id: urbanobserver_subscription
 theme: urbanobserver
 region: footer
-weight: 0
+weight: -17
 provider: null
 plugin: 'block_content:faad6518-20c0-4e11-aed6-21c5e8b7ea0c'
 settings:

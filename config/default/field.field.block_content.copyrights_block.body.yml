@@ -1,0 +1,24 @@
+uuid: c8f85535-633b-472b-a4b2-63b2b9742ab0
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.copyrights_block
+    - field.storage.block_content.body
+  module:
+    - text
+id: block_content.copyrights_block.body
+field_name: body
+entity_type: block_content
+bundle: copyrights_block
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

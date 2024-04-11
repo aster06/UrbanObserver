@@ -11,7 +11,7 @@ dependencies:
 id: menuitemextrasdemomenuq
 theme: urbanobserver
 region: secondary_menu
-weight: 0
+weight: -17
 provider: system
 plugin: 'system_menu_block:mie-demo-base-menu'
 settings:

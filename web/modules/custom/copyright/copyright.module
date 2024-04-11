@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * Primary module hook for copyright module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function copyright_theme() {
+  return [
+    'copyright' => [
+      'variables' => [
+        'text' => NULL,
+      ],
+    ],
+  ];
+}
