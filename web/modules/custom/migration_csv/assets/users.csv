@@ -1,0 +1,4 @@
+uid,username,email,status,roles
+1,OnePerson,blabla@gmail.com,1,Authenticated user
+2,SecondPerson,lalala@gmail.com,1,Authenticated user
+3,ThirdPerson,lolololo@gmail.com,1,Authenticated user

@@ -1,0 +1,7 @@
+type: module
+name: Custom migrate csv
+description: 'Custom migration from a csv file'
+package: custom
+core_version_requirement: ^10
+dependencies:
+  - drupal:migrate
