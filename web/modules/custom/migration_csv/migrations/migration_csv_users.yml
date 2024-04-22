@@ -18,7 +18,7 @@ process:
   roles: roles
   type:
     plugin: default_value
-    default_value: article
+    default_value: user
 destination:
   plugin: 'entity:user'
 migration_dependencies: {}

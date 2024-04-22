@@ -43,7 +43,7 @@ class CustomDestination extends DestinationBase implements ContainerFactoryPlugi
     array $configuration,
     $plugin_id,
     $plugin_definition,
-    MigrationInterface $migration = NULL): CustomDestination|ContainerFactoryPluginInterface|static {
+    MigrationInterface $migration = NULL): static {
     return new static(
       $configuration,
       $plugin_id,
