@@ -1,0 +1,24 @@
+id: migration_csv_users
+label: 'User migration from CSV'
+migration_tags:
+  - users
+migration_group: null
+source:
+  plugin: 'csv'
+  path: modules/custom/migration_csv/assets/users.csv
+  delimiter: ","
+  enclosure: '"'
+  header_offset: 0
+  ids:
+    - uid
+process:
+  name: username
+  mail: email
+  status: status
+  roles: roles
+  type:
+    plugin: default_value
+    default_value: user
+destination:
+  plugin: 'entity:user'
+migration_dependencies: {}

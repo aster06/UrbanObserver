@@ -1,0 +1,22 @@
+id: migration_csv_registration
+label: 'Registration migration from CSV'
+migration_tags:
+  - users
+  - registration
+migration_group: null
+source:
+  plugin: 'csv'
+  path: modules/custom/migration_csv/assets/users_registration.csv
+  delimiter: ","
+  enclosure: '"'
+  header_offset: 0
+  ids:
+    - uid
+process:
+  uid: uid
+  country: country
+  user_city: user_city
+destination:
+  plugin: custom_destination
+  database_connection: default
+migration_dependencies: {}
